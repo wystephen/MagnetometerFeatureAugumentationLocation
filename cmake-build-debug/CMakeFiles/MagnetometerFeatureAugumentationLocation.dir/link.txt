@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/main.cpp.o  -o MagnetometerFeatureAugumentationLocation 

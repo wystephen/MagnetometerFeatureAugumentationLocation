@@ -71,12 +71,8 @@ class ImuResultReader:
             #         self.data_with_time[i,j+1] = float(tmp_list[j-1].split(' ')[1])
             #         self.data_with_time[i,j+2] = float(tmp_list[j])
 
-
-
-
-
-
-
+        def SavetoFile(self,file_name):
+            data_save = np.zeros([self.data_with_time.shape[0],9])
 
 
 
