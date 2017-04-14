@@ -12,32 +12,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.1/CompilerIdCXX/a.out" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/octave-workspace" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/CSVReader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/FUNCTIONBASE.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/FileReader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/JsonCodert.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/JsonObject.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/Matrix.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/MyError.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/Vector.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/Zupt.data.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/jsontest.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/magicmatrix.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/matplotlib_interface.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/pinv.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/test.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/test_main.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/time_stamp.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Extent/u1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/MagnetometerFeatureAugumentationLocation.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/MagnetometerFeatureAugumentationLocation.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuResultReader.py" afterPath="$PROJECT_DIR$/scripts/ImuResultReader.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,13 +63,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImuResultReader.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImuResultReader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="87" column="11" lean-forward="true" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+            <state relative-caret-position="356">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="e#2#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Matrix.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/Extent/Matrix.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+              <folding>
+                <element signature="e#2172#2181#0" expanded="true" />
+                <element signature="e#2402#2411#0" expanded="true" />
+                <element signature="e#2742#2751#0" expanded="true" />
+                <element signature="e#3115#3124#0" expanded="true" />
+                <element signature="e#3299#3308#0" expanded="true" />
+                <element signature="e#4075#4084#0" expanded="true" />
+                <element signature="e#4288#4297#0" expanded="true" />
+                <element signature="e#4890#4899#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,6 +111,7 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/scripts/ImuResultReader.py" />
+        <option value="$PROJECT_DIR$/include/Extent/Matrix.h" />
       </list>
     </option>
   </component>
@@ -108,6 +121,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="width" value="1920" />
     <option name="height" value="1044" />
@@ -150,21 +164,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TMP_DATA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MagnetometerFeatureAugumentationLocation" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MagnetometerFeatureAugumentationLocation" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="Extent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,7 +436,7 @@
       <workItem from="1491873254612" duration="8861000" />
       <workItem from="1491982950279" duration="903000" />
       <workItem from="1492132103556" duration="869000" />
-      <workItem from="1492133362820" duration="758000" />
+      <workItem from="1492133362820" duration="1438000" />
     </task>
     <task id="LOCAL-00001" summary="...change the code.">
       <created>1491898608418</created>
@@ -441,11 +445,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491898608419</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="save data.">
+      <created>1492134134622</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134134622</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11391000" />
+    <option name="totallyTimeSpent" value="12071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -481,7 +492,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="...change the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="...change the code." />
+    <MESSAGE value="save data." />
+    <option name="LAST_COMMIT_MESSAGE" value="save data." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -652,10 +666,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="87" column="11" lean-forward="true" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+        <state relative-caret-position="356">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#2#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Extent/Matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+          <folding>
+            <element signature="e#2172#2181#0" expanded="true" />
+            <element signature="e#2402#2411#0" expanded="true" />
+            <element signature="e#2742#2751#0" expanded="true" />
+            <element signature="e#3115#3124#0" expanded="true" />
+            <element signature="e#3299#3308#0" expanded="true" />
+            <element signature="e#4075#4084#0" expanded="true" />
+            <element signature="e#4288#4297#0" expanded="true" />
+            <element signature="e#4890#4899#0" expanded="true" />
           </folding>
         </state>
       </provider>
