@@ -88,15 +88,11 @@ class ImuResultReader:
         np.savetxt(file_name, data_save, delimiter=",")
 
 
-
-
-
-
 if __name__ == '__main__':
     irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record(2).txt")
     # np.savetxt("../TMP_DATA/all_data.csv",irr.data_with_time,"%.18e",
     #            ',')
-    irr.SavetoFile("./all_data.csv")
+    irr.SavetoFile("../TMP_DATA/all_data.csv")
 
     plt.figure(1)
     plt.grid(True)
