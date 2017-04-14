@@ -12,6 +12,10 @@ import re
 
 class ImuResultReader:
     def __init__(self,file_name):
+        '''
+        
+        :param file_name: 
+        '''
         self.file_handle = open(file_name)
 
         # Read whole file
@@ -71,16 +75,28 @@ class ImuResultReader:
             #         self.data_with_time[i,j+1] = float(tmp_list[j-1].split(' ')[1])
             #         self.data_with_time[i,j+2] = float(tmp_list[j])
 
-        def SavetoFile(self,file_name):
-            data_save = np.zeros([self.data_with_time.shape[0],9])
+    def SavetoFile(self, file_name):
+        '''
+        save time accx accy accz wx wy wz mx my mz pressure height
+        :param file_name: 
+        :return: 
+        '''
+        data_save = np.zeros([self.data_with_time.shape[0], 12])
+        data_save[:, :7] = self.data_with_time[:, :7]
+        print(data_save[10, :])
+        data_save[:, 7:] = self.data_with_time[:, -5:]
+        np.savetxt(file_name, data_save, delimiter=",")
+
+
 
 
 
 
 if __name__ == '__main__':
     irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record(2).txt")
-    np.savetxt("../TMP_DATA/all_data.csv",irr.data_with_time,"%.18e",
-               ',')
+    # np.savetxt("../TMP_DATA/all_data.csv",irr.data_with_time,"%.18e",
+    #            ',')
+    irr.SavetoFile("./all_data.csv")
 
     plt.figure(1)
     plt.grid(True)

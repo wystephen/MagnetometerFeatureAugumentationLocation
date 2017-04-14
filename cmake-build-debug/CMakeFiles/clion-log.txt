@@ -1,4 +1,4 @@
-/home/steve/Tools/clion-2017.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/steve/Code/MagnetometerFeatureAugumentationLocation
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/steve/Code/MagnetometerFeatureAugumentationLocation
 -- The C compiler identification is GNU 6.2.0
 -- The CXX compiler identification is GNU 6.2.0
 -- Check for working C compiler: /usr/bin/cc
