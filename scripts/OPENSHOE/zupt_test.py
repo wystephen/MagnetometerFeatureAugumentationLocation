@@ -6,7 +6,7 @@ import numpy as np
 import scipy as sp
 
 
-class zupte_test:
+class zv_detector:
     def __init__(self, setting):
         self.setting = setting
 

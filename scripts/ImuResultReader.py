@@ -84,7 +84,8 @@ class ImuResultReader:
         data_save = np.zeros([self.data_with_time.shape[0], 12])
         data_save[:, :7] = self.data_with_time[:, :7]
         print(data_save[10, :])
-        data_save[:, 7:] = self.data_with_time[:, -5:]
+        data_save[:, -5:] = self.data_with_time[:, -5:]
+        print(data_save[1000, :])
         np.savetxt(file_name, data_save, delimiter=",")
 
 

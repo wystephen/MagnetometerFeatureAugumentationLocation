@@ -36,13 +36,13 @@ class ZUPTaidedInsPlus(object):
         self.last_pose_constrain = 0
         self.last_zv = 0
 
-    def init_Nav_eq(self, u1, u2):
+    def init_Nav_eq(self, u1):
         '''
 
         :param u1:
-        :param u2:
         :return:
         '''
+        u2 = u1
 
         f_u = np.mean(u1[:, 0])
         f_v = np.mean(u1[:, 1])
@@ -261,16 +261,15 @@ class ZUPTaidedInsPlus(object):
 
         return R
 
-    def GetPosition(self, u1, zupt1, pose, distance):
-
-        """
-
-        :param u1:
-        :param u2:
-        :param zupt1:
-        :param zupt2:
-        :return:
-        """
+    def GetPosition(self, u1, zupt1):
+        '''
+        
+        :param u1: 
+        :param zupt1: 
+        :param pose: 
+        :param distance: 
+        :return: 
+        '''
 
         u2 = u1
         zupt2 = zupt1
@@ -285,23 +284,16 @@ class ZUPTaidedInsPlus(object):
         self.P = (self.F.dot(self.P)).dot(np.transpose(self.F)) + \
                  (self.G.dot(self.Q)).dot(np.transpose(self.G))
 
-        # self.P = self.para.s_P
-        # self.P = self.P * 50.0
-
-        # zupt1 = 0
-        # zupt2 = 0
-        # self.last_zv += 1
-        # and (self.last_zv > 2)
-        if (zupt1 == 1 or zupt2 == 1):
+        if (zupt1 > 0.5 or zupt2 > 0.5):
             self.last_zv = 0
             # print (11)
             # self.P = self.P * 30.0
-            if (zupt1 == 1) and (not (zupt2 == 1)):
+            if (zupt1 > 0.5) and (not (zupt2 == 1)):
                 # print(1)
                 H = self.H1
                 R = self.R1
                 z = -self.x_h[3:6]
-            elif (not (zupt1 == 1)) and (zupt2 == 1):
+            elif (not (zupt1 > 0.5)) and (zupt2 > 0.5):
                 # print(2)
                 H = self.H2
                 R = self.R2
@@ -331,70 +323,6 @@ class ZUPTaidedInsPlus(object):
                                                                          self.quat1,
                                                                          self.quat2)
 
-        '''
-        RANGE CONSTRAINT.
-        '''
-        self.last_constraint += 1
-
-        if self.para.range_constraint_on and \
-                        self.last_constraint > self.para.min_rud_sep and \
-                        np.linalg.norm(
-                                    self.x_h[0:3] - self.x_h[9:12]) > \
-                        self.para.range_constraint:
-            self.last_constraint = 0
-
-            tmp_in1 = np.zeros([10, 1])
-            tmp_in2 = np.zeros([10, 1])
-
-            tmp_in1[0:6] = self.x_h[0:6]
-            tmp_in1[6:10] = self.quat1.reshape(4, 1)
-
-            tmp_in2[0:6] = self.x_h[9:15]
-            tmp_in2[6:10] = self.quat2.reshape(4, 1)
-
-            tmp1, tmp2, self.P = self.range_constraint(tmp_in1, tmp_in2, self.P)
-
-            self.x_h[0:6] = tmp1[0:6]
-            self.quat1 = tmp1[6:10]
-
-            self.x_h[9:15] = tmp2[0:6]
-            self.quat2 = tmp2[6:10]
-
-        '''
-        END RANGE CONSTRAINT
-        '''
-        self.last_pose_constrain += 1
-        # pose[2] = 0.0
-        # tp = pose
-        # pose[0] = tp[1]
-        # pose[1] = tp[0]
-        '''Beacon Range Constraint.'''
-
-        if self.para.pose_constraint and \
-                        self.last_pose_constrain > self.para.min_rud_sep and \
-                        np.linalg.norm(
-                                    self.x_h[0:2] - pose) > distance:
-            self.x_h[9] = pose[0]
-            self.x_h[10] = pose[1]
-            self.para.range_constraint = distance
-            self.last_pose_constrain = 0
-
-            tmp_in1 = np.zeros([10, 1])
-            tmp_in2 = np.zeros([10, 1])
-
-            tmp_in1[0:6] = self.x_h[0:6]
-            tmp_in1[6:10] = self.quat1.reshape(4, 1)
-
-            tmp_in2[0:6] = self.x_h[9:15]
-            tmp_in2[6:10] = self.quat2.reshape(4, 1)
-
-            tmp1, tmp2, self.P = self.range_constraint(tmp_in1, tmp_in2, self.P)
-
-            self.x_h[0:6] = tmp1[0:6]
-            self.quat1 = tmp1[6:10]
-
-            self.x_h[9:15] = tmp2[0:6]
-            self.quat2 = tmp2[6:10]
 
         self.P = (self.P * 0.5 + self.P.transpose() * 0.5)
         # print(self.x_h,self.quat1,self.quat2)
