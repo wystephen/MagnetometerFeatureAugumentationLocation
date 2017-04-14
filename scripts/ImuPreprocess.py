@@ -23,7 +23,9 @@ class ImuPreprocess:
         self.data[:, 1:4] = self.data[:, 1:4] * 9.8
 
         self.para = Setting.settings()
-        # self.para.time_Window_size = 40
+        self.para.sigma_a *= 4.0
+        self.para.sigma_g *= 4.0
+        # self.para.time_Window_size = 5
 
     def computezupt(self):
         '''
@@ -40,7 +42,7 @@ class ImuPreprocess:
         plt.grid(True)
         for i in range(1, 4):
             plt.plot(self.data[:, i])
-        plt.plot(self.zupt_result)
+        plt.plot(self.zupt_result * 80.0)
         plt.show()
 
     def ShowMagnety(self):
