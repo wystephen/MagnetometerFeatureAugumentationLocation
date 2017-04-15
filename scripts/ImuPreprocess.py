@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 # from OPENSHOE import zupt_test
 from scripts.OPENSHOE import Setting, zupt_test, ZUPT
 
+import os
 
 class ImuPreprocess:
     def __init__(self, source_data_file):
@@ -39,6 +40,9 @@ class ImuPreprocess:
         
         :return: 
         '''
+
+        if (os.
+
         zero_velocity_detector = zupt_test.zv_detector(self.para)
         self.zupt_result = zero_velocity_detector.GLRT_Detector(self.data[:, 1:7])
 
@@ -72,12 +76,6 @@ class ImuPreprocess:
         plt.title("filter result ")
         plt.plot(self.trace_x[:, 0], self.trace_x[:, 1], '.-')
         plt.grid(True)
-
-
-
-
-
-
 
 
     def ShowMagnety(self):
