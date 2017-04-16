@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 # from OPENSHOE import zupt_test
 from scripts.OPENSHOE import Setting, zupt_test, ZUPT
 
+import array
+
 import os
 
 class ImuPreprocess:
@@ -35,9 +37,13 @@ class ImuPreprocess:
         print("TS :", self.para.Ts)
         # self.para.time_Window_size = 5
 
+        return
+
     def computezupt(self):
         '''
-        
+        run zero velocity detector and zupt location.
+         (If tmp_data/trace.txt and tmp_data/zupt_result.txt exists,
+         Just load data from file to save time.)
         :return: 
         '''
 
@@ -102,8 +108,15 @@ class ImuPreprocess:
         plt.plot(self.trace_x[:, 0], self.trace_x[:, 1], '.-')
         plt.grid(True)
 
+        return
+
+
 
     def ShowMagnety(self):
+        '''
+        Find and show simple feature in sequence.
+        :return: 
+        '''
         plt.figure()
         plt.subplot(4, 1, 1)
         plt.title("norm")
@@ -120,6 +133,43 @@ class ImuPreprocess:
         plt.title(" pressure")
         plt.plot(self.data[:, 10] - np.mean(self.data[:, 10]))
         print(min(self.data[:, 11]), max(self.data[:, 11]))
+        return
+
+    def findvertex(self):
+        '''
+        Find vertex and compute edge(in trace graph not optimize graph).
+        :return: 
+        '''
+
+        vertex_point = array.array('f')
+        data_cols = 9
+
+        for i in range(1, self.trace_x.shape[0]):
+            if self.zupt_result[i] > 0.5 and self.zupt_result[i - 1] < 0.5:
+
+                for j in range(data_cols):
+                    vertex_point.append(self.trace_x[i, j])
+                    # vertex_point.append(self.trace_x[i,0])
+                    # vertex_point.append(self.trace_x[i,1])
+                    # vertex_point.append(self.trace_x[i,2])
+                    # vertex_point
+        self.vertics = np.frombuffer(vertex_point, dtype=np.float32)
+        self.vertics = np.reshape(self.vertics, (-1, data_cols))
+        print(self.vertics[20, :])
+
+        plt.figure()
+        plt.title("show vertices in trace")
+        plt.grid(True)
+
+        plt.plot(self.trace_x[:, 0], self.trace_x[:, 1], 'r.-', label="trace")
+        plt.plot(self.vertics[:, 0], self.vertics[:, 1], 'bo', label="vertex")
+
+        plt.legend()
+
+        return
+
+
+
 
 
 
@@ -131,5 +181,7 @@ if __name__ == '__main__':
     ip.computezupt()
 
     ip.ShowMagnety()
+
+    ip.findvertex()
 
     plt.show()
