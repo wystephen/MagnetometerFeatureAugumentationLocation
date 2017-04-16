@@ -185,7 +185,12 @@ class ImuPreprocess:
         corner = array.array('f')
 
         for i in range(self.vertics.shape[0]):
-            
+            if i == 1 or i == self.vertics.shape[0] - 1:
+                for j in range(self.vertics.shape[1]):
+                    corner.append(self.vertics[i, j])
+            else:
+                
+
 
 
 
