@@ -168,6 +168,26 @@ class ImuPreprocess:
 
         return
 
+    def findcorner(self):
+        '''
+        Find corner in vertex point.
+        :return: 
+        '''
+
+        plt.figure()
+        plt.title("show x y z (in findcorner)")
+
+        for i in range(3):
+            plt.plot(self.vertics[:, i], label=str(i))
+        plt.grid(True)
+        plt.legend()
+
+        corner = array.array('f')
+
+        for i in range(self.vertics.shape[0]):
+            
+
+
 
 
 
@@ -183,5 +203,7 @@ if __name__ == '__main__':
     ip.ShowMagnety()
 
     ip.findvertex()
+
+    ip.findcorner()
 
     plt.show()
