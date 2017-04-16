@@ -41,7 +41,30 @@ class ImuPreprocess:
         :return: 
         '''
 
-        if (os.
+        if "tmp_data" in os.listdir("./"):
+            print(os.listdir("./"))
+            if "zupt_result.txt" in os.listdir("./tmp_data") and "trace.txt" in os.listdir("./tmp_data"):
+
+                self.trace_x = np.loadtxt("./tmp_data/trace.txt")
+                self.zupt_result = np.loadtxt("./tmp_data/zupt_result.txt")
+
+                if self.trace_x.shape[0] == self.data.shape[0]:
+                    plt.figure()
+                    plt.title("ZUPT detector(quick load)")
+                    plt.grid(True)
+                    for i in range(1, 4):
+                        plt.plot(self.data[:, i])
+                    plt.plot(self.zupt_result * 80.0)
+
+                    plt.figure()
+                    plt.title("filter result (quick load)")
+                    plt.plot(self.trace_x[:, 0], self.trace_x[:, 1], '.-')
+                    plt.grid(True)
+
+                    return
+
+        else:
+            os.mkdir("tmp_data")
 
         zero_velocity_detector = zupt_test.zv_detector(self.para)
         self.zupt_result = zero_velocity_detector.GLRT_Detector(self.data[:, 1:7])
@@ -71,6 +94,8 @@ class ImuPreprocess:
         self.trace_x = self.trace_x.transpose()
 
         print(self.trace_x.shape)
+        np.savetxt("./tmp_data/trace.txt", self.trace_x)
+        np.savetxt("./tmp_data/zupt_result.txt", self.zupt_result)
 
         plt.figure()
         plt.title("filter result ")
