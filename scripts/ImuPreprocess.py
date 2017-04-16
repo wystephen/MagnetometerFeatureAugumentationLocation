@@ -48,7 +48,7 @@ class ImuPreprocess:
         '''
 
         if "tmp_data" in os.listdir("./"):
-            print(os.listdir("./"))
+            # print(os.listdir("./"))
             if "zupt_result.txt" in os.listdir("./tmp_data") and "trace.txt" in os.listdir("./tmp_data"):
 
                 self.trace_x = np.loadtxt("./tmp_data/trace.txt")
@@ -178,25 +178,61 @@ class ImuPreprocess:
         plt.title("show x y z (in findcorner)")
 
         for i in range(3):
-            plt.plot(self.vertics[:, i], label=str(i))
+            plt.plot(self.vertics[:, i], '-+', label=str(i))
         plt.grid(True)
         plt.legend()
 
         corner = array.array('f')
 
-        threshold = 0.5
+        # plt.figure()
+        # plt.title("\\delta y / \\delta x")
+        tmp = (self.vertics[1:, 1] - self.vertics[:-1, 1]) / (self.vertics[1:, 0] - self.vertics[:-1, 1])
+        plt.plot(tmp, label="\deltay / \delta x")
+        plt.legend()
+        plt.grid(True)
+
+        threshold = 0.2
+        length = 5
+
+        itcounter = 0
 
         for i in range(self.vertics.shape[0]):
+            # if itcounter > 0:
+            #     itcounter -= 1
+            #     continue
+
             if i == 1 or i == self.vertics.shape[0] - 1:
                 for j in range(self.vertics.shape[1]):
                     corner.append(self.vertics[i, j])
+            elif i < length + 1 or i > self.vertics.shape[0] - length - 1:
+                itcounter = 0
+                continue
             else:
-                if (np.abs(self.vertics[i, 0] -
-                                   (self.vertics[i - 1, 0] + self.vertics[i + 1, 0]) / 2.0) > threshold or
-                            np.abs(self.vertics[i, 1] -
-                                           (self.vertics[i - 1, 1] + self.vertics[i + 1, 1]) / 2.0) > threshold):
+                # if (np.abs(self.vertics[i, 0] -
+                #                    (self.vertics[i - 1, 0] + self.vertics[i + 1, 0]) / 2.0) > threshold or
+                #             np.abs(self.vertics[i, 1] -
+                #                            (self.vertics[i - 1, 1] + self.vertics[i + 1, 1]) / 2.0) > threshold):
+                if ((self.vertics[i, 0] - self.vertics[i - length, 0]) * (
+                    self.vertics[i + length, 0] - self.vertics[i, 0]) < 0.0 and
+                        (abs((self.vertics[i, 0] - self.vertics[i - length, 0]) + (
+                            self.vertics[i + length, 0] - self.vertics[i, 0])) > threshold
+                         ) or (
+                                    (self.vertics[i, 1] - self.vertics[i - length, 1]) * (
+                                    self.vertics[i + length, 1] - self.vertics[i, 1]) < 0.0 and
+                                abs((self.vertics[i, 1] - self.vertics[i - length, 1]) + (
+                                    self.vertics[i + length, 1] - self.vertics[i, 1])) > threshold)
+                    ):
+                    itcounter += 1
+                    # if itcounter < 3 or itcounter > 4:
+                    #     continue
+
                     for j in range(self.vertics.shape[1]):
                         corner.append(self.vertics[i, j])
+                        # itcounter += length-3
+                else:
+                    itcounter = 0
+
+
 
         self.corner = np.frombuffer(corner, dtype=np.float32).reshape([-1, self.vertics.shape[1]])
 
