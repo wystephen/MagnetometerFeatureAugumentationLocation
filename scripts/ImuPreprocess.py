@@ -184,12 +184,34 @@ class ImuPreprocess:
 
         corner = array.array('f')
 
+        threshold = 0.5
+
         for i in range(self.vertics.shape[0]):
             if i == 1 or i == self.vertics.shape[0] - 1:
                 for j in range(self.vertics.shape[1]):
                     corner.append(self.vertics[i, j])
             else:
-                
+                if (np.abs(self.vertics[i, 0] -
+                                   (self.vertics[i - 1, 0] + self.vertics[i + 1, 0]) / 2.0) > threshold or
+                            np.abs(self.vertics[i, 1] -
+                                           (self.vertics[i - 1, 1] + self.vertics[i + 1, 1]) / 2.0) > threshold):
+                    for j in range(self.vertics.shape[1]):
+                        corner.append(self.vertics[i, j])
+
+        self.corner = np.frombuffer(corner, dtype=np.float32).reshape([-1, self.vertics.shape[1]])
+
+        # for i in range(3):
+        #     plt.plot(self.corner[:,i],'ro')
+
+        plt.figure()
+        plt.title("corner in vertex")
+        plt.plot(self.vertics[:, 0], self.vertics[:, 1], 'r-+', label="vertics")
+        plt.plot(self.corner[:, 0], self.corner[:, 1], 'bo', label="corner")
+
+        plt.legend()
+        plt.grid(True)
+
+
 
 
 
