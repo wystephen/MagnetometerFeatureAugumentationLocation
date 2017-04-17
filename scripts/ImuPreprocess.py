@@ -282,6 +282,7 @@ class ImuPreprocess:
         valid_length = 5
 
         self.feature_extract_range = np.zeros([np.max(self.corner_id[:, 0].astype(np.int)) + 1, 4])
+        self.flag_point = np.zeros([self.feature_extract_range.shape[0], 2])
 
         for i in range(self.feature_extract_range.shape[0]):
             first = -1
@@ -297,6 +298,7 @@ class ImuPreprocess:
 
                         # TODO: could be speed up
                         last = self.corner_id[tt, 1]
+                        self.flag_point[i, :] = self.vertics[last, :2]
             # find index in source data
 
             self.feature_extract_range[i, 0] = self.vertics_id[first - valid_length]
@@ -304,10 +306,12 @@ class ImuPreprocess:
             self.feature_extract_range[i, 2] = self.vertics_id[last]
             self.feature_extract_range[i, 3] = self.vertics_id[last + valid_length]
 
+        self.feature_extract_range = self.feature_extract_range.astype(dtype=np.int)
+
         # print("feature range : \n",self.feature_range)
 
         '''
-        Extract feature and compare
+        Extract feature 
         '''
 
         self.feature = np.zeros([self.feature_extract_range.shape[0], 12])
@@ -355,21 +359,39 @@ class ImuPreprocess:
 
         print(self.feature)
 
+        ''''
+        Compara features
+        '''
+
+        self.distance = np.zeros([self.feature.shape[0], self.feature.shape[0]])
+        for i in range(self.distance.shape[0]):
+            for j in range(self.distance.shape[1]):
+                self.distance[i, j] = np.linalg.norm(self.feature[i, :] - self.feature[j, :])
+
+        print("distantce:\n", self.distance)
+
+        plt.contourf(self.distance)
+
+        plt.figure()
+        plt.title("relation ship ")
+
+        plt.plot(self.vertics[:, 0], self.vertics[:, 1], 'b*-')
+
+        for i in range(self.distance.shape[0]):
+            for j in range(self.distance.shape[1]):
+                if i == j:
+                    continue
+                elif self.distance[i, j] < 220:
+                    plt.plot([self.flag_point[i, 0], self.flag_point[j, 0]],
+                             [self.flag_point[i, 1], self.flag_point[j, 1]],
+                             'r-')
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-        plt.legend()
+                    # plt.legend()
 
 
 
