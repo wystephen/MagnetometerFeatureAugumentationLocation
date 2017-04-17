@@ -248,16 +248,6 @@ class ImuPreprocess:
         plt.grid(True)
 
 
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     ip = ImuPreprocess(source_data_file="../TMP_DATA/all_data.csv")
 
