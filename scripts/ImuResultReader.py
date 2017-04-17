@@ -87,19 +87,50 @@ class ImuResultReader:
         data_save[:, -5:] = self.data_with_time[:, -5:]
         print(data_save[1000, :])
         np.savetxt(file_name, data_save, delimiter=",")
+        return data_save
 
 
 if __name__ == '__main__':
-    irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record(2).txt")
+    # irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record(5).txt")
     # np.savetxt("../TMP_DATA/all_data.csv",irr.data_with_time,"%.18e",
     #            ',')
-    irr.SavetoFile("../TMP_DATA/all_data.csv")
+    # irr.SavetoFile("../TMP_DATA/all_data.csv")
 
-    plt.figure(1)
-    plt.grid(True)
+    array_list = list()
+    full_time_wast = 0.0
+    full_size = 0
 
-    for i in range(1,9):
-        plt.plot(irr.data_with_time[:,i])
+    for i in [1, 2, 3, 4]:
+        irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record({0}).txt".format(i))
 
-    plt.show()
+        # array_list.append(irr.data_with_time)
 
+        array_list.append(irr.SavetoFile("../TMP_DATA/all_data{0}.csv".format(i)))
+
+        full_size += irr.data_with_time.shape[0]
+
+
+        # data_to_save = np.zeros([full_size,array_list[0].shape[1]])
+        #
+        # begin_index = 0
+        # for data in array_list:
+        #     if begin_index == 0:
+        #         data[:,0] = data[:,0]-data[0,0]
+        #     else:
+        #         data[:,0] = data[:,0]-data[0,0] + data_to_save[begin_index-1,0]
+        #
+        #     data_to_save[begin_index:data.shape[0],:] = data
+        #     begin_index += data.shape[0]
+        #
+        # np.savetxt("../TMP_DATA/all_data.csv",data_to_save,delimiter=",")
+
+
+
+
+        # plt.figure(1)
+        # plt.grid(True)
+        #
+        # for i in range(1,9):
+        #     plt.plot(irr.data_with_time[:,i])
+        #
+        # plt.show()

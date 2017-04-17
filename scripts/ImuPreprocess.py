@@ -142,6 +142,7 @@ class ImuPreprocess:
         '''
 
         vertex_point = array.array('f')
+        vertex_to_id = array.array('f')
         data_cols = 9
 
         for i in range(1, self.trace_x.shape[0]):
@@ -153,8 +154,12 @@ class ImuPreprocess:
                     # vertex_point.append(self.trace_x[i,1])
                     # vertex_point.append(self.trace_x[i,2])
                     # vertex_point
+                vertex_to_id.append(i)
         self.vertics = np.frombuffer(vertex_point, dtype=np.float32)
         self.vertics = np.reshape(self.vertics, (-1, data_cols))
+        self.vertics_id = np.frombuffer(vertex_to_id, dtype=np.float32).reshape([-1])
+        self.vertics_id = self.vertics_id.astype(dtype=np.int32)
+
         print(self.vertics[20, :])
 
         plt.figure()
@@ -196,7 +201,7 @@ class ImuPreprocess:
         length = 5
 
         itcounter = 0
-        corner_index = 0
+        corner_index = -1
 
         for i in range(self.vertics.shape[0]):
             # if itcounter > 0:
@@ -242,9 +247,9 @@ class ImuPreprocess:
 
 
         self.corner = np.frombuffer(corner, dtype=np.float32).reshape([-1, self.vertics.shape[1]])
-        self.corner_id = np.frombuffer(corner_id, dtype=np.float32).reshape([-1, 2])
+        self.corner_id = np.frombuffer(corner_id, dtype=np.float32).reshape([-1, 2]).astype(np.int)
 
-        print("corner id :", self.corner_id)
+        # print("corner id :", self.corner_id)
 
         # for i in range(3):
         #     plt.plot(self.corner[:,i],'ro')
@@ -263,11 +268,68 @@ class ImuPreprocess:
         :return: 
         '''
 
+        plt.figure()
+        plt.title("plot vetex feature")
+
+        plt.grid(True)
+
+        # print(self.corner_id[:,0]==1)
+
+        '''
+        4 cols :
+        front begin |front end |after begin| after end
+        '''
+        valid_length = 5
+
+        self.feature_extract_range = np.zeros([np.max(self.corner_id[:, 0].astype(np.int)) + 1, 4])
+
+        for i in range(self.feature_extract_range.shape[0]):
+            first = -1
+            last = -1
+
+            # find first and last vertex id of this corner
+            for tt in range(self.corner_id.shape[0]):
+                if self.corner_id[tt, 0] == i:
+                    if first == -1:
+                        first = self.corner_id[tt, 1]
+
+                    else:
+
+                        # TODO: could be speed up
+                        last = self.corner_id[tt, 1]
+            # find index in source data
+
+            self.feature_extract_range[i, 0] = self.vertics_id[first - valid_length]
+            self.feature_extract_range[i, 1] = self.vertics_id[first]
+            self.feature_extract_range[i, 2] = self.vertics_id[last]
+            self.feature_extract_range[i, 3] = self.vertics_id[last + valid_length]
+
+        # print("feature range : \n",self.feature_range)
+
+
+        '''
+        Extract feature and compare
+        '''
+
+        # self.fea
+
+
+
+
+
+
+
+
+
+
+        plt.legend()
+
+
 
 
 
 if __name__ == '__main__':
-    ip = ImuPreprocess(source_data_file="../TMP_DATA/all_data.csv")
+    ip = ImuPreprocess(source_data_file="../TMP_DATA/all_data2.csv")
 
     ip.computezupt()
 
@@ -276,5 +338,7 @@ if __name__ == '__main__':
     ip.findvertex()
 
     ip.findcorner()
+
+    ip.computeconerfeature()
 
     plt.show()
