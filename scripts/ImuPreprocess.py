@@ -183,6 +183,7 @@ class ImuPreprocess:
         plt.legend()
 
         corner = array.array('f')
+        corner_id = array.array('f')
 
         # plt.figure()
         # plt.title("\\delta y / \\delta x")
@@ -195,6 +196,7 @@ class ImuPreprocess:
         length = 5
 
         itcounter = 0
+        corner_index = 0
 
         for i in range(self.vertics.shape[0]):
             # if itcounter > 0:
@@ -202,8 +204,9 @@ class ImuPreprocess:
             #     continue
 
             if i == 1 or i == self.vertics.shape[0] - 1:
-                for j in range(self.vertics.shape[1]):
-                    corner.append(self.vertics[i, j])
+                # for j in range(self.vertics.shape[1]):
+                #     corner.append(self.vertics[i, j])
+                itcounter = 0
             elif i < length + 1 or i > self.vertics.shape[0] - length - 1:
                 itcounter = 0
                 continue
@@ -225,6 +228,10 @@ class ImuPreprocess:
                     itcounter += 1
                     # if itcounter < 3 or itcounter > 4:
                     #     continue
+                    if itcounter == 1:
+                        corner_index += 1
+                    corner_id.append(corner_index)
+                    corner_id.append(i)
 
                     for j in range(self.vertics.shape[1]):
                         corner.append(self.vertics[i, j])
@@ -235,6 +242,9 @@ class ImuPreprocess:
 
 
         self.corner = np.frombuffer(corner, dtype=np.float32).reshape([-1, self.vertics.shape[1]])
+        self.corner_id = np.frombuffer(corner_id, dtype=np.float32).reshape([-1, 2])
+
+        print("corner id :", self.corner_id)
 
         # for i in range(3):
         #     plt.plot(self.corner[:,i],'ro')
@@ -246,6 +256,14 @@ class ImuPreprocess:
 
         plt.legend()
         plt.grid(True)
+
+    def computeconerfeature(self):
+        '''
+        Compute corner feature and compara it 
+        :return: 
+        '''
+
+
 
 
 if __name__ == '__main__':

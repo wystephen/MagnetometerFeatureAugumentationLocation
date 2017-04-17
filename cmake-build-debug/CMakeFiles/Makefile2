@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /home/steve/Code/MagnetometerFeatureAugumentationLocation
 CMAKE_BINARY_DIR = /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/graph_build.dir
+
+# All Build rule for target.
+CMakeFiles/graph_build.dir/all:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/depend
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target graph_build"
+.PHONY : CMakeFiles/graph_build.dir/all
+
+# Include target in all.
+all: CMakeFiles/graph_build.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/graph_build.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/graph_build.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/graph_build.dir/rule
+
+# Convenience name for target.
+graph_build: CMakeFiles/graph_build.dir/rule
+
+.PHONY : graph_build
+
+# clean rule for target.
+CMakeFiles/graph_build.dir/clean:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/clean
+.PHONY : CMakeFiles/graph_build.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/graph_build.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/MagnetometerFeatureAugumentationLocation.dir
 
 # All Build rule for target.

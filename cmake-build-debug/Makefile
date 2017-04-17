@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named graph_build
+
+# Build rule for target.
+graph_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 graph_build
+.PHONY : graph_build
+
+# fast build rule for target.
+graph_build/fast:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/build
+.PHONY : graph_build/fast
+
+#=============================================================================
 # Target rules for targets named MagnetometerFeatureAugumentationLocation
 
 # Build rule for target.
@@ -150,6 +163,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/graph_build_test.o: src/graph_build_test.cpp.o
+
+.PHONY : src/graph_build_test.o
+
+# target to build an object file
+src/graph_build_test.cpp.o:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/src/graph_build_test.cpp.o
+.PHONY : src/graph_build_test.cpp.o
+
+src/graph_build_test.i: src/graph_build_test.cpp.i
+
+.PHONY : src/graph_build_test.i
+
+# target to preprocess a source file
+src/graph_build_test.cpp.i:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/src/graph_build_test.cpp.i
+.PHONY : src/graph_build_test.cpp.i
+
+src/graph_build_test.s: src/graph_build_test.cpp.s
+
+.PHONY : src/graph_build_test.s
+
+# target to generate assembly for a file
+src/graph_build_test.cpp.s:
+	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/src/graph_build_test.cpp.s
+.PHONY : src/graph_build_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... graph_build"
 	@echo "... MagnetometerFeatureAugumentationLocation"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/graph_build_test.o"
+	@echo "... src/graph_build_test.i"
+	@echo "... src/graph_build_test.s"
 .PHONY : help
 
 
