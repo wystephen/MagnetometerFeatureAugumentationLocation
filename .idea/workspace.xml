@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="322" />
+    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="371" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -16,15 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/ZoEdge.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/ZoEdge.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/feature.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TMP_DATA/all_data.csv" afterPath="$PROJECT_DIR$/TMP_DATA/all_data.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuResultReader.py" afterPath="$PROJECT_DIR$/scripts/ImuResultReader.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,8 +101,8 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="733">
-                        <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+                      <state relative-caret-position="140">
+                        <caret line="323" column="27" lean-forward="false" selection-start-line="323" selection-start-column="27" selection-end-line="323" selection-end-column="27" />
                         <folding>
                           <element signature="e#65#83#0" expanded="true" />
                         </folding>
@@ -597,7 +590,7 @@
       <workItem from="1492167936051" duration="9000" />
       <workItem from="1492241836578" duration="2118000" />
       <workItem from="1492300572514" duration="22848000" />
-      <workItem from="1492407868311" duration="8610000" />
+      <workItem from="1492407868311" duration="9410000" />
     </task>
     <task id="LOCAL-00001" summary="...change the code.">
       <created>1491898608418</created>
@@ -725,11 +718,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492427215622</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="modified cmake file.">
+      <created>1492431584625</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1492431584625</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61837000" />
+    <option name="totallyTimeSpent" value="62637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1208,8 +1208,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="323" column="27" lean-forward="false" selection-start-line="323" selection-start-column="27" selection-end-line="323" selection-end-column="27" />
           <folding>
             <element signature="e#65#83#0" expanded="true" />
           </folding>

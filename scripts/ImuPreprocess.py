@@ -306,12 +306,59 @@ class ImuPreprocess:
 
         # print("feature range : \n",self.feature_range)
 
-
         '''
         Extract feature and compare
         '''
 
-        # self.fea
+        self.feature = np.zeros([self.feature_extract_range.shape[0], 12])
+
+        # x y z -axis
+        # for i in range(3):
+
+        # before mean std
+        # self.feature[i*2,0] = np.mean(self.data[
+        #                                   self.feature_extract_range[]])
+
+
+        # after mean std
+
+        for index in range(self.feature.shape[0]):
+
+            for i in range(3):
+                i = int(i)
+
+                self.feature[index, i * 2] = np.mean(
+                    self.data[
+                    self.feature_extract_range[index, 0]:self.feature_extract_range[index, 1]
+                    , i + 7
+                    ]
+                )
+                self.feature[index, i * 2 + 1] = np.std(
+                    self.data[
+                    self.feature_extract_range[index, 0]:self.feature_extract_range[index, 1]
+                    , i + 7
+                    ]
+                )
+
+                self.feature[index, i * 2 + 6] = np.mean(
+                    self.data[
+                    self.feature_extract_range[index, 2]:self.feature_extract_range[index, 3]
+                    , i + 7
+                    ]
+                )
+                self.feature[index, i * 2 + 1 + 6] = np.std(
+                    self.data[
+                    self.feature_extract_range[index, 2]:self.feature_extract_range[index, 3]
+                    , i + 7
+                    ]
+                )
+
+        print(self.feature)
+
+
+
+
+
 
 
 
