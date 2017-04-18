@@ -154,7 +154,7 @@ int main(int argc, char *argv[]) {
                 edge->setMeasurement(transform);
 //                edge->setMeasurementFromState();
 //                edge->set
-                globalOptimizer.addEdge(edge);
+//                globalOptimizer.addEdge(edge);
 
             }
 

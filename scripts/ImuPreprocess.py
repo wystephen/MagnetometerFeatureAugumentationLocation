@@ -54,6 +54,7 @@ class ImuPreprocess:
 
                 self.trace_x = np.loadtxt("./tmp_data/trace.txt")
                 self.zupt_result = np.loadtxt("./tmp_data/zupt_result.txt")
+                self.all_quat = np.loadtxt("./tmp_data/all_quat")
                 tmp_save = np.zeros([self.zupt_result.shape[0], 2])
                 tmp_save[:, 0] = self.zupt_result[:]
                 np.savetxt("../TMP_DATA/zupt_result.csv", tmp_save, delimiter=',')
@@ -94,19 +95,30 @@ class ImuPreprocess:
         ins_filter.init_Nav_eq(self.data[:30, 1:7])
 
         self.trace_x = np.zeros([9, self.data.shape[0]])
+        self.all_quat = np.zeros([self.data.shape[0], 4])
+        print("self .all quat :", self.all_quat)
+
+        '''
+        Try extrac 
+        '''
+
 
         for index in range(self.data.shape[0]):
             # if(index > 2):
             #     self.para.Ts = self.data[index,0]-self.data[index-1,0]
             self.trace_x[:, index] = ins_filter.GetPosition(self.data[index, 1:7], self.zupt_result[index]).reshape(18)[
                                      :9]
+
+            self.all_quat[index, :] = ins_filter.quat1.reshape([1, -1])
+
         self.trace_x = self.trace_x.transpose()
 
         print(self.trace_x.shape)
         np.savetxt("./tmp_data/trace.txt", self.trace_x)
         np.savetxt("./tmp_data/zupt_result.txt", self.zupt_result)
-        tmp_save = np.zeros([self.zupt_result.shape[0], 2])
-        tmp_save[:, 0] = self.zupt_result[:]
+        np.savetxt("./tmp_data/all_quat.txt", self.all_quat)
+        tmp_save = np.zeros([self.zupt_result.shape[0], 1])
+        tmp_save[:] = self.zupt_result[:]
         np.savetxt("../TMP_DATA/zupt_result.csv", tmp_save, delimiter=',')
 
         plt.figure()
@@ -148,6 +160,7 @@ class ImuPreprocess:
         '''
 
         vertex_point = array.array('f')
+        vertex_quat = array.array('f')
         vertex_to_id = array.array('f')
         data_cols = 9
 
@@ -156,6 +169,8 @@ class ImuPreprocess:
 
                 for j in range(data_cols):
                     vertex_point.append(self.trace_x[i, j])
+                for k in range(4):
+                    vertex_quat.append(self.all_quat[i, k])
                     # vertex_point.append(self.trace_x[i,0])
                     # vertex_point.append(self.trace_x[i,1])
                     # vertex_point.append(self.trace_x[i,2])
@@ -163,8 +178,13 @@ class ImuPreprocess:
                 vertex_to_id.append(i)
         self.vertics = np.frombuffer(vertex_point, dtype=np.float32)
         self.vertics = np.reshape(self.vertics, (-1, data_cols))
+        self.vertex_quat = np.frombuffer(vertex_quat, dtype=np.float32).reshape([-1, 4])
         self.vertics_id = np.frombuffer(vertex_to_id, dtype=np.float32).reshape([-1])
         self.vertics_id = self.vertics_id.astype(dtype=np.int32)
+
+        np.savetxt("../TMP_DATA/vertex_pose.csv", self.vertics, delimiter=',')
+        np.savetxt("../TMP_DATA/vertex_quat.csv", self.vertex_quat, delimiter=',')
+
 
         print(self.vertics[20, :])
 

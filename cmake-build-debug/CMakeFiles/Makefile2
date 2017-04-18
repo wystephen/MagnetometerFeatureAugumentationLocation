@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /home/steve/Code/MagnetometerFeatureAugumentationLocation
 CMAKE_BINARY_DIR = /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/MagnetometerFeatureAugumentationLocation.dir
+
+# All Build rule for target.
+CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all:
+	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/depend
+	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target MagnetometerFeatureAugumentationLocation"
+.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+
+# Include target in all.
+all: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule
+
+# Convenience name for target.
+MagnetometerFeatureAugumentationLocation: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule
+
+.PHONY : MagnetometerFeatureAugumentationLocation
+
+# clean rule for target.
+CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean:
+	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
+.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/graph_build.dir
 
 # All Build rule for target.
@@ -97,39 +134,39 @@ clean: CMakeFiles/graph_build.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MagnetometerFeatureAugumentationLocation.dir
+# Target rules for target CMakeFiles/graph_build_without_ekf.dir
 
 # All Build rule for target.
-CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all:
-	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/depend
-	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target MagnetometerFeatureAugumentationLocation"
-.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+CMakeFiles/graph_build_without_ekf.dir/all:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/depend
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target graph_build_without_ekf"
+.PHONY : CMakeFiles/graph_build_without_ekf.dir/all
 
 # Include target in all.
-all: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+all: CMakeFiles/graph_build_without_ekf.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule: cmake_check_build_system
+CMakeFiles/graph_build_without_ekf.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/graph_build_without_ekf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule
+.PHONY : CMakeFiles/graph_build_without_ekf.dir/rule
 
 # Convenience name for target.
-MagnetometerFeatureAugumentationLocation: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/rule
+graph_build_without_ekf: CMakeFiles/graph_build_without_ekf.dir/rule
 
-.PHONY : MagnetometerFeatureAugumentationLocation
-
-# clean rule for target.
-CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean:
-	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
-.PHONY : CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
+.PHONY : graph_build_without_ekf
 
 # clean rule for target.
-clean: CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/clean
+CMakeFiles/graph_build_without_ekf.dir/clean:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/clean
+.PHONY : CMakeFiles/graph_build_without_ekf.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/graph_build_without_ekf.dir/clean
 
 .PHONY : clean
 

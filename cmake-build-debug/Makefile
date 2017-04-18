@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named MagnetometerFeatureAugumentationLocation
+
+# Build rule for target.
+MagnetometerFeatureAugumentationLocation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MagnetometerFeatureAugumentationLocation
+.PHONY : MagnetometerFeatureAugumentationLocation
+
+# fast build rule for target.
+MagnetometerFeatureAugumentationLocation/fast:
+	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
+.PHONY : MagnetometerFeatureAugumentationLocation/fast
+
+#=============================================================================
 # Target rules for targets named graph_build
 
 # Build rule for target.
@@ -124,17 +137,17 @@ graph_build/fast:
 .PHONY : graph_build/fast
 
 #=============================================================================
-# Target rules for targets named MagnetometerFeatureAugumentationLocation
+# Target rules for targets named graph_build_without_ekf
 
 # Build rule for target.
-MagnetometerFeatureAugumentationLocation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MagnetometerFeatureAugumentationLocation
-.PHONY : MagnetometerFeatureAugumentationLocation
+graph_build_without_ekf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 graph_build_without_ekf
+.PHONY : graph_build_without_ekf
 
 # fast build rule for target.
-MagnetometerFeatureAugumentationLocation/fast:
-	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
-.PHONY : MagnetometerFeatureAugumentationLocation/fast
+graph_build_without_ekf/fast:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/build
+.PHONY : graph_build_without_ekf/fast
 
 main.o: main.cpp.o
 
@@ -190,6 +203,33 @@ src/graph_build_test.cpp.s:
 	$(MAKE) -f CMakeFiles/graph_build.dir/build.make CMakeFiles/graph_build.dir/src/graph_build_test.cpp.s
 .PHONY : src/graph_build_test.cpp.s
 
+src/graph_build_without_ekf.o: src/graph_build_without_ekf.cpp.o
+
+.PHONY : src/graph_build_without_ekf.o
+
+# target to build an object file
+src/graph_build_without_ekf.cpp.o:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.o
+.PHONY : src/graph_build_without_ekf.cpp.o
+
+src/graph_build_without_ekf.i: src/graph_build_without_ekf.cpp.i
+
+.PHONY : src/graph_build_without_ekf.i
+
+# target to preprocess a source file
+src/graph_build_without_ekf.cpp.i:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.i
+.PHONY : src/graph_build_without_ekf.cpp.i
+
+src/graph_build_without_ekf.s: src/graph_build_without_ekf.cpp.s
+
+.PHONY : src/graph_build_without_ekf.s
+
+# target to generate assembly for a file
+src/graph_build_without_ekf.cpp.s:
+	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.s
+.PHONY : src/graph_build_without_ekf.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -197,15 +237,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... graph_build"
 	@echo "... MagnetometerFeatureAugumentationLocation"
+	@echo "... graph_build"
+	@echo "... graph_build_without_ekf"
+	@echo "... rebuild_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... src/graph_build_test.o"
 	@echo "... src/graph_build_test.i"
 	@echo "... src/graph_build_test.s"
+	@echo "... src/graph_build_without_ekf.o"
+	@echo "... src/graph_build_without_ekf.i"
+	@echo "... src/graph_build_without_ekf.s"
 .PHONY : help
 
 

@@ -54,6 +54,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/graph_build.dir/DependInfo.cmake"
   "CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/DependInfo.cmake"
+  "CMakeFiles/graph_build.dir/DependInfo.cmake"
+  "CMakeFiles/graph_build_without_ekf.dir/DependInfo.cmake"
   )
