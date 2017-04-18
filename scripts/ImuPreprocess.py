@@ -357,7 +357,7 @@ class ImuPreprocess:
                     ]
                 )
 
-        print(self.feature)
+        # print("feature:",self.feature)
 
         ''''
         Compara features
@@ -382,7 +382,7 @@ class ImuPreprocess:
         close_vetices_num = 0
 
         for i in range(self.distance.shape[0]):
-            for j in range(self.distance.shape[1]):
+            for j in range(i + 1, self.distance.shape[1]):
                 if i == j:
                     continue
                 elif self.distance[i, j] < feature_threold:
@@ -395,13 +395,11 @@ class ImuPreprocess:
         Save result to csv_file
         '''
 
-        close_vetices = np.zeros([close_vetices_num, 2])
+        close_vetices = np.zeros([int(close_vetices_num), 2])
         print("close shape:", close_vetices.shape)
         index = 0
 
         for i in range(self.distance.shape[0]):
-            if i == 0:
-                continue
             for j in range(i + 1, self.distance.shape[1]):
                 if self.distance[i, j] < feature_threold:
                     close_vetices[index, 0] = int(
@@ -411,17 +409,7 @@ class ImuPreprocess:
                     index += 1
 
         print(close_vetices)
-
-
-
-
-
-
-
-
-
-
-
+        np.savetxt("../TMP_DATA/close_vetices_num.csv", close_vetices, delimiter=',')
 
                     # plt.legend()
 
