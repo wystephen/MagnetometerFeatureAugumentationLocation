@@ -147,8 +147,8 @@ int main(int argc, char *argv[]) {
 //                std::cout << "P rows :" << P.rows() << " cols : " << P.cols() << std::endl;
 
                 Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
-                information(0, 0) = information(1, 1) = information(2, 2) = 50;
-                information(3, 3) = information(4, 4) = information(5, 5) = 100;
+                information(0, 0) = information(1, 1) = information(2, 2) = 2100;
+                information(3, 3) = information(4, 4) = information(5, 5) = 2000;
                 edge->setInformation(information);
 
                 edge->setMeasurement(transform);
@@ -168,9 +168,12 @@ int main(int argc, char *argv[]) {
     for (int k(0); k < close_id.GetRows(); ++k) {
         auto edge = new DistanceEdge();
 
+        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
+        edge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
+        edge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
         edge->setMeasurement(0.0);
         Eigen::Matrix<double, 1, 1> information;
-        information(0, 0) = 1.0 / 50.0;
+        information(0, 0) = 1.0 / 1.0;
 
 //        if(*close_id(k,0)>337||*close_id(k,1)>337)
 //        {
@@ -178,8 +181,7 @@ int main(int argc, char *argv[]) {
 //        }
 
         edge->setInformation(information);
-        edge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
-        edge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
+
 
         globalOptimizer.addEdge(edge);
     }

@@ -18,9 +18,6 @@
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/ZUPT/EKF.hpp" afterPath="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/ZUPT/MYEKF.h" afterPath="$PROJECT_DIR$/include/ZUPT/MYEKF.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_test.cpp" afterPath="$PROJECT_DIR$/src/graph_build_test.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -41,8 +38,8 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="320">
-                        <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+                      <state relative-caret-position="840">
+                        <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
                         <folding>
                           <element signature="e#65#83#0" expanded="true" />
                         </folding>
@@ -50,11 +47,21 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="EKF.hpp" pinned="false" current-in-tab="true">
+                <file leaf-file-name="EKF.hpp" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/include/ZUPT/EKF.hpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="423">
-                        <caret line="350" column="21" lean-forward="true" selection-start-line="350" selection-start-column="21" selection-end-line="350" selection-end-column="21" />
+                      <state relative-caret-position="356">
+                        <caret line="506" column="25" lean-forward="false" selection-start-line="506" selection-start-column="25" selection-end-line="506" selection-end-column="25" />
+                        <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="DistanceEdge.cpp" pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="300">
+                        <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
                         <folding />
                       </state>
                     </provider>
@@ -92,7 +99,7 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="398">
               <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
               <folding />
             </state>
@@ -102,8 +109,8 @@
       <file leaf-file-name="ImuResultReader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="107" column="24" lean-forward="true" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+            <state relative-caret-position="230">
+              <caret line="102" column="25" lean-forward="false" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
               <folding>
                 <element signature="e#2#33#0" expanded="true" />
               </folding>
@@ -114,22 +121,12 @@
       <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="150" column="36" lean-forward="false" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
+            <state relative-caret-position="279">
+              <caret line="149" column="78" lean-forward="false" selection-start-line="149" selection-start-column="78" selection-end-line="149" selection-end-column="78" />
               <folding>
                 <element signature="e#38#58#0" expanded="true" />
                 <element signature="e#152#173#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DistanceEdge.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -185,9 +182,9 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
         <option value="$PROJECT_DIR$/include/ZUPT/MYEKF.h" />
+        <option value="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
         <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
-        <option value="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
       </list>
     </option>
   </component>
@@ -610,7 +607,7 @@
       <workItem from="1492300572514" duration="22848000" />
       <workItem from="1492407868311" duration="19238000" />
       <workItem from="1492482350981" duration="1622000" />
-      <workItem from="1492484964789" duration="11034000" />
+      <workItem from="1492484964789" duration="13252000" />
     </task>
     <task id="LOCAL-00001" summary="...change the code.">
       <created>1491898608418</created>
@@ -787,11 +784,25 @@
       <option name="project" value="LOCAL" />
       <updated>1492485555300</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="another bug...">
+      <created>1492503629422</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1492503629422</updated>
+    </task>
+    <task id="LOCAL-00027" summary="can be optimize but with a very big MSE as use the last k to keep K is not nan.">
+      <created>1492504782233</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1492504782233</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85121000" />
+    <option name="totallyTimeSpent" value="87339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -799,10 +810,10 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15294118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.49786097" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32929516" sideWeight="0.49786097" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -848,7 +859,9 @@
     <MESSAGE value="save file." />
     <MESSAGE value="load data ok." />
     <MESSAGE value="memory bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="memory bug." />
+    <MESSAGE value="another bug..." />
+    <MESSAGE value="can be optimize but with a very big MSE as use the last k to keep K is not nan." />
+    <option name="LAST_COMMIT_MESSAGE" value="can be optimize but with a very big MSE as use the last k to keep K is not nan." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1127,7 +1140,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="398">
           <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding />
         </state>
@@ -1207,34 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="e#65#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="107" column="24" lean-forward="true" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
-          <folding>
-            <element signature="e#2#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TMP_DATA/close_vetices_num.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1253,18 +1238,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+          <folding>
+            <element signature="e#65#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/ZUPT/EKF.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="350" column="21" lean-forward="true" selection-start-line="350" selection-start-column="21" selection-end-line="350" selection-end-column="21" />
+        <state relative-caret-position="356">
+          <caret line="506" column="25" lean-forward="false" selection-start-line="506" selection-start-column="25" selection-end-line="506" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="102" column="25" lean-forward="false" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+          <folding>
+            <element signature="e#2#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="150" column="36" lean-forward="false" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
+        <state relative-caret-position="279">
+          <caret line="149" column="78" lean-forward="false" selection-start-line="149" selection-start-column="78" selection-end-line="149" selection-end-column="78" />
           <folding>
             <element signature="e#38#58#0" expanded="true" />
             <element signature="e#152#173#0" expanded="true" />
