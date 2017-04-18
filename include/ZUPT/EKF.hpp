@@ -307,10 +307,17 @@ public:
             OMEGA(3, 1) = -Q;
             OMEGA(3, 2) = -R;
 
+            if (std::isnan(OMEGA.sum())) {
+                std::cout << "omega is nan " << std::endl;
+            }
 //            Eigen::Vector4d tq = quat_;
 
             quat_ = (cos(v / 2.0) * Eigen::Matrix4d::Identity() +
                      2.0 / v * sin(v / 2.0) * OMEGA) * (q);
+
+            if (std::isnan(quat_.sum())) {
+                std::cout << "quat_ error nann in state transition equation " << std::endl;
+            }
 
 //            quat_ /= quat_.norm();
 //            for(int i(0);i<4;++i)
@@ -340,6 +347,9 @@ public:
         Eigen::MatrixXd f_t(Rb2t * (u.block(0, 0, 3, 1)));
 
         Eigen::Vector3d acc_t(f_t + g_t);
+        if (std::isnan(acc_t.sum())) {
+            std::cout << "acc _ t  erro " << std::endl;
+        }
 
         Eigen::MatrixXd A, B;
 
@@ -347,7 +357,7 @@ public:
         A.setIdentity();
 //        MYCHECK(1);
 //        std::cout << A.rows() << " x " << A.cols() << std::endl;
-        std::cout << "dt :" << dt << std::endl;
+//        std::cout << "dt :" << dt << std::endl;
         A(0, 3) = dt;
         A(1, 4) = dt;
         A(2, 5) = dt;
@@ -367,6 +377,9 @@ public:
 //        MYCHECK(1);
 
 
+        if (std::isnan(x_h_.sum())) {
+            std::cout << "new x_h_ is nana " << std::endl;
+        }
         x_h_ = y;
 //        MYCHECK(1);
         return y;
@@ -432,6 +445,9 @@ public:
 
         Eigen::Matrix3d OMEGA;
         OMEGA.setZero();
+        if (std::isnan(dx.sum())) {
+            std::cout << "dx is nan " << std::endl;
+        }
 
         if (std::isnan(epsilon(0) + epsilon(1) + epsilon(2))) {
             std::cout << "epsilon error " << std::endl;
@@ -486,8 +502,14 @@ public:
 
             Eigen::MatrixXd K;
             K = P_ * H_.transpose().eval() * (H_ * P_ * H_.transpose().eval() + R_).inverse();
-
+            if (std::isnan(K.sum())) {
+                std::cout << " k in nan ... " << std::endl;
+                K = last_K;
+            } else {
+                last_K = K;
+            }
             Eigen::VectorXd dx = K * z;
+
 
             Eigen::MatrixXd Id;
             Id.resize(9, 9);
@@ -557,6 +579,7 @@ private:
 
     Eigen::MatrixXd K_;
 
+    Eigen::MatrixXd last_K;
 
     Eigen::Vector4d quat_;
     Eigen::Isometry3d latest_t = Eigen::Isometry3d::Identity();

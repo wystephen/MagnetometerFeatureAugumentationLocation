@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
 
             auto *v = new g2o::VertexSE3();
             v->setId(vertex_id);
-            v->setEstimate(abs_transform);
+//            v->setEstimate(abs_transform);
             if (vertex_id == 0) {
                 v->setFixed(true);
             }
@@ -153,6 +153,7 @@ int main(int argc, char *argv[]) {
 
                 edge->setMeasurement(transform);
 //                edge->setMeasurementFromState();
+//                edge->set
                 globalOptimizer.addEdge(edge);
 
             }
@@ -180,7 +181,7 @@ int main(int argc, char *argv[]) {
         edge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
         edge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
 
-//        globalOptimizer.addEdge(edge);
+        globalOptimizer.addEdge(edge);
     }
 
 
