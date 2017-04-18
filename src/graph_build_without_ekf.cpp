@@ -67,27 +67,7 @@ int main(int argc, char *argv[]) {
 
 
 
-    /// Add distance caonstraint
-    for (int k(0); k < close_id.GetRows(); ++k) {
-        auto edge = new DistanceEdge();
 
-        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
-        edge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
-        edge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
-        edge->setMeasurement(0.0);
-        Eigen::Matrix<double, 1, 1> information;
-        information(0, 0) = 1.0 / 1.0;
-
-//        if(*close_id(k,0)>337||*close_id(k,1)>337)
-//        {
-//            continue;
-//        }
-
-        edge->setInformation(information);
-
-
-        globalOptimizer.addEdge(edge);
-    }
 
     /// Build base graph
 
@@ -105,7 +85,10 @@ int main(int argc, char *argv[]) {
         the_quat.z() = *vertex_quat(index, 2);
         the_quat.w() = *vertex_quat(index, 3);
 
-        Eigen::Matrix3d rotation_matrix = the_quat.normalized().toRotationMatrix();
+//        std::cout << "vertex quat :" << *vertex_quat(index,0),*vertex_quat(index,1)
+//                ,*vertex_quat(index,2),*vertex_pose()
+
+        Eigen::Matrix3d rotation_matrix = the_quat.toRotationMatrix();
 
 
         Eigen::Vector3d offset(
@@ -120,14 +103,16 @@ int main(int argc, char *argv[]) {
             }
         }
 
-
+        for (int ix(0); ix < 3; ++ix) {
+            transform(ix, 3) = offset(ix);
+        }
 
         /// add vertex
 
         auto *vertex = new g2o::VertexSE3();
         vertex->setId(index);
 //        vertex->setEstimate
-        vertex->setEstimate(transform);
+//        vertex->setEstimate(transform);
         if (index == 0) {
             vertex->setFixed(true);
         }
@@ -137,19 +122,20 @@ int main(int argc, char *argv[]) {
         /// add edge
         if (index > 0) {
 
-            auto *edge = new g2o::EdgeSE3;
+            auto *edge = new g2o::EdgeSE3();
 
             edge->vertices()[0] = globalOptimizer.vertex(index - 1);
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
-            information(0, 0) = information(1, 1) = information(2, 2) = 2100;
-            information(3, 3) = information(4, 4) = information(5, 5) = 2000;
+            information(0, 0) = information(1, 1) = information(2, 2) = 200;
+            information(3, 3) = information(4, 4) = information(5, 5) = 1000;
             edge->setInformation(information);
 
             edge->setInformation(information);
 
             edge->setMeasurement(last_t.inverse() * transform);
+            std::cout << " index : \n" << (transform).matrix() << std::endl;
 
             globalOptimizer.addEdge(edge);
         }
@@ -159,7 +145,21 @@ int main(int argc, char *argv[]) {
 
     }
 
+    /// Add distance caonstraint
+    for (int k(0); k < close_id.GetRows(); ++k) {
+        auto distanceEdge = new DistanceEdge();
 
+        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
+        distanceEdge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
+        distanceEdge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
+        distanceEdge->setMeasurement(0.0);
+        Eigen::Matrix<double, 1, 1> information;
+        information(0, 0) = 1.0 / 1.0;
+
+        distanceEdge->setInformation(information);
+
+        globalOptimizer.addEdge(distanceEdge);
+    }
 
     /// Optimizer
     double start_optimize_time = TimeStamp::now();
