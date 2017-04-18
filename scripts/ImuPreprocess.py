@@ -298,7 +298,7 @@ class ImuPreprocess:
 
                         # TODO: could be speed up
                         last = self.corner_id[tt, 1]
-                        self.flag_point[i, :] = self.vertics[last, :2]
+                        self.flag_point[i, :] = self.vertics[int((first + last) / 2), :2]
             # find index in source data
 
             self.feature_extract_range[i, 0] = self.vertics_id[first - valid_length]
@@ -363,12 +363,14 @@ class ImuPreprocess:
         Compara features
         '''
 
+        feature_threold = 240
+
         self.distance = np.zeros([self.feature.shape[0], self.feature.shape[0]])
         for i in range(self.distance.shape[0]):
             for j in range(self.distance.shape[1]):
                 self.distance[i, j] = np.linalg.norm(self.feature[i, :] - self.feature[j, :])
 
-        print("distantce:\n", self.distance)
+        # print("distantce:\n", self.distance)
 
         plt.contourf(self.distance)
 
@@ -377,14 +379,44 @@ class ImuPreprocess:
 
         plt.plot(self.vertics[:, 0], self.vertics[:, 1], 'b*-')
 
+        close_vetices_num = 0
+
         for i in range(self.distance.shape[0]):
             for j in range(self.distance.shape[1]):
                 if i == j:
                     continue
-                elif self.distance[i, j] < 220:
+                elif self.distance[i, j] < feature_threold:
+                    close_vetices_num += 1
                     plt.plot([self.flag_point[i, 0], self.flag_point[j, 0]],
                              [self.flag_point[i, 1], self.flag_point[j, 1]],
                              'r-')
+
+        '''
+        Save result to csv_file
+        '''
+
+        close_vetices = np.zeros([close_vetices_num, 2])
+        print("close shape:", close_vetices.shape)
+        index = 0
+
+        for i in range(self.distance.shape[0]):
+            if i == 0:
+                continue
+            for j in range(i + 1, self.distance.shape[1]):
+                if self.distance[i, j] < feature_threold:
+                    close_vetices[index, 0] = int(
+                        (self.feature_extract_range[i, 1] + self.feature_extract_range[i, 2]) / 2)
+                    close_vetices[index, 1] = int(
+                        (self.feature_extract_range[j, 1] + self.feature_extract_range[j, 2]) / 2)
+                    index += 1
+
+        print(close_vetices)
+
+
+
+
+
+
 
 
 
