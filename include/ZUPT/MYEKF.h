@@ -614,10 +614,22 @@ public:
         // build transform matrix
         Eigen::Isometry3d t2(Eigen::Isometry3d::Identity());
 
-        Eigen::Matrix3d rotation_matrix = q2dcm(quat_);
+        Eigen::Quaterniond q;
+        q.x() = quat_(0);
+        q.y() = quat_(1);
+        q.z() = quat_(2);
+        q.w() = quat_(3);
+
+        Eigen::Matrix3d rotation_matrix = q.normalized().toRotationMatrix();
+
+
+//        Eigen::Matrix3d rotation_matrix = q2dcm(quat_);
         for (int i(0); i < 3; ++i) {
             for (int j(0); j < 3; ++j) {
                 t2(i, j) = rotation_matrix(i, j);
+                if (std::isnan(t2(i, j))) {
+                    std::cout << t2(i, j) << std::endl;
+                }
             }
         }
         for (int i(0); i < 3; ++i) {

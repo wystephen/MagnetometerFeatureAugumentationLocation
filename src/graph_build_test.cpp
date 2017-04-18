@@ -4,6 +4,8 @@
 # include <iostream>
 #include <thread>
 
+#include <fstream>
+
 
 //#include "Eigen/Dense"
 //#include "Eigen/Geometry"
@@ -12,6 +14,7 @@
 
 #include "Extent/CSVReader.h"
 #include "ZUPT/MYEKF.h"
+#include "ZUPT/EKF.hpp"
 
 #include "Extent/time_stamp.h"
 #include "Extent/matplotlib_interface.h"
@@ -41,28 +44,34 @@ G2O_USE_TYPE_GROUP(slam3d)
 int main(int argc, char *argv[]) {
     /// Load Data
     int k(0);
-    CSVReader raw_data("./TMP_DATA/all_data2.csv");
+    CSVReader raw_data_file("./TMP_DATA/preprocess_data.csv");
 //    std::cin >> k;
-    CSVReader zv_data("./TMP_DATA/zupt_result.csv");
+    CSVReader zv_data_file("./TMP_DATA/zupt_result.csv");
 
 //    std::cin >> k;
-    CSVReader close_id("./TMP_DATA/close_vetices_num.csv");
+    CSVReader close_id_file("./TMP_DATA/close_vetices_num.csv");
+
+
+    auto raw_data(raw_data_file.GetMatrix());
+    auto zv_data(zv_data_file.GetMatrix());
+    auto close_id(close_id_file.GetMatrix());
 
 //    std::cin >> k;
 
-    if (zv_data.GetMatrix().GetRows() != raw_data.GetMatrix().GetRows()) {
+    if (zv_data.GetRows() != raw_data.GetRows()) {
         MYERROR("rows of raw data and zv_data is not equal");
     }
 
-    Eigen::MatrixXd u(raw_data.GetMatrix().GetRows(), raw_data.GetMatrix().GetCols() - 1);
+    Eigen::MatrixXd u(raw_data.GetRows(), raw_data.GetCols() - 1);
+    u.setZero();
 
     std::cout << u.rows() << " : " << u.cols() << std::endl;
-    std::cin >> k;
+//    std::cin >> k;
 
-    for (int i(0); i < raw_data.GetMatrix().GetRows(); ++i) {
-        for (int j(1); j < raw_data.GetMatrix().GetCols(); ++j) {
-//            u(i, j - 1) = raw_data.GetMatrix()(i, j);
-            std::cout << *raw_data.GetMatrix()(i, j) << std::endl;
+    for (int i(0); i < u.rows(); ++i) {
+        for (int j(1); j < u.cols() - 1; ++j) {
+            u(i, j - 1) = *raw_data(i, j);
+//            std::cout << *raw_data.GetMatrix()(i, j) << std::endl;
         }
     }
 
@@ -85,40 +94,67 @@ int main(int argc, char *argv[]) {
     /// Initial EKF
 
     SettingPara settingPara(true);
+    settingPara.Ts_ = 1.0 / 200.0;
 
-    MyEkf myekf(settingPara);
+    settingPara.sigma_acc_ *= 6.0;
+    settingPara.sigma_gyro_ *= 6.0;
+
+    Ekf myekf(settingPara);
     myekf.InitNavEq(u.block(0, 0, 40, 6));
 
     int vertex_id = 0;
 
     for (int index(0); index < u.rows(); ++index) {
-        auto tmp = myekf.GetPosition(u.block(index, 0, 1, 6),
-                                     *zv_data.GetMatrix()(index, 0));
+//        std::cout << "before GetPosition" << std::endl;
+        if (index > 0) {
+            settingPara.Ts_ = (*raw_data(index, 0) - *raw_data(index - 1, 0));
+        }
+        auto tmp = myekf.GetPosition(u.block(index, 0, 1, 6).transpose(),
+                                     *zv_data(index, 0));
 
+//        std::cout << "after GetPosition" << std::endl;
+
+        if (vertex_id == 337) {
+//            break;
+        }
         if (index == 0 ||
-            (*zv_data.GetMatrix()(index - 1, 0) < 0.5 && *zv_data.GetMatrix()(index, 0) > 0.5)) {
+            (*zv_data(index - 1, 0) < 0.5 && *zv_data(index, 0) > 0.5)) {
 
-            Eigen::MatrixXd P;
+            Eigen::MatrixXd P(9, 9);
+            P.setZero();
             Eigen::Isometry3d transform = Eigen::Isometry3d::Identity();
             Eigen::Isometry3d abs_transform = Eigen::Isometry3d::Identity();
+//            std::cout << "before Get Transform" << std::endl;
 
+            std::cout << "index :" << index << "vertex id : " << vertex_id << std::endl;
             myekf.GetTransform(P, transform, abs_transform);
+//            std::cout << "after Get Transform" << std::endl;
 
             auto *v = new g2o::VertexSE3();
             v->setId(vertex_id);
             v->setEstimate(abs_transform);
-            if (index == 0) {
+            if (vertex_id == 0) {
                 v->setFixed(true);
             }
             globalOptimizer.addVertex(v);
 
             // add vertex
-            if (index > 0) {
+            if (vertex_id > 0) {
                 auto *edge = new g2o::EdgeSE3();
-                edge->vertices()[0] = globalOptimizer.vertex(index - 1);
-                edge->vertices()[1] = globalOptimizer.vertex(index);
+                edge->vertices()[0] = globalOptimizer.vertex(vertex_id - 1);
+                edge->vertices()[1] = globalOptimizer.vertex(vertex_id);
 
-                std::cout << "P rows :" << P.rows() << " cols : " << P.cols() << std::endl;
+//                std::cout << "P rows :" << P.rows() << " cols : " << P.cols() << std::endl;
+
+                Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
+                information(0, 0) = information(1, 1) = information(2, 2) = 50;
+                information(3, 3) = information(4, 4) = information(5, 5) = 100;
+                edge->setInformation(information);
+
+                edge->setMeasurement(transform);
+//                edge->setMeasurementFromState();
+                globalOptimizer.addEdge(edge);
+
             }
 
 
@@ -128,12 +164,61 @@ int main(int argc, char *argv[]) {
 
 
     /// Add distance caonstraint
+    for (int k(0); k < close_id.GetRows(); ++k) {
+        auto edge = new DistanceEdge();
+
+        edge->setMeasurement(0.0);
+        Eigen::Matrix<double, 1, 1> information;
+        information(0, 0) = 1.0 / 50.0;
+
+//        if(*close_id(k,0)>337||*close_id(k,1)>337)
+//        {
+//            continue;
+//        }
+
+        edge->setInformation(information);
+        edge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
+        edge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
+
+//        globalOptimizer.addEdge(edge);
+    }
 
 
 
     /// Optimizer
+    double start_optimize_time = TimeStamp::now();
+//    globalOptimizer.initializeOptimization();
+    globalOptimizer.initializeOptimization();
+    globalOptimizer.optimize(2000);
+    std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;
 
 
     ///Save result
+    std::ofstream trace_file("./TMP_DATA/save_trace.txt");
+
+    std::vector<double> rx, ry, rz;
+    int index = 0;
+    while (true) {
+        auto t_vertex = globalOptimizer.vertex(index);
+        if (t_vertex > 0) {
+            double data[10] = {0};
+            t_vertex->getEstimateData(data);
+
+            rx.push_back(data[0]);
+            ry.push_back(data[1]);
+            rz.push_back(data[2]);
+            trace_file << data[0] << " " << data[1] << " " << data[2] << std::endl;
+            index++;
+        } else {
+            break;
+        }
+//        delete t_vertex;
+    }
+
+    std::cout << "after compute vertex : " << rx.size() << std::endl;
+    trace_file.close();
+
+    matplotlibcpp::plot(rx, ry, "r-*");
+    matplotlibcpp::show();
 
 }

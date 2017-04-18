@@ -163,7 +163,7 @@ public:
 
         try {
             // 1e-3  ==>>>  fabs(T) != 0
-            if (fabs(T) > 1e-3) {
+            if (fabs(T) > 1e-8) {
                 S = 0.5 / sqrt(fabs(T));
 
                 qw = 0.25 / S;
@@ -307,10 +307,19 @@ public:
             OMEGA(3, 1) = -Q;
             OMEGA(3, 2) = -R;
 
+//            Eigen::Vector4d tq = quat_;
+
             quat_ = (cos(v / 2.0) * Eigen::Matrix4d::Identity() +
                      2.0 / v * sin(v / 2.0) * OMEGA) * (q);
 
-            quat_ /= quat_.norm();
+//            quat_ /= quat_.norm();
+//            for(int i(0);i<4;++i)
+//            {
+//                if(std::isnan(quat_(i)))
+//                {
+//                    quat_ = tq;
+//                }
+//            }
 //            quat_ /= quat_(3);
 
 
@@ -338,6 +347,7 @@ public:
         A.setIdentity();
 //        MYCHECK(1);
 //        std::cout << A.rows() << " x " << A.cols() << std::endl;
+        std::cout << "dt :" << dt << std::endl;
         A(0, 3) = dt;
         A(1, 4) = dt;
         A(2, 5) = dt;
@@ -423,6 +433,10 @@ public:
         Eigen::Matrix3d OMEGA;
         OMEGA.setZero();
 
+        if (std::isnan(epsilon(0) + epsilon(1) + epsilon(2))) {
+            std::cout << "epsilon error " << std::endl;
+        }
+
         OMEGA(0, 1) = -epsilon(2);
         OMEGA(0, 2) = epsilon(1);
 
@@ -435,7 +449,17 @@ public:
 
         R = (Eigen::Matrix3d::Identity() - OMEGA) * (R);
 
+
+        Eigen::Vector4d tq = quat_;
+
         quat_ = dcm2q(R);
+
+        for (int i(0); i < 4; ++i) {
+            if (std::isnan(quat_(i))) {
+                quat_ = tq;
+            }
+        }
+
 
         return x_out;
 
@@ -454,6 +478,10 @@ public:
              (G_ * Q_ * G_.transpose().eval());
         if (zupt1 > 0.5) {
             Eigen::Vector3d z(-x_h_.block(3, 0, 3, 1));
+
+            if (std::isnan(z(0) + z(1) + z(2))) {
+                std::cout << "z error . " << std::endl;
+            }
 
 
             Eigen::MatrixXd K;
@@ -474,6 +502,40 @@ public:
         return x_h_;
     }
 
+    bool GetTransform(Eigen::MatrixXd &P, Eigen::Isometry3d &transform, Eigen::Isometry3d &abs_t) {
+        P = P_;
+        // build transform matrix
+        Eigen::Isometry3d t2(Eigen::Isometry3d::Identity());
+
+        Eigen::Quaterniond q;
+        q.x() = quat_(0);
+        q.y() = quat_(1);
+        q.z() = quat_(2);
+        q.w() = quat_(3);
+
+        Eigen::Matrix3d rotation_matrix = q.normalized().toRotationMatrix();
+
+
+//        Eigen::Matrix3d rotation_matrix = q2dcm(quat_);
+        for (int i(0); i < 3; ++i) {
+            for (int j(0); j < 3; ++j) {
+                t2(i, j) = rotation_matrix(i, j);
+                if (std::isnan(t2(i, j))) {
+                    std::cout << t2(i, j) << std::endl;
+                }
+            }
+        }
+        for (int i(0); i < 3; ++i) {
+            t2(i, 3) = x_h_(i, 0);
+        }
+
+        // return ...
+
+        transform = latest_t.inverse() * t2;
+        latest_t = t2;
+        abs_t = t2;
+
+    }
 
 private:
     //Parameters in here.
@@ -497,7 +559,7 @@ private:
 
 
     Eigen::Vector4d quat_;
-
+    Eigen::Isometry3d latest_t = Eigen::Isometry3d::Identity();
 
 };
 

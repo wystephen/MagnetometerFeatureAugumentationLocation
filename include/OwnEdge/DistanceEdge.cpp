@@ -60,8 +60,8 @@ void DistanceEdge::linearizeOplus() {
         if (std::abs(p1[i] - p2[i]) - _measurement < 0.1) {
             continue;
         }
-        _jacobianOplusXi(0, i) = (p1[i] - p2[i]) / dis;
-        _jacobianOplusXj(0, i) = -(p1[i] - p2[i]) / dis;
+        _jacobianOplusXi(0, i) = -(p1[i] - p2[i]) / dis;
+        _jacobianOplusXj(0, i) = (p1[i] - p2[i]) / dis;
     }
 
 }

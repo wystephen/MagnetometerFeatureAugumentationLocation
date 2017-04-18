@@ -35,6 +35,7 @@ class ImuPreprocess:
 
         self.para.Ts = np.mean(self.data[1:, 0] - self.data[:-1, 0])
         print("TS :", self.para.Ts)
+        np.savetxt("../TMP_DATA/preprocess_data.csv", self.data, delimiter=',')
         # self.para.time_Window_size = 5
 
         return
@@ -288,6 +289,7 @@ class ImuPreprocess:
 
         self.feature_extract_range = np.zeros([np.max(self.corner_id[:, 0].astype(np.int)) + 1, 4])
         self.flag_point = np.zeros([self.feature_extract_range.shape[0], 2])
+        self.flag_corner_id = np.zeros([self.feature_extract_range.shape[0]])
 
         for i in range(self.feature_extract_range.shape[0]):
             first = -1
@@ -304,6 +306,7 @@ class ImuPreprocess:
                         # TODO: could be speed up
                         last = self.corner_id[tt, 1]
                         self.flag_point[i, :] = self.vertics[int((first + last) / 2), :2]
+                        self.flag_corner_id[i] = int((first + last) / 2)
             # find index in source data
 
             self.feature_extract_range[i, 0] = self.vertics_id[first - valid_length]
@@ -407,10 +410,12 @@ class ImuPreprocess:
         for i in range(self.distance.shape[0]):
             for j in range(i + 1, self.distance.shape[1]):
                 if self.distance[i, j] < feature_threold:
-                    close_vetices[index, 0] = int(
-                        (self.feature_extract_range[i, 1] + self.feature_extract_range[i, 2]) / 2)
-                    close_vetices[index, 1] = int(
-                        (self.feature_extract_range[j, 1] + self.feature_extract_range[j, 2]) / 2)
+                    # close_vetices[index, 0] = int(
+                    #     (self.feature_extract_range[i, 1] + self.feature_extract_range[i, 2]) / 2)
+                    # close_vetices[index, 1] = int(
+                    #     (self.feature_extract_range[j, 1] + self.feature_extract_range[j, 2]) / 2)
+                    close_vetices[index, 0] = self.flag_corner_id[i]
+                    close_vetices[index, 1] = self.flag_corner_id[j]
                     index += 1
 
         print(close_vetices)
