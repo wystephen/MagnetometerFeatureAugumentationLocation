@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
 //        vertex->setEstimate
         vertex->setEstimate(transform);
         if (index == 0) {
-            vertex->setFixed(true);
+//            vertex->setFixed(true);
         }
         globalOptimizer.addVertex(vertex);
 
@@ -159,10 +159,10 @@ int main(int argc, char *argv[]) {
         if (index > 0) {
             auto *edge = new Z0Edge();
             edge->vertices()[0] = globalOptimizer.vertex(index - 1);
-            edge->vertices()[1] = globalOptimizer.vertices(index);
+            edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 1, 1> information;
-            information(0, 0) = 100;
+            information(0, 0) = 1000;
             edge->setInformation(information);
 
             edge->setMeasurement(0.0);
