@@ -40,21 +40,32 @@ G2O_USE_TYPE_GROUP(slam3d)
 
 int main(int argc, char *argv[]) {
     /// Load Data
+    int k(0);
     CSVReader raw_data("./TMP_DATA/all_data2.csv");
+//    std::cin >> k;
     CSVReader zv_data("./TMP_DATA/zupt_result.csv");
+
+//    std::cin >> k;
     CSVReader close_id("./TMP_DATA/close_vetices_num.csv");
+
+//    std::cin >> k;
 
     if (zv_data.GetMatrix().GetRows() != raw_data.GetMatrix().GetRows()) {
         MYERROR("rows of raw data and zv_data is not equal");
     }
 
-    Eigen::MatrixXd u(raw_data.rows_, raw_data.cols_ - 1);
+    Eigen::MatrixXd u(raw_data.GetMatrix().GetRows(), raw_data.GetMatrix().GetCols() - 1);
 
-    for (int i(0); i < raw_data.rows_; ++i) {
-        for (int j(1); j < raw_data.cols_; ++j) {
-            u(i, j - 1) = raw_data.GetMatrix()(i, j);
+    std::cout << u.rows() << " : " << u.cols() << std::endl;
+    std::cin >> k;
+
+    for (int i(0); i < raw_data.GetMatrix().GetRows(); ++i) {
+        for (int j(1); j < raw_data.GetMatrix().GetCols(); ++j) {
+//            u(i, j - 1) = raw_data.GetMatrix()(i, j);
+            std::cout << *raw_data.GetMatrix()(i, j) << std::endl;
         }
     }
+
 
     /// Initial graph
     g2o::SparseOptimizer globalOptimizer;
@@ -82,10 +93,10 @@ int main(int argc, char *argv[]) {
 
     for (int index(0); index < u.rows(); ++index) {
         auto tmp = myekf.GetPosition(u.block(index, 0, 1, 6),
-                                     zv_data.GetMatrix()(index, 0));
+                                     *zv_data.GetMatrix()(index, 0));
 
         if (index == 0 ||
-            (zv_data.GetMatrix()(index - 1, 0) < 0.5 && zv_data.GetMatrix()(index, 0) > 0.5)) {
+            (*zv_data.GetMatrix()(index - 1, 0) < 0.5 && *zv_data.GetMatrix()(index, 0) > 0.5)) {
 
             Eigen::MatrixXd P;
             Eigen::Isometry3d transform = Eigen::Isometry3d::Identity();

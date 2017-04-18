@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(MagnetometerFeatureAugumentationLocation)
 
-set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O4 -msse2 -msse3 -msse4 -lopencv_aruco -lpthread ")
 find_package(Eigen3 REQUIRED)
+FIND_PACKAGE(OpenMP REQUIRED)
+find_package(PythonLibs 2.7 REQUIRED)
 
 if (OPENMP_FOUND)
     message("OPENMP FOUND")
@@ -28,6 +30,8 @@ include_directories(
         /usr/local/include
         ${CSPARSE_INCLUDE_DIR}
         ${G2O_INCLUDE_DIR}
+        ${PYTHON_INDCLUDE_PATH}
+
 )
 
 link_directories(
@@ -53,4 +57,4 @@ add_executable(MagnetometerFeatureAugumentationLocation ${SOURCE_FILES})
 
 
 add_executable(graph_build src/graph_build_test.cpp)
-target_link_libraries(graph_build ${G2O_LIBS} ${CSPARSE_LIBRARY})
+target_link_libraries(graph_build ${G2O_LIBS} ${CSPARSE_LIBRARY} ${PYTHON_LIBRARIES})

@@ -2,7 +2,6 @@
 // Created by steve on 16-8-30.
 //
 #pragma once
-
 #include <iostream>
 #include "FileReader.h"
 
@@ -76,8 +75,8 @@ bool CSVReader::MatSize() {
 //Just for test.
 void CSVReader::test1() {
 
-//    std::cout << *m_(3, 2) << std::endl;
-//    std::cout << *m_.transport()(2, 3) << std::endl;
+    std::cout << *m_(3, 2) << std::endl;
+    std::cout << *m_.transport()(2, 3) << std::endl;
 }
 
 inline Matrix<double> CSVReader::GetMatrix() {
@@ -102,7 +101,7 @@ bool CSVReader::LoadData() {
     for (int index(0); index < tmp_str.size(); ++index) {
         if (tmp_str[index] == ',' || tmp_str[index] == '\n') {
             r_index = index;
-            m_(the_row, the_col) = atof(tmp_str.substr(l_index, r_index - l_index).c_str());
+            *m_(the_row, the_col) = atof(tmp_str.substr(l_index, r_index - l_index).c_str());
             if (tmp_str[index] == '\n') {
                 ++the_row;
                 the_col = 0;
@@ -110,13 +109,13 @@ bool CSVReader::LoadData() {
                 ++the_col;
             }
             if (the_row == rows_ - 1 && the_col == cols_ - 1) {
-                m_(the_row, the_col) = atof(tmp_str.substr(r_index + 1, file_size_ - r_index - 1).c_str());
+                *m_(the_row, the_col) = atof(tmp_str.substr(r_index + 1, file_size_ - r_index - 1).c_str());
                 break;
             }
             l_index = r_index + 1;
         }
     }
-
+	
     return false;
 }
 

@@ -1,5 +1,6 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/steve/Code/MagnetometerFeatureAugumentationLocation
--- Found CSPARSE: /usr/include/suitesparse  
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython2.7.so (found suitable version "2.7.12+", minimum required is "2.7") 
+OPENMP FOUND
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug
