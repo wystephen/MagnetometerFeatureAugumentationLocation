@@ -40,6 +40,22 @@ G2O_USE_TYPE_GROUP(slam3d)
 
 int main(int argc, char *argv[]) {
 
+    double first_info(1000), second_info(1000), distance_info(0.001);
+
+    /// parameters
+    std::cout << "para num :" << argc << std::endl;
+    if (argc == 4) {
+        first_info = std::stod(argv[1]);
+        second_info = std::stod(argv[2]);
+        distance_info = std::stod(argv[3]);
+
+        std::cout << "first info :" << first_info
+                  << "second info :" << second_info
+                  << "distance info :" << distance_info
+                  << std::endl;
+
+    }
+
     /// Load Data
     CSVReader vertex_pose_file("./TMP_DATA/vertex_pose.csv");
     CSVReader vertex_quat_file("./TMP_DATA/vertex_quat.csv");
@@ -112,7 +128,7 @@ int main(int argc, char *argv[]) {
         auto *vertex = new g2o::VertexSE3();
         vertex->setId(index);
 //        vertex->setEstimate
-//        vertex->setEstimate(transform);
+        vertex->setEstimate(transform);
         if (index == 0) {
             vertex->setFixed(true);
         }
@@ -128,15 +144,28 @@ int main(int argc, char *argv[]) {
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
-            information(0, 0) = information(1, 1) = information(2, 2) = 200;
-            information(3, 3) = information(4, 4) = information(5, 5) = 1000;
+            information(0, 0) = information(1, 1) = information(2, 2) = first_info;
+            information(3, 3) = information(4, 4) = information(5, 5) = second_info;
             edge->setInformation(information);
 
             edge->setInformation(information);
 
             edge->setMeasurement(last_t.inverse() * transform);
-            std::cout << " index : \n" << (transform).matrix() << std::endl;
+//            std::cout << " index : \n" << (transform).matrix() << std::endl;
 
+            globalOptimizer.addEdge(edge);
+        }
+
+        if (index > 0) {
+            auto *edge = new Z0Edge();
+            edge->vertices()[0] = globalOptimizer.vertex(index - 1);
+            edge->vertices()[1] = globalOptimizer.vertices(index);
+
+            Eigen::Matrix<double, 1, 1> information;
+            information(0, 0) = 100;
+            edge->setInformation(information);
+
+            edge->setMeasurement(0.0);
             globalOptimizer.addEdge(edge);
         }
 
@@ -154,7 +183,7 @@ int main(int argc, char *argv[]) {
         distanceEdge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
         distanceEdge->setMeasurement(0.0);
         Eigen::Matrix<double, 1, 1> information;
-        information(0, 0) = 1.0 / 1.0;
+        information(0, 0) = distance_info;
 
         distanceEdge->setInformation(information);
 
