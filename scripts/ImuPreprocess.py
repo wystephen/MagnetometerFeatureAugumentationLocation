@@ -53,7 +53,7 @@ class ImuPreprocess:
 
                 self.trace_x = np.loadtxt("./tmp_data/trace.txt")
                 self.zupt_result = np.loadtxt("./tmp_data/zupt_result.txt")
-
+                np.savetxt("../TMP_DATA/zupt_result.csv", self.zupt_result, delimiter=',')
                 if self.trace_x.shape[0] == self.data.shape[0]:
                     plt.figure()
                     plt.title("ZUPT detector(quick load)")
@@ -102,6 +102,7 @@ class ImuPreprocess:
         print(self.trace_x.shape)
         np.savetxt("./tmp_data/trace.txt", self.trace_x)
         np.savetxt("./tmp_data/zupt_result.txt", self.zupt_result)
+        np.savetxt("../TMP_DATA/zupt_result.csv", self.zupt_result, delimiter=',')
 
         plt.figure()
         plt.title("filter result ")

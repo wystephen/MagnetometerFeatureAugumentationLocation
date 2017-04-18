@@ -499,6 +499,7 @@ public:
 
     }
 
+
     Eigen::VectorXd GetPosition(Eigen::VectorXd u, double zupt1) {
 
 //        MYCHECK(1);
@@ -608,6 +609,29 @@ public:
 
     }
 
+    bool GetTransform(Eigen::MatrixXd &P, Eigen::Isometry3d &transform, Eigen::Isometry3d &abs_t) {
+        P = P_;
+        // build transform matrix
+        Eigen::Isometry3d t2(Eigen::Isometry3d::Identity());
+
+        Eigen::Matrix3d rotation_matrix = q2dcm(quat_);
+        for (int i(0); i < 3; ++i) {
+            for (int j(0); j < 3; ++j) {
+                t2(i, j) = rotation_matrix(i, j);
+            }
+        }
+        for (int i(0); i < 3; ++i) {
+            t2(i, 3) = x_h_(i, 0);
+        }
+
+        // return ...
+
+        transform = latest_t.inverse() * t2;
+        latest_t = t2;
+        abs_t = t2;
+
+    }
+
 
     /**
      *
@@ -669,6 +693,9 @@ private:
     Eigen::VectorXd last_chage_state_;
 
     bool last_zupt_ = true;
+
+
+    Eigen::Isometry3d latest_t = Eigen::Isometry3d::Identity();
 
 
 };
