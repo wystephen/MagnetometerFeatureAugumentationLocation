@@ -17,119 +17,21 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="MagnetometerFeatureAugumentationLocation">
-				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/MagnetometerFeatureAugumentationLocation" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
-					<Add directory="/usr/local/cuda/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/suitesparse"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 MagnetometerFeatureAugumentationLocation"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="MagnetometerFeatureAugumentationLocation/fast">
-				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/MagnetometerFeatureAugumentationLocation" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
-					<Add directory="/usr/local/cuda/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/suitesparse"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 MagnetometerFeatureAugumentationLocation/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="graph_build">
-				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/graph_build" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
-					<Add directory="/usr/local/cuda/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/suitesparse"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="graph_build/fast">
-				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/graph_build" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
-					<Add directory="/usr/local/cuda/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/suitesparse"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -147,13 +49,13 @@
 					<Add directory="/usr/local/cuda/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build_without_ekf"/>
@@ -174,13 +76,13 @@
 					<Add directory="/usr/local/cuda/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build_without_ekf/fast"/>
@@ -189,11 +91,109 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
+			<Target title="graph_build">
+				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/graph_build" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
+					<Add directory="/usr/local/cuda/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_build/fast">
+				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/graph_build" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
+					<Add directory="/usr/local/cuda/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_build/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MagnetometerFeatureAugumentationLocation">
+				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/MagnetometerFeatureAugumentationLocation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
+					<Add directory="/usr/local/cuda/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 MagnetometerFeatureAugumentationLocation"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MagnetometerFeatureAugumentationLocation/fast">
+				<Option output="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/MagnetometerFeatureAugumentationLocation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include"/>
+					<Add directory="/usr/local/cuda/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 MagnetometerFeatureAugumentationLocation/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/steve/Code/MagnetometerFeatureAugumentationLocation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
