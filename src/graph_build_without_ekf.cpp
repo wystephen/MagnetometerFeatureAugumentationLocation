@@ -224,5 +224,7 @@ int main(int argc, char *argv[]) {
     trace_file.close();
 
     matplotlibcpp::plot(rx, ry, "r-*");
-    matplotlibcpp::show();
+//    matplotlibcpp::show();
+    matplotlibcpp::save("/home/steve/Data/tmpimg" + std::to_string(first_info) + "-" + std::to_string(second_info) + "-"
+                        + std::to_string(distance_info) + ".jpg");
 }
