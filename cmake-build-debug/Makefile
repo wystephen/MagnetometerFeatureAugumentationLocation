@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MagnetometerFeatureAugumentationLocation
-
-# Build rule for target.
-MagnetometerFeatureAugumentationLocation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MagnetometerFeatureAugumentationLocation
-.PHONY : MagnetometerFeatureAugumentationLocation
-
-# fast build rule for target.
-MagnetometerFeatureAugumentationLocation/fast:
-	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
-.PHONY : MagnetometerFeatureAugumentationLocation/fast
-
-#=============================================================================
 # Target rules for targets named graph_build
 
 # Build rule for target.
@@ -148,6 +135,32 @@ graph_build_without_ekf: cmake_check_build_system
 graph_build_without_ekf/fast:
 	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/build
 .PHONY : graph_build_without_ekf/fast
+
+#=============================================================================
+# Target rules for targets named MagnetometerFeatureAugumentationLocation
+
+# Build rule for target.
+MagnetometerFeatureAugumentationLocation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MagnetometerFeatureAugumentationLocation
+.PHONY : MagnetometerFeatureAugumentationLocation
+
+# fast build rule for target.
+MagnetometerFeatureAugumentationLocation/fast:
+	$(MAKE) -f CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build
+.PHONY : MagnetometerFeatureAugumentationLocation/fast
+
+#=============================================================================
+# Target rules for targets named graph_build_only_corner
+
+# Build rule for target.
+graph_build_only_corner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 graph_build_only_corner
+.PHONY : graph_build_only_corner
+
+# fast build rule for target.
+graph_build_only_corner/fast:
+	$(MAKE) -f CMakeFiles/graph_build_only_corner.dir/build.make CMakeFiles/graph_build_only_corner.dir/build
+.PHONY : graph_build_only_corner/fast
 
 main.o: main.cpp.o
 
@@ -210,6 +223,7 @@ src/graph_build_without_ekf.o: src/graph_build_without_ekf.cpp.o
 # target to build an object file
 src/graph_build_without_ekf.cpp.o:
 	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.o
+	$(MAKE) -f CMakeFiles/graph_build_only_corner.dir/build.make CMakeFiles/graph_build_only_corner.dir/src/graph_build_without_ekf.cpp.o
 .PHONY : src/graph_build_without_ekf.cpp.o
 
 src/graph_build_without_ekf.i: src/graph_build_without_ekf.cpp.i
@@ -219,6 +233,7 @@ src/graph_build_without_ekf.i: src/graph_build_without_ekf.cpp.i
 # target to preprocess a source file
 src/graph_build_without_ekf.cpp.i:
 	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.i
+	$(MAKE) -f CMakeFiles/graph_build_only_corner.dir/build.make CMakeFiles/graph_build_only_corner.dir/src/graph_build_without_ekf.cpp.i
 .PHONY : src/graph_build_without_ekf.cpp.i
 
 src/graph_build_without_ekf.s: src/graph_build_without_ekf.cpp.s
@@ -228,6 +243,7 @@ src/graph_build_without_ekf.s: src/graph_build_without_ekf.cpp.s
 # target to generate assembly for a file
 src/graph_build_without_ekf.cpp.s:
 	$(MAKE) -f CMakeFiles/graph_build_without_ekf.dir/build.make CMakeFiles/graph_build_without_ekf.dir/src/graph_build_without_ekf.cpp.s
+	$(MAKE) -f CMakeFiles/graph_build_only_corner.dir/build.make CMakeFiles/graph_build_only_corner.dir/src/graph_build_without_ekf.cpp.s
 .PHONY : src/graph_build_without_ekf.cpp.s
 
 # Help Target
@@ -237,10 +253,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... MagnetometerFeatureAugumentationLocation"
+	@echo "... rebuild_cache"
 	@echo "... graph_build"
 	@echo "... graph_build_without_ekf"
-	@echo "... rebuild_cache"
+	@echo "... MagnetometerFeatureAugumentationLocation"
+	@echo "... graph_build_only_corner"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,6 +1,7 @@
 //
-// Created by steve on 17-4-18.
+// Created by steve on 17-4-19.
 //
+
 #include <iostream>
 #include <thread>
 
@@ -39,8 +40,8 @@ G2O_USE_TYPE_GROUP(slam3d)
 
 
 int main(int argc, char *argv[]) {
-
     double first_info(1000), second_info(1000), distance_info(0.001);
+
 
     /// parameters
     std::cout << "para num :" << argc << std::endl;
@@ -73,7 +74,7 @@ int main(int argc, char *argv[]) {
     typedef g2o::BlockSolver_6_3 SlamBlockSolver;
     typedef g2o::LinearSolverCSparse<SlamBlockSolver::PoseMatrixType> SlamLinearSolver;
 
-    // Initial solver
+    /// Initial solver
     SlamLinearSolver *linearSolver = new SlamLinearSolver();
     linearSolver->setBlockOrdering(false);
     SlamBlockSolver *blockSolver = new SlamBlockSolver(linearSolver);
@@ -81,100 +82,29 @@ int main(int argc, char *argv[]) {
             new g2o::OptimizationAlgorithmLevenberg(blockSolver);
     globalOptimizer.setAlgorithm(solver);
 
+    /// read and push all id of corners , id of first vertex and last vertex
 
+    std::vector<int> key_id;
 
+    key_id.push_back(0);
+    for (int i(0); i < close_id.GetRows(); ++i) {
+        for (int j(0); j < close_id.GetCols(); ++j) {
+            int tmp = *(close_id(i, j));
+//            if(key_id.)
 
-
-    /// Build base graph
-
-
-    Eigen::Isometry3d last_t = (Eigen::Isometry3d::Identity());
-
-    for (int index(0); index < vertex_pose.GetRows(); ++index) {
-        /// build transfrom matrix
-
-        Eigen::Isometry3d transform = (Eigen::Isometry3d::Identity());
-
-        Eigen::Quaterniond the_quat;
-        the_quat.x() = *vertex_quat(index, 0);
-        the_quat.y() = *vertex_quat(index, 1);
-        the_quat.z() = *vertex_quat(index, 2);
-        the_quat.w() = *vertex_quat(index, 3);
-
-//        std::cout << "vertex quat :" << *vertex_quat(index,0),*vertex_quat(index,1)
-//                ,*vertex_quat(index,2),*vertex_pose()
-
-        Eigen::Matrix3d rotation_matrix = the_quat.toRotationMatrix();
-
-
-        Eigen::Vector3d offset(
-                *vertex_pose(index, 0),
-                *vertex_pose(index, 1),
-                *vertex_pose(index, 2)
-        );
-
-        for (int ix(0); ix < 3; ++ix) {
-            for (int iy(0); iy < 3; ++iy) {
-                transform(ix, iy) = rotation_matrix(ix, iy);
-            }
         }
-
-        for (int ix(0); ix < 3; ++ix) {
-            transform(ix, 3) = offset(ix);
-        }
-
-        /// add vertex
-
-        auto *vertex = new g2o::VertexSE3();
-        vertex->setId(index);
-//        vertex->setEstimate
-        vertex->setEstimate(transform);
-        if (index == 0) {
-//            vertex->setFixed(true);
-        }
-        globalOptimizer.addVertex(vertex);
-
-
-        /// add edge
-        if (index > 0) {
-
-            auto *edge = new g2o::EdgeSE3();
-
-            edge->vertices()[0] = globalOptimizer.vertex(index - 1);
-            edge->vertices()[1] = globalOptimizer.vertex(index);
-
-            Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
-            information(0, 0) = information(1, 1) = information(2, 2) = first_info;
-            information(3, 3) = information(4, 4) = information(5, 5) = second_info;
-            edge->setInformation(information);
-
-            edge->setInformation(information);
-
-            edge->setMeasurement(last_t.inverse() * transform);
-//            std::cout << " index : \n" << (transform).matrix() << std::endl;
-
-            globalOptimizer.addEdge(edge);
-        }
-
-        if (index > 0) {
-            auto *edge = new Z0Edge();
-            edge->vertices()[0] = globalOptimizer.vertex(index - 1);
-            edge->vertices()[1] = globalOptimizer.vertex(index);
-
-            Eigen::Matrix<double, 1, 1> information;
-            information(0, 0) = 1000;
-            edge->setInformation(information);
-
-            edge->setMeasurement(0.0);
-            globalOptimizer.addEdge(edge);
-        }
-
-        last_t = transform;
-
-
     }
 
-    /// Add distance caonstraint
+
+
+
+
+
+
+    /**
+     *
+     */
+    /// Add distance constraint
     for (int k(0); k < close_id.GetRows(); ++k) {
         auto distanceEdge = new DistanceEdge();
 
@@ -225,6 +155,6 @@ int main(int argc, char *argv[]) {
 
     matplotlibcpp::plot(rx, ry, "r-*");
     matplotlibcpp::show();
-//    matplotlibcpp::save("/home/steve/Data/tmpimg" + std::to_string(first_info) + "-" + std::to_string(second_info) + "-"
-//                        + std::to_string(distance_info) + ".jpg");
+
 }
+
