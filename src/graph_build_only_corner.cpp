@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <thread>
+#include <algorithm>
 
 #include <fstream>
 
@@ -91,9 +92,97 @@ int main(int argc, char *argv[]) {
         for (int j(0); j < close_id.GetCols(); ++j) {
             int tmp = *(close_id(i, j));
 //            if(key_id.)
+            if (std::find(key_id.begin(), key_id.end(), tmp) == key_id.end()) {
+                key_id.push_back(tmp);
+            }
 
         }
     }
+
+    /// build related
+    Eigen::Isometry3d last_t = (Eigen::Isometry3d::Identity());
+    for (int i(0); i < key_id.size(); ++i) {
+        int index = key_id.at(i);
+
+        Eigen::Isometry3d transform = (Eigen::Isometry3d::Identity());
+
+        Eigen::Quaterniond the_quat;
+        the_quat.x() = *vertex_quat(index, 0);
+        the_quat.y() = *vertex_quat(index, 1);
+        the_quat.z() = *vertex_quat(index, 2);
+        the_quat.w() = *vertex_quat(index, 3);
+
+//        std::cout << "vertex quat :" << *vertex_quat(index,0),*vertex_quat(index,1)
+//                ,*vertex_quat(index,2),*vertex_pose()
+
+        Eigen::Matrix3d rotation_matrix = the_quat.toRotationMatrix();
+
+
+        Eigen::Vector3d offset(
+                *vertex_pose(index, 0),
+                *vertex_pose(index, 1),
+                *vertex_pose(index, 2)
+        );
+
+        for (int ix(0); ix < 3; ++ix) {
+            for (int iy(0); iy < 3; ++iy) {
+                transform(ix, iy) = rotation_matrix(ix, iy);
+            }
+        }
+
+        for (int ix(0); ix < 3; ++ix) {
+            transform(ix, 3) = offset(ix);
+        }
+
+        /// add vertex
+
+        auto *vertex = new g2o::VertexSE3();
+        vertex->setId(index);
+//        vertex->setEstimate
+        vertex->setEstimate(transform);
+        if (index == 0) {
+//            vertex->setFixed(true);
+        }
+        globalOptimizer.addVertex(vertex);
+
+
+        /// add edge
+        if (index > 0) {
+
+            auto *edge = new g2o::EdgeSE3();
+
+            edge->vertices()[0] = globalOptimizer.vertex(index - 1);
+            edge->vertices()[1] = globalOptimizer.vertex(index);
+
+            Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
+            information(0, 0) = information(1, 1) = information(2, 2) = first_info;
+            information(3, 3) = information(4, 4) = information(5, 5) = second_info;
+            edge->setInformation(information);
+
+            edge->setInformation(information);
+
+            edge->setMeasurement(last_t.inverse() * transform);
+//            std::cout << " index : \n" << (transform).matrix() << std::endl;
+
+            globalOptimizer.addEdge(edge);
+        }
+
+        if (index > 0) {
+            auto *edge = new Z0Edge();
+            edge->vertices()[0] = globalOptimizer.vertex(index - 1);
+            edge->vertices()[1] = globalOptimizer.vertex(index);
+
+            Eigen::Matrix<double, 1, 1> information;
+            information(0, 0) = 1000;
+            edge->setInformation(information);
+
+            edge->setMeasurement(0.0);
+            globalOptimizer.addEdge(edge);
+        }
+
+        last_t = transform;
+    }
+
 
 
 

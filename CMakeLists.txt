@@ -63,5 +63,5 @@ add_executable(graph_build_without_ekf src/graph_build_without_ekf.cpp)
 target_link_libraries(graph_build_without_ekf ${G2O_LIBS} ${CSPARSE_LIBRARY} ${PYTHON_LIBRARIES})
 
 
-add_executable(graph_build_only_corner src/graph_build_without_ekf.cpp)
+add_executable(graph_build_only_corner src/graph_build_only_corner.cpp)
 target_link_libraries(graph_build_only_corner ${G2O_LIBS} ${CSPARSE_LIBRARY} ${PYTHON_LIBRARIES})
