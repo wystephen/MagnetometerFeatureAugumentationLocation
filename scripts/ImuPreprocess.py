@@ -441,6 +441,10 @@ class ImuPreprocess:
         print(close_vetices)
         np.savetxt("../TMP_DATA/close_vetices_num.csv", close_vetices, delimiter=',')
 
+        '''
+        Save all vertex in corner.
+        '''
+
                     # plt.legend()
 
 

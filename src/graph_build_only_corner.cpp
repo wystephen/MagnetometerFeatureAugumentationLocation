@@ -99,6 +99,8 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    std::sort(key_id.begin(), key_id.end());
+
     /// build related
     Eigen::Isometry3d last_t = (Eigen::Isometry3d::Identity());
     for (int i(0); i < key_id.size(); ++i) {
