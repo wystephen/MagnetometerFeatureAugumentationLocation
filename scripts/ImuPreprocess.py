@@ -54,7 +54,7 @@ class ImuPreprocess:
 
                 self.trace_x = np.loadtxt("./tmp_data/trace.txt")
                 self.zupt_result = np.loadtxt("./tmp_data/zupt_result.txt")
-                self.all_quat = np.loadtxt("./tmp_data/all_quat")
+                self.all_quat = np.loadtxt("./tmp_data/all_quat.txt")
                 tmp_save = np.zeros([self.zupt_result.shape[0], 2])
                 tmp_save[:, 0] = self.zupt_result[:]
                 np.savetxt("../TMP_DATA/zupt_result.csv", tmp_save, delimiter=',')
@@ -441,9 +441,23 @@ class ImuPreprocess:
         print(close_vetices)
         np.savetxt("../TMP_DATA/close_vetices_num.csv", close_vetices, delimiter=',')
 
+
         '''
         Save all vertex in corner.
         '''
+        close_plus = array.array('f')
+
+        for i in range(self.distance.shape[0]):
+            for j in range(i + 1, self.distance.shape[1]):
+                if self.distance[i, j] < feature_threold:
+                    for ix in range(self.feature_extract_range[i, 1], self.feature_extract_range[i, 2]):
+                        for iy in range(self.feature_extract_range[j, 1], self.feature_extract_range[j, 2]):
+                            close_plus.append(ix)
+                            close_plus.append(iy)
+
+        close_full = np.frombuffer(close_plus, dtype=np.float32).reshape([-1, 2]).astype(dtype=int)
+        np.savetxt("../TMP_DATA/close_vetices_num_full.csv", close_full, delimiter=',')
+
 
                     # plt.legend()
 
