@@ -310,6 +310,7 @@ class ImuPreprocess:
         self.feature_extract_range = np.zeros([np.max(self.corner_id[:, 0].astype(np.int)) + 1, 4])
         self.flag_point = np.zeros([self.feature_extract_range.shape[0], 2])
         self.flag_corner_id = np.zeros([self.feature_extract_range.shape[0]])
+        self.fl = np.zeros([self.feature_extract_range.shape[0], 2])
 
         for i in range(self.feature_extract_range.shape[0]):
             first = -1
@@ -327,6 +328,9 @@ class ImuPreprocess:
                         last = self.corner_id[tt, 1]
                         self.flag_point[i, :] = self.vertics[int((first + last) / 2), :2]
                         self.flag_corner_id[i] = int((first + last) / 2)
+
+            self.fl[i, 0] = first
+            self.fl[i, 1] = last
             # find index in source data
 
             self.feature_extract_range[i, 0] = self.vertics_id[first - valid_length]
@@ -335,6 +339,7 @@ class ImuPreprocess:
             self.feature_extract_range[i, 3] = self.vertics_id[last + valid_length]
 
         self.feature_extract_range = self.feature_extract_range.astype(dtype=np.int)
+        self.fl = self.fl.astype(dtype=np.int)
 
         # print("feature range : \n",self.feature_range)
 
@@ -450,8 +455,8 @@ class ImuPreprocess:
         for i in range(self.distance.shape[0]):
             for j in range(i + 1, self.distance.shape[1]):
                 if self.distance[i, j] < feature_threold:
-                    for ix in range(self.feature_extract_range[i, 1], self.feature_extract_range[i, 2]):
-                        for iy in range(self.feature_extract_range[j, 1], self.feature_extract_range[j, 2]):
+                    for ix in range(self.fl[i, 0], self.fl[i, 1]):
+                        for iy in range(self.fl[j, 0], self.fl[j, 1]):
                             close_plus.append(ix)
                             close_plus.append(iy)
 

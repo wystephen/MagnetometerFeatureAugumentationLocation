@@ -82,7 +82,23 @@ int main(int argc, char *argv[]) {
     globalOptimizer.setAlgorithm(solver);
 
 
+    /// read and push all id of corners , id of first vertex and last vertex
 
+    std::vector<int> key_id;
+
+    key_id.push_back(0);
+    for (int i(0); i < close_id.GetRows(); ++i) {
+        for (int j(0); j < close_id.GetCols(); ++j) {
+            int tmp = *(close_id(i, j));
+//            if(key_id.)
+            if (std::find(key_id.begin(), key_id.end(), tmp) == key_id.end()) {
+                key_id.push_back(tmp);
+            }
+
+        }
+    }
+
+    std::sort(key_id.begin(), key_id.end());
 
 
     /// Build base graph
@@ -144,8 +160,14 @@ int main(int argc, char *argv[]) {
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 6, 6> information = Eigen::Matrix<double, 6, 6>::Identity();
+
+
             information(0, 0) = information(1, 1) = information(2, 2) = first_info;
             information(3, 3) = information(4, 4) = information(5, 5) = second_info;
+            if (std::find(key_id.begin(), key_id.end(), index) != key_id.end()) {
+                information(0, 0) = information(1, 1) = information(2, 2) = first_info * 10.0;
+                information(3, 3) = information(4, 4) = information(5, 5) = second_info * 10.0;
+            }
             edge->setInformation(information);
 
             edge->setInformation(information);
