@@ -144,9 +144,9 @@ int main(int argc, char *argv[]) {
         auto *vertex = new g2o::VertexSE3();
         vertex->setId(index);
 //        vertex->setEstimate
-        vertex->setEstimate(transform);
+//        vertex->setEstimate(transform);
         if (index == 0) {
-//            vertex->setFixed(true);
+            vertex->setFixed(true);
         }
         globalOptimizer.addVertex(vertex);
 
@@ -218,6 +218,8 @@ int main(int argc, char *argv[]) {
 //    globalOptimizer.initializeOptimization();
     globalOptimizer.initializeOptimization();
     globalOptimizer.optimize(2000);
+    globalOptimizer.optimize(1000);
+    globalOptimizer.optimize(1000);
     std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;
 
 
@@ -247,6 +249,7 @@ int main(int argc, char *argv[]) {
     trace_file.close();
 
     matplotlibcpp::plot(rx, ry, "r-*");
+    double sum_dis(0.0);
     for (int i(0); i < close_id.GetRows(); ++i) {
         std::vector<double> tx, ty;
 
@@ -261,9 +264,11 @@ int main(int argc, char *argv[]) {
             ty.push_back(tmp_data[1]);
         }
         matplotlibcpp::plot(tx, ty, "-b");
+        sum_dis += std::sqrt(std::pow(tx[0] - tx[1], 2.0) + std::pow(ty[1] - ty[0], 2.0));
 
 
     }
+    std::cout << "sum of distance is :" << sum_dis << std::endl;
     matplotlibcpp::show();
 //    matplotlibcpp::save("/home/steve/Data/tmpimg" + std::to_string(first_info) + "-" + std::to_string(second_info) + "-"
 //                        + std::to_string(distance_info) + ".jpg");

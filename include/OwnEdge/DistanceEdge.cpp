@@ -31,9 +31,9 @@ void DistanceEdge::computeError() {
     double p1[10], p2[10];
     from->getEstimateData(p1);
     to->getEstimateData(p2);
-    _error(0, 0) = std::pow(std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
+    _error(0, 0) = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
                                       (p1[1] - p2[1]) * (p1[1] - p2[1]) +
-                                      (p1[2] - p2[2]) * (p1[2] - p2[2])) - (_measurement), 1.0);//*_information(0,0);
+                             (p1[2] - p2[2]) * (p1[2] - p2[2])) - (_measurement);//*_information(0,0);
 }
 
 bool DistanceEdge::setMeasurementFromState() {
