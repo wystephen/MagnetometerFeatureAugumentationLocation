@@ -40,21 +40,27 @@ G2O_USE_TYPE_GROUP(slam3d)
 
 int main(int argc, char *argv[]) {
 
-    double first_info(1000), second_info(1000), distance_info(0.001);
+    double first_info(1000), second_info(1000), distance_info(0.001), corner_ratio(10.0);
 
     /// parameters
     std::cout << "para num :" << argc << std::endl;
-    if (argc == 4) {
+    if (argc > 3) {
         first_info = std::stod(argv[1]);
         second_info = std::stod(argv[2]);
         distance_info = std::stod(argv[3]);
 
-        std::cout << "first info :" << first_info
-                  << "second info :" << second_info
-                  << "distance info :" << distance_info
-                  << std::endl;
-
     }
+
+    if (argc == 5) {
+        corner_ratio = std::stod(argv[4]);
+    }
+
+    std::cout << "first info :" << first_info
+              << "second info :" << second_info
+              << "distance info :" << distance_info
+              << " corner ratio :" << corner_ratio
+              << std::endl;
+
 
     /// Load Data
     CSVReader vertex_pose_file("./TMP_DATA/vertex_pose.csv");
@@ -165,8 +171,8 @@ int main(int argc, char *argv[]) {
             information(0, 0) = information(1, 1) = information(2, 2) = first_info;
             information(3, 3) = information(4, 4) = information(5, 5) = second_info;
             if (std::find(key_id.begin(), key_id.end(), index) != key_id.end()) {
-                information(0, 0) = information(1, 1) = information(2, 2) = first_info / 100.0;
-                information(3, 3) = information(4, 4) = information(5, 5) = second_info / 100.0;
+                information(0, 0) = information(1, 1) = information(2, 2) = first_info / corner_ratio;
+                information(3, 3) = information(4, 4) = information(5, 5) = second_info / corner_ratio;
             }
             edge->setInformation(information);
 
@@ -185,7 +191,7 @@ int main(int argc, char *argv[]) {
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 1, 1> information;
-            information(0, 0) = 10;
+            information(0, 0) = 3;
             edge->setInformation(information);
 
             edge->setMeasurement(0.0);
