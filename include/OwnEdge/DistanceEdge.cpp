@@ -31,9 +31,10 @@ void DistanceEdge::computeError() {
     double p1[10], p2[10];
     from->getEstimateData(p1);
     to->getEstimateData(p2);
-    _error(0, 0) = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
-                                      (p1[1] - p2[1]) * (p1[1] - p2[1]) +
-                             (p1[2] - p2[2]) * (p1[2] - p2[2])) - (_measurement);//*_information(0,0);
+    double dis = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
+                           (p1[1] - p2[1]) * (p1[1] - p2[1]) +
+                           (p1[2] - p2[2]) * (p1[2] - p2[2]));
+    _error(0, 0) = dis - (_measurement);//*_information(0,0);
 }
 
 bool DistanceEdge::setMeasurementFromState() {
@@ -57,11 +58,11 @@ void DistanceEdge::linearizeOplus() {
                            (p1[2] - p2[2]) * (p1[2] - p2[2]));
 
     for (int i(0); i < 3; ++i) {
-        if (std::abs(p1[i] - p2[i]) - _measurement < 0.0000001) {
+        if (std::abs(p1[i] - p2[i]) - _measurement < 0.00000000000001) {
             continue;
         }
-        _jacobianOplusXi(0, i) = (p1[i] - p2[i]) / dis;//* 2.0 * (dis - _measurement);
-        _jacobianOplusXj(0, i) = -(p1[i] - p2[i]) / dis;//* 2.0 * (dis - _measurement);
+        _jacobianOplusXi(0, i) = -(p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
+        _jacobianOplusXj(0, i) = (p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
     }
 
 }

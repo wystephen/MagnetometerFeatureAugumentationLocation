@@ -185,11 +185,11 @@ int main(int argc, char *argv[]) {
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 1, 1> information;
-            information(0, 0) = 1000;
+            information(0, 0) = 10;
             edge->setInformation(information);
 
             edge->setMeasurement(0.0);
-//            globalOptimizer.addEdge(edge);
+            globalOptimizer.addEdge(edge);
         }
 
         last_t = transform;
@@ -268,7 +268,7 @@ int main(int argc, char *argv[]) {
 
 
     }
-    std::cout << "sum of distance is :" << sum_dis << std::endl;
+    std::cout << "sum of distance is :" << sum_dis << " raw distance is :" << 1969.1 << std::endl;
     matplotlibcpp::show();
 //    matplotlibcpp::save("/home/steve/Data/tmpimg" + std::to_string(first_info) + "-" + std::to_string(second_info) + "-"
 //                        + std::to_string(distance_info) + ".jpg");
