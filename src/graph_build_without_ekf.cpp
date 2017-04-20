@@ -165,8 +165,8 @@ int main(int argc, char *argv[]) {
             information(0, 0) = information(1, 1) = information(2, 2) = first_info;
             information(3, 3) = information(4, 4) = information(5, 5) = second_info;
             if (std::find(key_id.begin(), key_id.end(), index) != key_id.end()) {
-                information(0, 0) = information(1, 1) = information(2, 2) = first_info / 10.0;
-                information(3, 3) = information(4, 4) = information(5, 5) = second_info / 10.0;
+                information(0, 0) = information(1, 1) = information(2, 2) = first_info / 100.0;
+                information(3, 3) = information(4, 4) = information(5, 5) = second_info / 100.0;
             }
             edge->setInformation(information);
 
