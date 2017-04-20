@@ -207,7 +207,7 @@ int main(int argc, char *argv[]) {
     for (int k(0); k < close_id.GetRows(); ++k) {
         auto distanceEdge = new DistanceEdge();
 
-        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
+//        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
         distanceEdge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
         distanceEdge->vertices()[1] = globalOptimizer.vertex(int(*close_id(k, 1)));
         distanceEdge->setMeasurement(0.0);
@@ -218,6 +218,7 @@ int main(int argc, char *argv[]) {
 
         globalOptimizer.addEdge(distanceEdge);
     }
+    std::cout << "close id count:" << close_id.GetRows() << std::endl;
 
     /// Optimizer
     double start_optimize_time = TimeStamp::now();
