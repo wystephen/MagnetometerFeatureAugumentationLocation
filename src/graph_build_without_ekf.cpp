@@ -165,8 +165,8 @@ int main(int argc, char *argv[]) {
             information(0, 0) = information(1, 1) = information(2, 2) = first_info;
             information(3, 3) = information(4, 4) = information(5, 5) = second_info;
             if (std::find(key_id.begin(), key_id.end(), index) != key_id.end()) {
-                information(0, 0) = information(1, 1) = information(2, 2) = first_info * 10.0;
-                information(3, 3) = information(4, 4) = information(5, 5) = second_info * 10.0;
+                information(0, 0) = information(1, 1) = information(2, 2) = first_info / 1000.0;
+                information(3, 3) = information(4, 4) = information(5, 5) = second_info / 1000.0;
             }
             edge->setInformation(information);
 
@@ -246,6 +246,23 @@ int main(int argc, char *argv[]) {
     trace_file.close();
 
     matplotlibcpp::plot(rx, ry, "r-*");
+    for (int i(0); i < close_id.GetRows(); ++i) {
+        std::vector<double> tx, ty;
+
+//        tx.push_back(*close_id)
+        for (int j(0); j < 2; ++j) {
+            double tmp_data[10] = {0};
+            auto *tv = globalOptimizer.vertex(*close_id(i, j));
+            if (tv > 0) {
+                tv->getEstimateData(tmp_data);
+            }
+            tx.push_back(tmp_data[0]);
+            ty.push_back(tmp_data[1]);
+        }
+        matplotlibcpp::plot(tx, ty, "-b");
+
+
+    }
     matplotlibcpp::show();
 //    matplotlibcpp::save("/home/steve/Data/tmpimg" + std::to_string(first_info) + "-" + std::to_string(second_info) + "-"
 //                        + std::to_string(distance_info) + ".jpg");
