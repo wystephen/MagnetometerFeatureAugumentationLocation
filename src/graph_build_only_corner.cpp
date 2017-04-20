@@ -179,7 +179,7 @@ int main(int argc, char *argv[]) {
             edge->setInformation(information);
 
             edge->setMeasurement(0.0);
-            globalOptimizer.addEdge(edge);
+//            globalOptimizer.addEdge(edge);
         }
 
         last_t = transform;
