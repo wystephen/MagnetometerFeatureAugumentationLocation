@@ -38,6 +38,9 @@
 #include "OwnEdge/DistanceEdge.h"
 #include "OwnEdge/DistanceEdge.cpp"
 
+#include "OwnEdge/Line3D.h"
+#include "OwnEdge/Line3D.cpp"
+
 G2O_USE_TYPE_GROUP(slam3d)
 
 
