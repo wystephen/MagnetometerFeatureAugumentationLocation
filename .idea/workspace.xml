@@ -19,9 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/PointonLine.h" afterPath="$PROJECT_DIR$/include/OwnEdge/PointonLine.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -679,14 +676,7 @@
       <workItem from="1492598348663" duration="245000" />
       <workItem from="1492598629301" duration="19204000" />
       <workItem from="1492732910255" duration="614000" />
-      <workItem from="1492733721845" duration="9649000" />
-    </task>
-    <task id="LOCAL-00001" summary="...change the code.">
-      <created>1491898608418</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1491898608419</updated>
+      <workItem from="1492733721845" duration="9668000" />
     </task>
     <task id="LOCAL-00002" summary="save data.">
       <created>1492134134622</created>
@@ -1024,11 +1014,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492745298302</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="do not achive linearizeOplus()~.">
+      <created>1492746016331</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1492746016333</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133913000" />
+    <option name="totallyTimeSpent" value="133932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1036,7 +1033,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16595517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.49786097" order="4" side_tool="false" content_ui="tabs" />
@@ -1065,7 +1062,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some unexpected error in compute feature." />
     <MESSAGE value="feature is useful." />
     <MESSAGE value="save vertex id." />
     <MESSAGE value="." />
@@ -1090,7 +1086,8 @@
     <MESSAGE value="pause" />
     <MESSAGE value="add Line3D and Point2Line3D but may not useful." />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="do not achive linearizeOplus()~." />
+    <option name="LAST_COMMIT_MESSAGE" value="do not achive linearizeOplus()~." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
