@@ -390,18 +390,75 @@ class ImuPreprocess:
                     ]
                 )
 
-        # print("feature:",self.feature)
+        # for i in range(self.feature.shape[0]):
+        #     for j in range(self.feature.shape[1]):
+
+
+        # print("feature:",self.feature.shape)
 
         ''''
         Compara features
         '''
 
-        feature_threold = 240
+        feature_threold = 100
+
+        # try to get abs
+        self.feature = np.abs(self.feature)
+
 
         self.distance = np.zeros([self.feature.shape[0], self.feature.shape[0]])
         for i in range(self.distance.shape[0]):
             for j in range(self.distance.shape[1]):
+
                 self.distance[i, j] = np.linalg.norm(self.feature[i, :] - self.feature[j, :])
+                # try  new way
+                # tmp = self.feature[j,:]
+                #
+                # dis_l = np.linalg.norm(self.feature[i,:]-tmp)
+                #
+                # tmp[:6] = self.feature[j,-6:]
+                # tmp[-6:] = self.feature[j,:6]
+                #
+                # dis_r = np.linalg.norm(self.feature[i,:]-tmp)
+                #
+                #
+                # if dis_l<dis_r:
+                #     self.distance[i,j] = dis_l
+                # else:
+                #     self.distance[i,j] = dis_r
+
+                # # tmp_first = self.feature[i,:]
+                # tmp_first = np.zeros([4])
+                # tmp_last = np.zeros([4])
+                #
+                # tmp_first[0] = self.feature[i,4]
+                # tmp_first[1] = self.feature[i,5]
+                #
+                # tmp_first[2] = self.feature[i,10]
+                # tmp_first[3] = self.feature[i,11]
+                #
+                #
+                # tmp_last[0] = self.feature[j,4]
+                # tmp_last[1] = self.feature[j,5]
+                #
+                # tmp_last[2] = self.feature[j,10]
+                # tmp_last[3] = self.feature[j,11]
+                #
+                # dis_l = np.linalg.norm(tmp_first-tmp_last)
+                #
+                # tmp_last[2] = self.feature[j,4]
+                # tmp_last[3] = self.feature[j,5]
+                #
+                # tmp_last[0] = self.feature[j,10]
+                # tmp_last[1] = self.feature[j,11]
+                #
+                #
+                # dis_r = np.linalg.norm(tmp_first-tmp_last)
+                #
+                # if dis_l<dis_r:
+                #     self.distance[i,j] = dis_l
+                # else:
+                #     self.distance[i,j] = dis_r
 
         # print("distantce:\n", self.distance)
 

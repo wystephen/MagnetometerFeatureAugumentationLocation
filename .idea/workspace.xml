@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="453" />
+    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="510" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -18,9 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/graph_build_without_ekf" afterPath="$PROJECT_DIR$/cmake-build-debug/graph_build_without_ekf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" afterPath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,23 +39,11 @@
                 <file leaf-file-name="graph_build_without_ekf.cpp" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="629">
-                        <caret line="221" column="42" lean-forward="true" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
+                      <state relative-caret-position="425">
+                        <caret line="209" column="5" lean-forward="true" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
                         <folding>
                           <element signature="e#38#57#0" expanded="true" />
                           <element signature="e#151#172#0" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="884">
-                        <caret line="366" column="37" lean-forward="false" selection-start-line="366" selection-start-column="37" selection-end-line="366" selection-end-column="37" />
-                        <folding>
-                          <element signature="e#65#83#0" expanded="true" />
                         </folding>
                       </state>
                     </provider>
@@ -139,12 +126,24 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="PointonLine.cpp" pinned="false" current-in-tab="true">
+                <file leaf-file-name="PointonLine.cpp" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/PointonLine.cpp">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="68">
                         <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
                         <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="491">
+                        <caret line="396" column="11" lean-forward="false" selection-start-line="396" selection-start-column="11" selection-end-line="396" selection-end-column="11" />
+                        <folding>
+                          <element signature="e#65#83#0" expanded="true" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -203,11 +202,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DistanceEdge.h" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DistanceEdge.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+                <state relative-caret-position="170">
+                  <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="close_vetices_num_full.csv" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="521">
+                  <caret line="101" column="4" lean-forward="false" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -242,7 +251,6 @@
         <option value="$PROJECT_DIR$/include/ZUPT/MYEKF.h" />
         <option value="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
         <option value="$PROJECT_DIR$/src/graph_build_only_corner.cpp" />
         <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
@@ -253,6 +261,8 @@
         <option value="$PROJECT_DIR$/include/OwnEdge/ZoEdge.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/ZoEdge.cpp" />
         <option value="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
+        <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
+        <option value="$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv" />
       </list>
     </option>
   </component>
@@ -393,7 +403,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.graph_build_without_ekf">
+  <component name="RunManager" selected="Python.ImuPreprocess">
     <configuration default="false" name="ImuResultReader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -710,14 +720,7 @@
       <workItem from="1492598348663" duration="245000" />
       <workItem from="1492598629301" duration="19204000" />
       <workItem from="1492732910255" duration="614000" />
-      <workItem from="1492733721845" duration="14870000" />
-    </task>
-    <task id="LOCAL-00006" summary="zupt ok...needed a higher sigma for zero velocity detector.">
-      <created>1492155118072</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1492155118072</updated>
+      <workItem from="1492733721845" duration="18580000" />
     </task>
     <task id="LOCAL-00007" summary="ksd">
       <created>1492160975848</created>
@@ -1055,26 +1058,32 @@
       <option name="project" value="LOCAL" />
       <updated>1492755259497</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary=" added robust kernel.">
+      <created>1492757197452</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1492757197452</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139134000" />
+    <option name="totallyTimeSpent" value="142844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16595517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.31323373" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31323373" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49573106" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.4914621" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.68676627" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977974" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.5085379" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1096,7 +1105,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="save file." />
     <MESSAGE value="load data ok." />
     <MESSAGE value="memory bug." />
     <MESSAGE value="another bug..." />
@@ -1121,7 +1129,8 @@
     <MESSAGE value="auto jacbian matrix." />
     <MESSAGE value="zero z .." />
     <MESSAGE value="ok result  at 5000 1000 0.1 4 10." />
-    <option name="LAST_COMMIT_MESSAGE" value="ok result  at 5000 1000 0.1 4 10." />
+    <MESSAGE value=" added robust kernel." />
+    <option name="LAST_COMMIT_MESSAGE" value=" added robust kernel." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1148,13 +1157,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/Extent/Matrix.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1180">
@@ -1411,16 +1413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="366" column="37" lean-forward="false" selection-start-line="366" selection-start-column="37" selection-end-line="366" selection-end-column="37" />
-          <folding>
-            <element signature="e#65#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1487,11 +1479,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+        <state relative-caret-position="-1029">
+          <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
           <folding>
             <element signature="e#38#58#0" expanded="true" />
-            <element signature="e#152#173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1504,18 +1495,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        <state relative-caret-position="170">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="396" column="11" lean-forward="false" selection-start-line="396" selection-start-column="11" selection-end-line="396" selection-end-column="11" />
+          <folding>
+            <element signature="e#65#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="221" column="42" lean-forward="true" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
+        <state relative-caret-position="425">
+          <caret line="209" column="5" lean-forward="true" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
             <element signature="e#151#172#0" expanded="true" />
@@ -1523,10 +1532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="521">
+          <caret line="101" column="4" lean-forward="false" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
           <folding />
         </state>
       </provider>
