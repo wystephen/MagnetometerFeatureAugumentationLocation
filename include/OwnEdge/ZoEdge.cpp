@@ -27,7 +27,8 @@ bool Z0Edge::write(std::ostream &os) const {
 void Z0Edge::computeError() {
     g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
     g2o::VertexSE3 *to = static_cast<g2o::VertexSE3 *>(_vertices[1]);
-    _error(0, 0) = (from->estimate().matrix()(2, 3) - _measurement);
+    _error(0, 0) = pow((from->estimate().matrix()(2, 3) - _measurement), 2.0)
+                   + pow((to->estimate().matrix()(2, 3) - _measurement), 2.0);
 }
 
 bool Z0Edge::setMeasurementFromState() {
@@ -36,16 +37,16 @@ bool Z0Edge::setMeasurementFromState() {
 
 }
 
-void Z0Edge::linearizeOplus() {
-//    std::cout << "linearizeOplus" << std::endl;
-    g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
-    g2o::VertexSE3 *to = static_cast<g2o::VertexSE3 *>(_vertices[1]);
-    _jacobianOplusXi(0, 2) = -1.;//*(_error(0,0));
-    _jacobianOplusXj(0, 2) = -1.;//* (_error(0,0));
-//    _jacobianOplusXi.setZero();
-//    _jacobianOplusXj.setZero();
-//    std::cout << " after linearizeOplus" << std::endl;
-}
+//void Z0Edge::linearizeOplus() {
+////    std::cout << "linearizeOplus" << std::endl;
+//    g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
+//    g2o::VertexSE3 *to = static_cast<g2o::VertexSE3 *>(_vertices[1]);
+//    _jacobianOplusXi(0, 2) = -1.;//*(_error(0,0));
+//    _jacobianOplusXj(0, 2) = -1.;//* (_error(0,0));
+////    _jacobianOplusXi.setZero();
+////    _jacobianOplusXj.setZero();
+////    std::cout << " after linearizeOplus" << std::endl;
+//}
 
 
 void Z0Edge::initialEstimate(const g2o::OptimizableGraph::VertexSet &from,
