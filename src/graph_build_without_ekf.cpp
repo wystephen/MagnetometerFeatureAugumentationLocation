@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
     /// Load Data
     CSVReader vertex_pose_file("./TMP_DATA/vertex_pose.csv");
     CSVReader vertex_quat_file("./TMP_DATA/vertex_quat.csv");
-    CSVReader close_id_file("./TMP_DATA/close_vetices_num.csv");
+    CSVReader close_id_file("./TMP_DATA/close_vetices_num_full.csv");
 
     auto vertex_pose(vertex_pose_file.GetMatrix());
     auto vertex_quat(vertex_quat_file.GetMatrix());
@@ -212,6 +212,7 @@ int main(int argc, char *argv[]) {
     /// Add distance caonstraint
     for (int k(0); k < close_id.GetRows(); ++k) {
         auto distanceEdge = new DistanceEdge();
+        static g2o::RobustKernel *rbk = g2o::RobustKernelFactory::instance()->construct("Cauchy");
 
 //        std::cout << "vertex id : " << int(*close_id(k, 0)) << " to " << int(*close_id(k, 1)) << std::endl;
         distanceEdge->vertices()[0] = globalOptimizer.vertex(int(*close_id(k, 0)));
@@ -221,6 +222,7 @@ int main(int argc, char *argv[]) {
         information(0, 0) = distance_info;
 
         distanceEdge->setInformation(information);
+        distanceEdge->setRobustKernel(rbk);
 
         globalOptimizer.addEdge(distanceEdge);
     }
