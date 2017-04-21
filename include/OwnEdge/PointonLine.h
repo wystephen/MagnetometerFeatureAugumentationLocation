@@ -48,7 +48,7 @@ public:
         return true;
     }
 
-    virtual void initialEstimate
+//    virtual void initialEstimate(const )
 
 };
 

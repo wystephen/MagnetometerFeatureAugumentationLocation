@@ -42,7 +42,7 @@ public:
         return true;
     }
 
-    void linearizeOplus();
+//    void linearizeOplus();
 
     virtual int measurementDimension() const {
         return 1;

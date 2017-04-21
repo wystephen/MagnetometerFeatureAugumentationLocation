@@ -34,7 +34,7 @@ void DistanceEdge::computeError() {
     double dis = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
                            (p1[1] - p2[1]) * (p1[1] - p2[1]) +
                            (p1[2] - p2[2]) * (p1[2] - p2[2]));
-    _error(0, 0) = dis - (_measurement);//*_information(0,0);
+    _error(0, 0) = std::pow(dis - (_measurement), 2.0);//*_information(0,0);
 }
 
 bool DistanceEdge::setMeasurementFromState() {
@@ -43,34 +43,34 @@ bool DistanceEdge::setMeasurementFromState() {
 }
 
 
-void DistanceEdge::linearizeOplus() {
-    /**
-     *  i from j to .
-     *  vertexSE3 (x,y,z wx wy wz)...
-     *
-     */
-    g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
-    g2o::VertexSE3 *to = static_cast<g2o::VertexSE3 *>(_vertices[1]);
-
-    double p1[10], p2[10];
-    from->getEstimateData(p1);
-    to->getEstimateData(p2);
-
-    _jacobianOplusXi.setZero();
-    _jacobianOplusXj.setZero();
-    double dis = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
-                           (p1[1] - p2[1]) * (p1[1] - p2[1]) +
-                           (p1[2] - p2[2]) * (p1[2] - p2[2]));
-
-    for (int i(0); i < 3; ++i) {
-        if (std::abs(p1[i] - p2[i]) - _measurement < 0.00000000000001) {
-            continue;
-        }
-        _jacobianOplusXi(0, i) = (p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
-        _jacobianOplusXj(0, i) = -(p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
-    }
-
-}
+//void DistanceEdge::linearizeOplus() {
+//    /**
+//     *  i from j to .
+//     *  vertexSE3 (x,y,z wx wy wz)...
+//     *
+//     */
+//    g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
+//    g2o::VertexSE3 *to = static_cast<g2o::VertexSE3 *>(_vertices[1]);
+//
+//    double p1[10], p2[10];
+//    from->getEstimateData(p1);
+//    to->getEstimateData(p2);
+//
+//    _jacobianOplusXi.setZero();
+//    _jacobianOplusXj.setZero();
+//    double dis = std::sqrt((p1[0] - p2[0]) * (p1[0] - p2[0]) +
+//                           (p1[1] - p2[1]) * (p1[1] - p2[1]) +
+//                           (p1[2] - p2[2]) * (p1[2] - p2[2]));
+//
+//    for (int i(0); i < 3; ++i) {
+//        if (std::abs(p1[i] - p2[i]) - _measurement < 0.00000000000001) {
+//            continue;
+//        }
+//        _jacobianOplusXi(0, i) = (p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
+//        _jacobianOplusXj(0, i) = -(p1[i] - p2[i]);//* 2.0 * (dis - _measurement);
+//    }
+//
+//}
 
 
 void DistanceEdge::initialEstimate(const g2o::OptimizableGraph::VertexSet &from,
