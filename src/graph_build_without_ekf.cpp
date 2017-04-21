@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
     /// Load Data
     CSVReader vertex_pose_file("./TMP_DATA/vertex_pose.csv");
     CSVReader vertex_quat_file("./TMP_DATA/vertex_quat.csv");
-    CSVReader close_id_file("./TMP_DATA/close_vetices_num_full.csv");
+    CSVReader close_id_file("./TMP_DATA/close_vetices_num.csv");
 
     auto vertex_pose(vertex_pose_file.GetMatrix());
     auto vertex_quat(vertex_quat_file.GetMatrix());
@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
         auto *vertex = new g2o::VertexSE3();
         vertex->setId(index);
 //        vertex->setEstimate
-//        vertex->setEstimate(transform);
+        vertex->setEstimate(transform);
         if (index == 0) {
             vertex->setFixed(true);
         }
