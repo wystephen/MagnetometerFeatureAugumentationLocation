@@ -41,6 +41,7 @@ G2O_USE_TYPE_GROUP(slam3d)
 int main(int argc, char *argv[]) {
 
     double first_info(1000), second_info(1000), distance_info(0.001), corner_ratio(10.0);
+    double zero_info(1000);
 
     /// parameters
     std::cout << "para num :" << argc << std::endl;
@@ -51,14 +52,19 @@ int main(int argc, char *argv[]) {
 
     }
 
-    if (argc == 5) {
+    if (argc >= 5) {
         corner_ratio = std::stod(argv[4]);
+    }
+
+    if (argc >= 6) {
+        zero_info = std::stod(argv[5]);
     }
 
     std::cout << "first info :" << first_info
               << "second info :" << second_info
               << "distance info :" << distance_info
               << " corner ratio :" << corner_ratio
+              << " zero info :" << zero_info
               << std::endl;
 
 
@@ -191,7 +197,7 @@ int main(int argc, char *argv[]) {
             edge->vertices()[1] = globalOptimizer.vertex(index);
 
             Eigen::Matrix<double, 1, 1> information;
-            information(0, 0) = 3;
+            information(0, 0) = zero_info;
             edge->setInformation(information);
 
             edge->setMeasurement(0.0);
