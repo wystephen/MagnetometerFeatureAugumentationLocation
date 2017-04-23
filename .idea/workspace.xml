@@ -19,7 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h" afterPath="$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -62,10 +61,10 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="478">
-                        <caret line="553" column="55" lean-forward="false" selection-start-line="553" selection-start-column="55" selection-end-line="553" selection-end-column="55" />
+                      <state relative-caret-position="648">
+                        <caret line="560" column="20" lean-forward="false" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
                         <folding>
-                          <element signature="e#18636#18679#0" expanded="false" />
+                          <element signature="e#18641#18684#0" expanded="false" />
                         </folding>
                       </state>
                     </provider>
@@ -670,14 +669,7 @@
       <workItem from="1492851618960" duration="4977000" />
       <workItem from="1492905410714" duration="1212000" />
       <workItem from="1492914475203" duration="3527000" />
-      <workItem from="1492944816873" duration="3830000" />
-    </task>
-    <task id="LOCAL-00011" summary="add quick load.">
-      <created>1492305083026</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1492305083026</updated>
+      <workItem from="1492944816873" duration="4558000" />
     </task>
     <task id="LOCAL-00012" summary="extracted vertex.">
       <created>1492311756338</created>
@@ -1015,11 +1007,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492927646376</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="error....in python code.">
+      <created>1492949303399</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1492949303404</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163443000" />
+    <option name="totallyTimeSpent" value="164171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1055,7 +1054,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="another bug..." />
     <MESSAGE value="can be optimize but with a very big MSE as use the last k to keep K is not nan." />
     <MESSAGE value="````" />
     <MESSAGE value="try to direct read quant and pose from file save by python scripts." />
@@ -1080,7 +1078,8 @@
     <MESSAGE value=" added robust kernel." />
     <MESSAGE value="change super class." />
     <MESSAGE value="new documents." />
-    <option name="LAST_COMMIT_MESSAGE" value="new documents." />
+    <MESSAGE value="error....in python code." />
+    <option name="LAST_COMMIT_MESSAGE" value="error....in python code." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1468,10 +1467,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="553" column="55" lean-forward="false" selection-start-line="553" selection-start-column="55" selection-end-line="553" selection-end-column="55" />
+        <state relative-caret-position="648">
+          <caret line="560" column="20" lean-forward="false" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
           <folding>
-            <element signature="e#18636#18679#0" expanded="false" />
+            <element signature="e#18641#18684#0" expanded="false" />
           </folding>
         </state>
       </provider>
