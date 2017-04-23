@@ -20,7 +20,7 @@
 #define MAGNETOMETERFEATUREAUGUMENTATIONLOCATION_POINT2LINE3D_H
 
 
-class Point2Line3D : public g2o::BaseUnaryEdge<1, g2o::VertexSE3, Line3D> {
+class Point2Line3D : public g2o::BaseBinaryEdge<1, g2o::VertexSE3, Line3D> {
 
 public:
 
