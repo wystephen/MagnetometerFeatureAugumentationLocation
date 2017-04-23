@@ -531,7 +531,7 @@ class ImuPreprocess:
 
         # print("feature range",self.feature_extract_range)
         # print("corner range:",self.corner)
-        self.line_range = np.zeros([self.feature_extract_range.shape[0] + 1, 2])
+        self.line_range = np.zeros([self.feature_extract_range.shape[0], 2])
         # print("vertex id ",self.vertics_id)
         # print("corner :", self.corner_id)
 
@@ -548,11 +548,11 @@ class ImuPreprocess:
         # self.line_range[i,0] = self.feature_extract_range[i-1,2]
         # self.line_range[i,1] = self.feature_extract_range[i,1]
 
-        current_corner_id = 0
+        current_corner_id = 1
 
 
         self.line_range[0, 0] = 0
-        self.line_range[0, 1] = self.corner_id[0, 1]
+        # self.line_range[0, 1] = self.corner_id[0, 1]
         self.line_range[self.line_range.shape[0] - 1, 1] = self.vertics.shape[0] - 1
 
         for k in range(self.corner_id.shape[0] - 1):
@@ -560,9 +560,11 @@ class ImuPreprocess:
             if self.corner_id[k, 0] == current_corner_id:  # and self.corner_id[k + 1, 0] == current_corner_id + 1:
                 # self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
                 # self.line_range[current_corner_id + 1, 0] = self.corner_id[k + 1, 1]
-                if k != 0:
-                    self.line_range[current_corner_id - 1, 1] = self.corner_id[k - 1, 1]
-                self.line_range[current_corner_id, 0] = self.corner_id[k, 1]
+                # if k != 0:
+                # if k+1 == self.corner_id
+                if k > 0:
+                    self.line_range[current_corner_id - 1, 1] = self.corner_id[k, 1]
+                self.line_range[current_corner_id, 1] = self.corner_id[k + 1, 1]
 
                 current_corner_id += 1
 
@@ -574,7 +576,7 @@ class ImuPreprocess:
 
         for i in range(self.line_range.shape[0]):
             plt.plot(self.vertics[int(self.line_range[i, 0]):int(self.line_range[i, 1]), 0],
-                     self.vertics[int(self.line_range[i, 0]):int(self.line_range[i, 1]), 1], 'y+')
+                     self.vertics[int(self.line_range[i, 0]):int(self.line_range[i, 1]), 1], 'y')
 
 
         print("self.line_range:", self.line_range)
