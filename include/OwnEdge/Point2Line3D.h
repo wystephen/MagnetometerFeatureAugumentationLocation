@@ -26,6 +26,7 @@ public:
 
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
+
     Point2Line3D() {
 
     }
@@ -39,6 +40,9 @@ public:
     }
 
 
+    /**
+     * Distance from point to line.
+     */
     void computeError() {
         double p[10] = {0};
         double l[10] = {0};
