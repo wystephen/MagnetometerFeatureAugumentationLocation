@@ -61,8 +61,8 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="308">
-                        <caret line="529" column="10" lean-forward="false" selection-start-line="529" selection-start-column="10" selection-end-line="529" selection-end-column="10" />
+                      <state relative-caret-position="529">
+                        <caret line="568" column="20" lean-forward="true" selection-start-line="568" selection-start-column="20" selection-end-line="568" selection-end-column="20" />
                         <folding>
                           <element signature="e#18641#18684#0" expanded="false" />
                         </folding>
@@ -669,14 +669,7 @@
       <workItem from="1492851618960" duration="4977000" />
       <workItem from="1492905410714" duration="1212000" />
       <workItem from="1492914475203" duration="3527000" />
-      <workItem from="1492944816873" duration="5408000" />
-    </task>
-    <task id="LOCAL-00013" summary="extracted vertex.">
-      <created>1492323452928</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1492323452928</updated>
+      <workItem from="1492944816873" duration="5989000" />
     </task>
     <task id="LOCAL-00014" summary="s">
       <created>1492323668368</created>
@@ -1014,11 +1007,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492950028825</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="another way  get line range.">
+      <created>1492951111879</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1492951111879</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165021000" />
+    <option name="totallyTimeSpent" value="165602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1468,8 +1468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="529" column="10" lean-forward="false" selection-start-line="529" selection-start-column="10" selection-end-line="529" selection-end-column="10" />
+        <state relative-caret-position="529">
+          <caret line="568" column="20" lean-forward="true" selection-start-line="568" selection-start-column="20" selection-end-line="568" selection-end-column="20" />
           <folding>
             <element signature="e#18641#18684#0" expanded="false" />
           </folding>

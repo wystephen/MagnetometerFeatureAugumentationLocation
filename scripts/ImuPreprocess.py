@@ -552,16 +552,29 @@ class ImuPreprocess:
 
 
         self.line_range[0, 0] = 0
-        # self.line_range[0,1] = self.corner_id[0,1]
+        self.line_range[0, 1] = self.corner_id[0, 1]
         self.line_range[self.line_range.shape[0] - 1, 1] = self.vertics.shape[0] - 1
 
-        for k in range(self.corner_id.shape[0]):
-            if self.corner_id[k, 0] == current_corner_id and self.corner_id[k + 1, 0] == current_corner_id + 1:
-                self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
-                self.line_range[current_corner_id + 1, 0] = self.corner_id[k + 1, 1]
+        for k in range(self.corner_id.shape[0] - 1):
+
+            if self.corner_id[k, 0] == current_corner_id:  # and self.corner_id[k + 1, 0] == current_corner_id + 1:
+                # self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
+                # self.line_range[current_corner_id + 1, 0] = self.corner_id[k + 1, 1]
+                if k != 0:
+                    self.line_range[current_corner_id - 1, 1] = self.corner_id[k - 1, 1]
+                self.line_range[current_corner_id, 0] = self.corner_id[k, 1]
 
                 current_corner_id += 1
 
+        plt.figure()
+        plt.title("line detector ")
+        plt.grid(True)
+
+        plt.plot(self.vertics[:, 0], self.vertics[:, 1], 'r*', label="vertex")
+
+        for i in range(self.line_range.shape[0]):
+            plt.plot(self.vertics[int(self.line_range[i, 0]):int(self.line_range[i, 1]), 0],
+                     self.vertics[int(self.line_range[i, 0]):int(self.line_range[i, 1]), 1], 'y+')
 
 
         print("self.line_range:", self.line_range)
