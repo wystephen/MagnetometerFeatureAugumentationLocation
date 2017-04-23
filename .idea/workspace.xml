@@ -61,8 +61,8 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="648">
-                        <caret line="560" column="20" lean-forward="false" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
+                      <state relative-caret-position="308">
+                        <caret line="529" column="10" lean-forward="false" selection-start-line="529" selection-start-column="10" selection-end-line="529" selection-end-column="10" />
                         <folding>
                           <element signature="e#18641#18684#0" expanded="false" />
                         </folding>
@@ -669,14 +669,7 @@
       <workItem from="1492851618960" duration="4977000" />
       <workItem from="1492905410714" duration="1212000" />
       <workItem from="1492914475203" duration="3527000" />
-      <workItem from="1492944816873" duration="4558000" />
-    </task>
-    <task id="LOCAL-00012" summary="extracted vertex.">
-      <created>1492311756338</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1492311756338</updated>
+      <workItem from="1492944816873" duration="5408000" />
     </task>
     <task id="LOCAL-00013" summary="extracted vertex.">
       <created>1492323452928</created>
@@ -1014,14 +1007,22 @@
       <option name="project" value="LOCAL" />
       <updated>1492949303404</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="another way  get line range.">
+      <created>1492950028825</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1492950028825</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164171000" />
+    <option name="totallyTimeSpent" value="165021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17235859" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1054,7 +1055,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="can be optimize but with a very big MSE as use the last k to keep K is not nan." />
     <MESSAGE value="````" />
     <MESSAGE value="try to direct read quant and pose from file save by python scripts." />
     <MESSAGE value="read file and build base graph ok." />
@@ -1079,7 +1079,8 @@
     <MESSAGE value="change super class." />
     <MESSAGE value="new documents." />
     <MESSAGE value="error....in python code." />
-    <option name="LAST_COMMIT_MESSAGE" value="error....in python code." />
+    <MESSAGE value="another way  get line range." />
+    <option name="LAST_COMMIT_MESSAGE" value="another way  get line range." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1457,8 +1458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="1921">
+          <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
           <folding>
             <element signature="e#152#173#0" expanded="true" />
           </folding>
@@ -1467,8 +1468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="560" column="20" lean-forward="false" selection-start-line="560" selection-start-column="20" selection-end-line="560" selection-end-column="20" />
+        <state relative-caret-position="308">
+          <caret line="529" column="10" lean-forward="false" selection-start-line="529" selection-start-column="10" selection-end-line="529" selection-end-column="10" />
           <folding>
             <element signature="e#18641#18684#0" expanded="false" />
           </folding>

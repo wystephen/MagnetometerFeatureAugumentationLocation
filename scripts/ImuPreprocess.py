@@ -552,13 +552,12 @@ class ImuPreprocess:
 
 
         self.line_range[0, 0] = 0
+        # self.line_range[0,1] = self.corner_id[0,1]
         self.line_range[self.line_range.shape[0] - 1, 1] = self.vertics.shape[0] - 1
 
         for k in range(self.corner_id.shape[0]):
-            if self.corner_id[k, 0] == current_corner_id:
-                # if k == 0 :
-                if k == 0:
-                    self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
+            if self.corner_id[k, 0] == current_corner_id and self.corner_id[k + 1, 0] == current_corner_id + 1:
+                self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
                 self.line_range[current_corner_id + 1, 0] = self.corner_id[k + 1, 1]
 
                 current_corner_id += 1
