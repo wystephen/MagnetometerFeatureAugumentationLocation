@@ -523,6 +523,42 @@ class ImuPreprocess:
 
                     # plt.legend()
 
+    def findstraightline(self):
+        '''
+        
+        :return: false is some error occur
+        '''
+
+        # print("feature range",self.feature_extract_range)
+        # print("corner range:",self.corner)
+        self.line_range = np.zeros([self.feature_extract_range.shape[0] + 1, 2])
+        # print("vertex id ",self.vertics_id)
+        print("corner :", self.corner_id)
+
+        # for i in range(self.line_range.shape[0]):
+        #
+        #     if i == 0:
+        #         self.line_range[i,0] = 0
+        #         self.line_range[i,1] = self.feature_extract_range[i,1]
+        #     elif i == (self.line_range.shape[0]-1):
+        #         self.line_range[i,0] = self.feature_extract_range[i-1,2]
+        #         self.line_range[i,1] = self.vertics_id[-1]
+        #     else:
+        #         print("i:",i, "in " , self.line_range.shape[0])
+        # self.line_range[i,0] = self.feature_extract_range[i-1,2]
+        # self.line_range[i,1] = self.feature_extract_range[i,1]
+
+        current_corner_id = 0
+
+        self.line_range[0, 0] = 0
+        self.line_range[self.line_range.shape[0] - 1, 1] =
+
+        print("self.line_range:", self.line_range)
+        np.savetxt("../TMP_DATA/line_range_file.csv", self.line_range, delimiter=',')
+
+        return True
+
+
 
 
 
@@ -539,5 +575,7 @@ if __name__ == '__main__':
     ip.findcorner()
 
     ip.computeconerfeature()
+
+    ip.findstraightline()
 
     plt.show()
