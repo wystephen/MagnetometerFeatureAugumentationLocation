@@ -19,7 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_test.cpp" afterPath="$PROJECT_DIR$/src/graph_build_test.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +61,8 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="733">
-                        <caret line="566" column="39" lean-forward="true" selection-start-line="566" selection-start-column="39" selection-end-line="566" selection-end-column="39" />
+                      <state relative-caret-position="206">
+                        <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -107,23 +107,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="385">
-                  <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+                <state relative-caret-position="487">
+                  <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="false">
+          <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1921">
-                  <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+                <state relative-caret-position="143">
+                  <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
                   <folding>
                     <element signature="e#38#58#0" expanded="true" />
+                    <element signature="e#152#173#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -136,10 +137,11 @@
           <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+                <state relative-caret-position="272">
+                  <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
                   <folding>
                     <element signature="e#38#58#0" expanded="true" />
+                    <element signature="e#152#173#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -195,7 +197,6 @@
         <option value="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/graph_build_only_corner.cpp" />
-        <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/PointonLine.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h" />
@@ -206,6 +207,7 @@
         <option value="$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h" />
         <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
+        <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
       </list>
     </option>
   </component>
@@ -669,14 +671,7 @@
       <workItem from="1492914475203" duration="3527000" />
       <workItem from="1492944816873" duration="6706000" />
       <workItem from="1493013024680" duration="2356000" />
-      <workItem from="1493017068873" duration="2282000" />
-    </task>
-    <task id="LOCAL-00017" summary="add some cpp file for zupt detector and trace computer.">
-      <created>1492419828091</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1492419828091</updated>
+      <workItem from="1493017068873" duration="2412000" />
     </task>
     <task id="LOCAL-00018" summary="modified cmake file.">
       <created>1492427215622</created>
@@ -1014,11 +1009,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493019068448</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Line range ok.">
+      <created>1493020042079</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1493020042079</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170957000" />
+    <option name="totallyTimeSpent" value="171087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1029,10 +1031,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31163287" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1055,7 +1057,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add z equalt to zero." />
     <MESSAGE value="try to search parameters." />
     <MESSAGE value="only use corner." />
     <MESSAGE value="fixed a bug in python script." />
@@ -1080,7 +1081,8 @@
     <MESSAGE value="add plot in line detector." />
     <MESSAGE value="error in line detector ." />
     <MESSAGE value="error in line detector .." />
-    <option name="LAST_COMMIT_MESSAGE" value="error in line detector .." />
+    <MESSAGE value="Line range ok." />
+    <option name="LAST_COMMIT_MESSAGE" value="Line range ok." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1090,11 +1092,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/OPENSHOE/Data_Test.py</url>
           <line>3</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/graph_build_test.cpp</url>
-          <line>96</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/include/OwnEdge/PointonLine.h</url>
@@ -1414,14 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1456,21 +1445,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-          <folding>
-            <element signature="e#38#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="487">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="566" column="39" lean-forward="true" selection-start-line="566" selection-start-column="39" selection-end-line="566" selection-end-column="39" />
+        <state relative-caret-position="206">
+          <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+          <folding>
+            <element signature="e#38#58#0" expanded="true" />
+            <element signature="e#152#173#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

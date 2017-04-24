@@ -54,10 +54,13 @@ int main(int argc, char *argv[]) {
 //    std::cin >> k;
     CSVReader close_id_file("./TMP_DATA/close_vetices_num.csv");
 
+    CSVReader line_range_file("./TMP_DATA/line_range_file.csv");
+
 
     auto raw_data(raw_data_file.GetMatrix());
     auto zv_data(zv_data_file.GetMatrix());
     auto close_id(close_id_file.GetMatrix());
+    auto line_range(line_range_file.GetMatrix());
 
 //    std::cin >> k;
 
