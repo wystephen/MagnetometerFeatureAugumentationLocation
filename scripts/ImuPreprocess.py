@@ -548,7 +548,7 @@ class ImuPreprocess:
         # self.line_range[i,0] = self.feature_extract_range[i-1,2]
         # self.line_range[i,1] = self.feature_extract_range[i,1]
 
-        current_corner_id = 1
+        current_corner_id = 0
 
 
         self.line_range[0, 0] = 0
@@ -558,13 +558,10 @@ class ImuPreprocess:
         for k in range(self.corner_id.shape[0] - 1):
 
             if self.corner_id[k, 0] == current_corner_id:  # and self.corner_id[k + 1, 0] == current_corner_id + 1:
-                # self.line_range[current_corner_id, 1] = self.corner_id[k, 1]
-                # self.line_range[current_corner_id + 1, 0] = self.corner_id[k + 1, 1]
-                # if k != 0:
-                # if k+1 == self.corner_id
+
                 if k > 0:
-                    self.line_range[current_corner_id - 1, 1] = self.corner_id[k, 1]
-                self.line_range[current_corner_id, 1] = self.corner_id[k + 1, 1]
+                    self.line_range[current_corner_id - 1, 1] = self.corner_id[k - 1, 1]
+                self.line_range[current_corner_id, 0] = self.corner_id[k, 1]
 
                 current_corner_id += 1
 

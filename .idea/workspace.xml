@@ -39,8 +39,8 @@
                 <file leaf-file-name="Point2Line3D.h" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="398">
-                        <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+                      <state relative-caret-position="527">
+                        <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
                         <folding>
                           <element signature="e#39#69#0" expanded="true" />
                         </folding>
@@ -52,7 +52,7 @@
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="85">
-                        <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                        <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -61,11 +61,9 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="648">
-                        <caret line="566" column="42" lean-forward="false" selection-start-line="566" selection-start-column="42" selection-end-line="566" selection-end-column="42" />
-                        <folding>
-                          <element signature="e#18638#18681#0" expanded="false" />
-                        </folding>
+                      <state relative-caret-position="376">
+                        <caret line="560" column="0" lean-forward="true" selection-start-line="560" selection-start-column="0" selection-end-line="560" selection-end-column="0" />
+                        <folding />
                       </state>
                     </provider>
                   </entry>
@@ -73,11 +71,11 @@
               </leaf>
             </split-first>
             <split-second>
-              <leaf>
+              <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                 <file leaf-file-name="Line3D.h" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="612">
+                      <state relative-caret-position="748">
                         <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
                         <folding />
                       </state>
@@ -88,7 +86,7 @@
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="85">
-                        <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                        <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -112,8 +110,8 @@
           <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="470">
-                  <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+                <state relative-caret-position="385">
+                  <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -125,7 +123,7 @@
                 <state relative-caret-position="1921">
                   <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
                   <folding>
-                    <element signature="e#152#173#0" expanded="true" />
+                    <element signature="e#38#58#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -138,10 +136,10 @@
           <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="374">
+                  <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
                   <folding>
-                    <element signature="e#152#173#0" expanded="true" />
+                    <element signature="e#38#58#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -150,7 +148,7 @@
           <file leaf-file-name="DistanceEdge.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
+                <state relative-caret-position="714">
                   <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
                   <folding />
                 </state>
@@ -669,14 +667,9 @@
       <workItem from="1492851618960" duration="4977000" />
       <workItem from="1492905410714" duration="1212000" />
       <workItem from="1492914475203" duration="3527000" />
-      <workItem from="1492944816873" duration="6446000" />
-    </task>
-    <task id="LOCAL-00015" summary="s">
-      <created>1492324361836</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1492324361836</updated>
+      <workItem from="1492944816873" duration="6706000" />
+      <workItem from="1493013024680" duration="2356000" />
+      <workItem from="1493017068873" duration="1311000" />
     </task>
     <task id="LOCAL-00016" summary="edge find ok.">
       <created>1492333075014</created>
@@ -1014,36 +1007,43 @@
       <option name="project" value="LOCAL" />
       <updated>1492951702595</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="error in line detector .">
+      <created>1492952161576</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1492952161576</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166059000" />
+    <option name="totallyTimeSpent" value="169986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17235859" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17609392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31163287" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.48719317" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.51280683" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31323373" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1055,7 +1055,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try to direct read quant and pose from file save by python scripts." />
     <MESSAGE value="read file and build base graph ok." />
     <MESSAGE value="add z equalt to zero." />
     <MESSAGE value="try to search parameters." />
@@ -1080,7 +1079,8 @@
     <MESSAGE value="error....in python code." />
     <MESSAGE value="another way  get line range." />
     <MESSAGE value="add plot in line detector." />
-    <option name="LAST_COMMIT_MESSAGE" value="add plot in line detector." />
+    <MESSAGE value="error in line detector ." />
+    <option name="LAST_COMMIT_MESSAGE" value="error in line detector ." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1408,23 +1408,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="714">
           <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#39#69#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="748">
           <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
           <folding />
         </state>
@@ -1433,45 +1451,25 @@
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="113" column="8" lean-forward="false" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-          <folding>
-            <element signature="e#152#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="566" column="42" lean-forward="false" selection-start-line="566" selection-start-column="42" selection-end-line="566" selection-end-column="42" />
+        <state relative-caret-position="376">
+          <caret line="560" column="0" lean-forward="true" selection-start-line="560" selection-start-column="0" selection-end-line="560" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding>
-            <element signature="e#18638#18681#0" expanded="false" />
+            <element signature="e#38#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
