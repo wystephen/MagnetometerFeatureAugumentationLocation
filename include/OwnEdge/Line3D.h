@@ -69,8 +69,7 @@ public:
 
 
     virtual bool setMinimalEstimateDataImpl(const double *est) {
-        _estimate = Eigen::Map<T>
-        v(est);
+        _estimate = Eigen::Map<T>(est);
         return true;
     }
 

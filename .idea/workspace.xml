@@ -19,7 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_test.cpp" afterPath="$PROJECT_DIR$/src/graph_build_test.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/Line3D.h" afterPath="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,21 +48,21 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="Line3D.cpp" pinned="false" current-in-tab="false">
+                <file leaf-file-name="Line3D.cpp" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="85">
-                        <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                        <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
+                <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="206">
-                        <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+                      <state relative-caret-position="8976">
+                        <caret line="538" column="0" lean-forward="true" selection-start-line="538" selection-start-column="0" selection-end-line="538" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -72,21 +72,33 @@
             </split-first>
             <split-second>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                <file leaf-file-name="Line3D.h" pinned="false" current-in-tab="false">
+                <file leaf-file-name="Line3D.h" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="748">
-                        <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+                      <state relative-caret-position="221">
+                        <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
                         <folding />
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="Point2Line3D.cpp" pinned="false" current-in-tab="true">
+                <file leaf-file-name="base_vertex.h" pinned="false" current-in-tab="false">
+                  <entry file="file:///usr/local/include/g2o/core/base_vertex.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="697">
+                        <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+                        <folding>
+                          <element signature="e#1928#1947#0" expanded="true" />
+                        </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="Point2Line3D.cpp" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="85">
-                        <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                      <state relative-caret-position="68">
+                        <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
                         <folding />
                       </state>
                     </provider>
@@ -120,8 +132,8 @@
           <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="143">
-                  <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+                <state relative-caret-position="840">
+                  <caret line="115" column="39" lean-forward="true" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
                   <folding>
                     <element signature="e#38#58#0" expanded="true" />
                     <element signature="e#152#173#0" expanded="true" />
@@ -137,8 +149,8 @@
           <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+                <state relative-caret-position="323">
+                  <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
                   <folding>
                     <element signature="e#38#58#0" expanded="true" />
                     <element signature="e#152#173#0" expanded="true" />
@@ -197,7 +209,6 @@
         <option value="$PROJECT_DIR$/include/ZUPT/EKF.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/graph_build_only_corner.cpp" />
-        <option value="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/PointonLine.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
@@ -208,6 +219,7 @@
         <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h" />
         <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
         <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
+        <option value="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
       </list>
     </option>
   </component>
@@ -671,21 +683,7 @@
       <workItem from="1492914475203" duration="3527000" />
       <workItem from="1492944816873" duration="6706000" />
       <workItem from="1493013024680" duration="2356000" />
-      <workItem from="1493017068873" duration="2412000" />
-    </task>
-    <task id="LOCAL-00018" summary="modified cmake file.">
-      <created>1492427215622</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1492427215622</updated>
-    </task>
-    <task id="LOCAL-00019" summary="modified cmake file.">
-      <created>1492431584625</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1492431584625</updated>
+      <workItem from="1493017068873" duration="6834000" />
     </task>
     <task id="LOCAL-00020" summary="some unexpected error in compute feature.">
       <created>1492432392856</created>
@@ -1016,11 +1014,25 @@
       <option name="project" value="LOCAL" />
       <updated>1493020042079</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Line range ok.">
+      <created>1493020178687</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1493020178687</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Line3D.">
+      <created>1493021579689</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1493021579690</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171087000" />
+    <option name="totallyTimeSpent" value="175509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1057,7 +1069,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try to search parameters." />
     <MESSAGE value="only use corner." />
     <MESSAGE value="fixed a bug in python script." />
     <MESSAGE value="dynamic information matrix." />
@@ -1082,7 +1093,8 @@
     <MESSAGE value="error in line detector ." />
     <MESSAGE value="error in line detector .." />
     <MESSAGE value="Line range ok." />
-    <option name="LAST_COMMIT_MESSAGE" value="Line range ok." />
+    <MESSAGE value="Line3D." />
+    <option name="LAST_COMMIT_MESSAGE" value="Line3D." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1303,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/g2o/core/base_vertex.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/g2o/types/slam3d/edge_se3.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1421,30 +1426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1453,18 +1434,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="534" column="0" lean-forward="true" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+        <state relative-caret-position="8976">
+          <caret line="538" column="0" lean-forward="true" selection-start-line="538" selection-start-column="0" selection-end-line="538" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/base_vertex.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding>
+            <element signature="e#1928#1947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+        <state relative-caret-position="840">
+          <caret line="115" column="39" lean-forward="true" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
           <folding>
             <element signature="e#38#58#0" expanded="true" />
             <element signature="e#152#173#0" expanded="true" />
