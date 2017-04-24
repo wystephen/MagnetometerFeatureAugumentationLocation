@@ -46,6 +46,46 @@ public:
     }
 
 
+    virtual bool setEstimateDataImpl(const double *est) {
+//        for(int i(0);i<6;++i)
+//        {
+//            est[i] = _estimate(i);
+//        }
+
+        Eigen::Map<const T> _est(est);
+        _estimate = _est;
+        return true;
+    }
+
+    virtual bool getEstimateData(double *est) const {
+        Eigen::Map<T> _est(est);
+        _est = _estimate;
+        return true;
+    }
+
+    virtual int estimateDimension() const {
+        return 6;
+    }
+
+
+    virtual bool setMinimalEstimateDataImpl(const double *est) {
+        _estimate = Eigen::Map<T>
+        v(est);
+        return true;
+    }
+
+    virtual bool getMinimalEstimateData(double *est) const {
+        Eigen::Map<T> v(est);
+        v = _estimate;
+        return true;
+    }
+
+
+    virtual int minimalEstimateDimension() const {
+        return 6;
+    }
+
+
 };
 
 
