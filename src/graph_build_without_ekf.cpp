@@ -238,35 +238,46 @@ int main(int argc, char *argv[]) {
     /// Add line constraint
 
     for (int k(0); k < line_range.GetRows(); ++k) {
+        MYCHECK(1);
         auto l_v = new Line2D();
+        MYCHECK(2);
         l_v->setId(10000 + k);
         globalOptimizer.addVertex(l_v);
+        MYCHECK(1);
 
         /// link point to line
-        for (int index = (int(*line_range(k, 0))); index < int(*line_range(k, 1)); ++index) {
+        for (int index = (int(*line_range(k, 0))) + 1; index < int(*line_range(k, 1)) - 1; ++index) {
+            MYCHECK(1);
             auto pl = new Point2Line2D();
+            MYCHECK(2);
             pl->vertices()[0] = globalOptimizer.vertex(k + 10000);
             if (globalOptimizer.vertex(index) > 0) {
 
                 pl->vertices()[1] = globalOptimizer.vertex(index);
             } else {
                 std::cerr << " the index " << index << "is out of range" << std::endl;
-                continue;
+                break;
             }
             Eigen::Matrix<double, 1, 1> information = Eigen::Matrix<double, 1, 1>::Identity();
             pl->setInformation(information);
+            MYCHECK(1);
             pl->setMeasurement(0.0);
-            globalOptimizer.addEdge(pl);
+            MYCHECK(1);
 
+            globalOptimizer.addEdge(pl);
+            MYCHECK(1);
 
         }
     }
+    MYCHECK(1);
 
     /// Optimizer
     double start_optimize_time = TimeStamp::now();
 //    globalOptimizer.initializeOptimization();
     globalOptimizer.initializeOptimization();
+    MYCHECK(1);
     globalOptimizer.optimize(2000);
+    MYCHECK(1);
     globalOptimizer.optimize(1000);
     globalOptimizer.optimize(1000);
     std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;

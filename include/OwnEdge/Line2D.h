@@ -42,9 +42,11 @@ public:
     }
 
     virtual void oplusImpl(const double *update) {
+        std::cout << "IN OplusImpl" << std::endl;
         for (int i(0); i < 2; ++i) {
             _estimate(i) += update[i];
         }
+        std::cout << "after oplusImpl" << std::endl;
     }
 
 

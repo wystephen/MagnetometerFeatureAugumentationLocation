@@ -40,6 +40,35 @@ public:
 
     void computeError();
 
+    virtual void setMeasurement(const double &m) {
+        _measurement = m;
+    }
+
+    virtual bool getMeasurementData(double *d) const {
+        *d = _measurement;
+        return true;
+    }
+
+//    void linearizeOplus();
+
+    virtual int measurementDimension() const {
+        return 1;
+    }
+
+    virtual bool setMeasurementFromState();
+
+    virtual double initialEstimatePossible(
+            const g2o::OptimizableGraph::VertexSet &/*from*/,
+            g2o::OptimizableGraph::Vertex */*to*/) {
+//        //TODO:
+//        std::cout << __FILE__ << __FUNCTION__
+//                  << __LINE__ << "this function not implement" << std::endl;
+        return 1.0;
+    }
+
+
+    virtual void initialEstimate(const g2o::OptimizableGraph::VertexSet &from,
+                                 g2o::OptimizableGraph::Vertex *to);
 
 };
 
