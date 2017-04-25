@@ -267,7 +267,7 @@ int main(int argc, char *argv[]) {
             pl->setInformation(information);
             MYCHECK(1);
             g2o::Line3D measuredLine;
-//            measuredLine<< 0.0,0.0,0.0,1.0,0.0,0.0;
+            measuredLine << 0.0, 0.0, 0.0, 1.0, 0.0, 0.0;
             pl->setMeasurement(measuredLine);
 //            pl->setMeasurement(0.0);
             MYCHECK(1);
