@@ -249,8 +249,12 @@ int main(int argc, char *argv[]) {
 
     for (int k(1); k < line_range.GetRows(); ++k) {
         auto l_v = new g2o::VertexLine3D();
-//        double est[6]={0.0,0.0,0.0,1.0,0.0,0.0};
-//        l_v->setEstimateData(est);
+//        int p_index
+        int p_index = *line_range(k, 1);
+        double tp[10];
+        globalOptimizer.vertex(p_index)->getEstimateData(tp);
+        double est[6] = {tp[0], tp[1], tp[2], 1.0, 0.0, 0.0};
+        l_v->setEstimateData(est);
         l_v->setId(10000 + k);
         globalOptimizer.addVertex(l_v);
 
@@ -317,10 +321,12 @@ int main(int argc, char *argv[]) {
 //    globalOptimizer.initializeOptimization();
     globalOptimizer.initializeOptimization();
     std::cout << "Try to do first optimize!" << std::endl;
+//
+//    globalOptimizer.optimize(2000);
+//    globalOptimizer.optimize(1000);
+//    globalOptimizer.optimize(1000);
+    globalOptimizer.optimize((1000000));
 
-    globalOptimizer.optimize(2000);
-    globalOptimizer.optimize(1000);
-    globalOptimizer.optimize(1000);
 
     std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;
 

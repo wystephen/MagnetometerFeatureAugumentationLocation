@@ -19,10 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/graph_build_without_ekf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" afterPath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -53,8 +52,8 @@
                 <file leaf-file-name="DistanceSE3Line3D.cpp" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="884">
-                        <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+                      <state relative-caret-position="442">
+                        <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -148,8 +147,8 @@
           <file leaf-file-name="optimizable_graph.h" pinned="false" current-in-tab="true">
             <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="298">
-                  <caret line="299" column="29" lean-forward="false" selection-start-line="299" selection-start-column="29" selection-end-line="299" selection-end-column="29" />
+                <state relative-caret-position="536">
+                  <caret line="313" column="15" lean-forward="false" selection-start-line="313" selection-start-column="15" selection-end-line="313" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -172,8 +171,8 @@
           <file leaf-file-name="graph_build_without_ekf.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+                <state relative-caret-position="247">
+                  <caret line="327" column="40" lean-forward="true" selection-start-line="327" selection-start-column="40" selection-end-line="327" selection-end-column="40" />
                   <folding>
                     <element signature="e#151#172#0" expanded="true" />
                   </folding>
@@ -265,8 +264,8 @@
         <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp" />
         <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" />
-        <option value="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" />
+        <option value="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
       </list>
     </option>
   </component>
@@ -731,14 +730,7 @@
       <workItem from="1492944816873" duration="6706000" />
       <workItem from="1493013024680" duration="2356000" />
       <workItem from="1493017068873" duration="10412000" />
-      <workItem from="1493083118922" duration="25032000" />
-    </task>
-    <task id="LOCAL-00031" summary="read file and build base graph ok.">
-      <created>1492515843881</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1492515843881</updated>
+      <workItem from="1493083118922" duration="28536000" />
     </task>
     <task id="LOCAL-00032" summary="add z equalt to zero.">
       <created>1492518007670</created>
@@ -1076,20 +1068,28 @@
       <option name="project" value="LOCAL" />
       <updated>1493113598244</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="run and output a result,but the result is not good.">
+      <created>1493121091793</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1493121091793</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204119000" />
+    <option name="totallyTimeSpent" value="207623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31163287" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29738563" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29738563" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14781217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1116,7 +1116,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="do not achive linearizeOplus()~." />
     <MESSAGE value="auto jacbian matrix." />
     <MESSAGE value="zero z .." />
     <MESSAGE value="ok result  at 5000 1000 0.1 4 10." />
@@ -1141,7 +1140,8 @@
     <MESSAGE value="try to use self defined vertex first." />
     <MESSAGE value="try to fixed a bug in point2line2d." />
     <MESSAGE value="same error to self defined class." />
-    <option name="LAST_COMMIT_MESSAGE" value="same error to self defined class." />
+    <MESSAGE value="run and output a result,but the result is not good." />
+    <option name="LAST_COMMIT_MESSAGE" value="run and output a result,but the result is not good." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1522,14 +1522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="299" column="29" lean-forward="false" selection-start-line="299" selection-start-column="29" selection-end-line="299" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1582,16 +1574,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        <state relative-caret-position="442">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="313" column="15" lean-forward="false" selection-start-line="313" selection-start-column="15" selection-end-line="313" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+        <state relative-caret-position="247">
+          <caret line="327" column="40" lean-forward="true" selection-start-line="327" selection-start-column="40" selection-end-line="327" selection-end-column="40" />
           <folding>
             <element signature="e#151#172#0" expanded="true" />
           </folding>
