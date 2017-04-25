@@ -11,9 +11,9 @@ void Point2Line2D::computeError() {
 
     std::cout << "compute error" << std::endl;
 
-    const auto *Line = static_cast<const Line2D *>(vertices()[0]);
+    auto *Line = static_cast<g2o::VertexSE3 *>(vertices()[0]);
     Line->getEstimateData(l);
-    auto *point = static_cast<g2o::VertexSE3 *>(vertices()[1]);
+    auto *point = static_cast<Line2D *>(vertices()[1]);
     point->getEstimateData(p);
 
     std::cout << "after load data " << std::endl;

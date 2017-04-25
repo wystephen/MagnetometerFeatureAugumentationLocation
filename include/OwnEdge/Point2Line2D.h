@@ -25,7 +25,10 @@ class Point2Line2D : public g2o::BaseBinaryEdge<1, double, Line2D, g2o::VertexSE
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
-    Point2Line2D() {
+    Point2Line2D() :
+            g2o::BaseBinaryEdge<1, double, Line2D, g2o::VertexSE3>() {
+        information().setIdentity();
+        _information(0, 0) = 10.0f;
 
     }
 
