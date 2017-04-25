@@ -241,51 +241,69 @@ int main(int argc, char *argv[]) {
 
     /// Add line constraint
 
+//    for (int k(0); k < line_range.GetRows(); ++k) {
+//        auto l_v = new g2o::VertexLine3D();
+//        l_v->setId(10000 + k);
+//        globalOptimizer.addVertex(l_v);
+//
+//        /// link point to line
+//        for (int index = (int(*line_range(k, 0))) + 1; index < int(*line_range(k, 1)) - 1; ++index) {
+//            auto pl = new g2o::EdgeSE3Line3D();
+//            pl->vertices()[1] = globalOptimizer.vertex(k + 10000);
+//            if (globalOptimizer.vertex(index) > 0) {
+//
+//                pl->vertices()[0] = globalOptimizer.vertex(index);
+//            } else {
+//                std::cerr << " the index " << index << "is out of range" << std::endl;
+//                break;
+//            }
+//            Eigen::Matrix4d information = Eigen::Matrix4d::Identity();
+//            information *= 100.0;
+//            pl->setInformation(information);
+//            g2o::Line3D measuredLine;
+//            measuredLine << 1.0, 0.0, 0.0, 1.0, 0.0, 0.0;
+//            pl->setMeasurement(measuredLine);
+//
+//            globalOptimizer.addEdge(pl);
+//
+//        }
+//    }
     for (int k(0); k < line_range.GetRows(); ++k) {
-        MYCHECK(1);
-        auto l_v = new g2o::VertexLine3D();
-        MYCHECK(2);
-        l_v->setId(10000 + k);
+        auto l_v = new Line2D();
+        l_v->setId(20000 + k);
         globalOptimizer.addVertex(l_v);
-        MYCHECK(1);
 
         /// link point to line
         for (int index = (int(*line_range(k, 0))) + 1; index < int(*line_range(k, 1)) - 1; ++index) {
-            MYCHECK(1);
-            auto pl = new g2o::EdgeSE3Line3D();
-            MYCHECK(2);
-            pl->vertices()[1] = globalOptimizer.vertex(k + 10000);
+            auto pl = new Point2Line2D();
+            pl->vertices()[0] = globalOptimizer.vertex(k + 20000);
             if (globalOptimizer.vertex(index) > 0) {
 
-                pl->vertices()[0] = globalOptimizer.vertex(index);
+                pl->vertices()[1] = globalOptimizer.vertex(index);
             } else {
                 std::cerr << " the index " << index << "is out of range" << std::endl;
                 break;
             }
-            Eigen::Matrix4d information = Eigen::Matrix4d::Identity();
+            Eigen::Matrix<double, 1, 1> information = Eigen::Matrix<double, 1, 1>::Identity();
             information *= 100.0;
             pl->setInformation(information);
-            MYCHECK(1);
-            g2o::Line3D measuredLine;
-            measuredLine << 0.0, 0.0, 0.0, 1.0, 0.0, 0.0;
-            pl->setMeasurement(measuredLine);
-//            pl->setMeasurement(0.0);
-            MYCHECK(1);
+//            g2o::Line3D measuredLine;
+//            measuredLine << 1.0, 0.0, 0.0, 1.0, 0.0, 0.0;
+//            pl->setMeasurement(measuredLine);
+            pl->setMeasurement(0.0f);
 
             globalOptimizer.addEdge(pl);
-            MYCHECK(1);
 
         }
     }
-    MYCHECK(1);
 
     /// Optimizer
     double start_optimize_time = TimeStamp::now();
 //    globalOptimizer.initializeOptimization();
     globalOptimizer.initializeOptimization();
-    MYCHECK(1);
+//    MYCHECK(1);
     globalOptimizer.optimize(2000);
-    MYCHECK(1);
+//    MYCHECK(1);
     globalOptimizer.optimize(1000);
     globalOptimizer.optimize(1000);
     std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;
