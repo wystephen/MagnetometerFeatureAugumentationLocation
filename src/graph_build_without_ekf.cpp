@@ -26,6 +26,7 @@
 #include "g2o/solvers/csparse/linear_solver_csparse.h"
 #include "g2o/types/slam3d/types_slam3d.h"
 #include "g2o/types/slam3d_addons/types_slam3d_addons.h"
+#include "g2o/solvers/cholmod/linear_solver_cholmod.h"
 
 #include "g2o/core/robust_kernel.h"
 #include "g2o/core/robust_kernel_factory.h"
@@ -46,7 +47,8 @@
 
 #include "OwnEdge/DistanceSE3Line3D.h"
 #include "OwnEdge/DistanceSE3Line3D.cpp"
-
+//#include "g2o_types_slam3d_addons_api.h"
+#include "g2o/types/slam3d_addons/line3d.h"
 G2O_USE_TYPE_GROUP(slam3d)
 
 
@@ -95,12 +97,13 @@ int main(int argc, char *argv[]) {
     g2o::SparseOptimizer globalOptimizer;
 
 
-    typedef g2o::BlockSolver_6_3 SlamBlockSolver;
+    typedef g2o::BlockSolverX SlamBlockSolver;
     typedef g2o::LinearSolverCSparse<SlamBlockSolver::PoseMatrixType> SlamLinearSolver;
 
     // Initial solver
     SlamLinearSolver *linearSolver = new SlamLinearSolver();
-    linearSolver->setBlockOrdering(false);
+//    linearSolver->setBlockOrdering(false);
+    linearSolver->setWriteDebug(true);
     SlamBlockSolver *blockSolver = new SlamBlockSolver(linearSolver);
     g2o::OptimizationAlgorithmLevenberg *solver =
             new g2o::OptimizationAlgorithmLevenberg(blockSolver);
@@ -246,6 +249,8 @@ int main(int argc, char *argv[]) {
 
     for (int k(1); k < line_range.GetRows(); ++k) {
         auto l_v = new g2o::VertexLine3D();
+//        double est[6]={0.0,0.0,0.0,1.0,0.0,0.0};
+//        l_v->setEstimateData(est);
         l_v->setId(10000 + k);
         globalOptimizer.addVertex(l_v);
 
@@ -253,10 +258,12 @@ int main(int argc, char *argv[]) {
         for (int index = (int(*line_range(k, 0))) + 1; index < int(*line_range(k, 1)) - 1; ++index) {
             auto pl = new DistanceSE3Line3D();
 
-            Eigen::Matrix<double, 1, 1> information = Eigen::Matrix<double, 1, 1>::Identity();
-            information *= 100.0;
+//            Eigen::Matrix<double, 1, 1> information = Eigen::Matrix<double, 1, 1>::Identity();
+//            information *= 100.0;
+            Eigen::Matrix<double, 1, 1> info;
+            info(0, 0) = 100.0f;
 
-            pl->setInformation(information);
+            pl->setInformation(info);
 //            g2o::Line3D measuredLine;
 //            measuredLine << 1.0, 0.0, 0.0, 1.0, 0.0, 0.0;
             pl->setMeasurement(0.0f);
@@ -304,18 +311,23 @@ int main(int argc, char *argv[]) {
 //    }
 
     /// Optimizer
+    globalOptimizer.setVerbose(true);
+    std::cout << "Try to optimize!" << std::endl;
     double start_optimize_time = TimeStamp::now();
 //    globalOptimizer.initializeOptimization();
     globalOptimizer.initializeOptimization();
-//    MYCHECK(1);
+    std::cout << "Try to do first optimize!" << std::endl;
+
     globalOptimizer.optimize(2000);
-//    MYCHECK(1);
     globalOptimizer.optimize(1000);
     globalOptimizer.optimize(1000);
+
     std::cout << " optimize waste time :" << TimeStamp::now() - start_optimize_time << std::endl;
 
 
     ///Save result
+
+    std::cout << " Save result to files ." << std::endl;
     std::ofstream trace_file("./TMP_DATA/save_trace.txt");
 
     std::vector<double> rx, ry, rz;

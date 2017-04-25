@@ -5,9 +5,11 @@
 #include "DistanceSE3Line3D.h"
 
 DistanceSE3Line3D::DistanceSE3Line3D() :
-        g2o::BaseBinaryEdge<1, double, g2o::VertexSE3, g2o::VertexLine3D>() {
+        g2o::BaseBinaryEdge<1, double, g2o::VertexSE3, g2o::VertexLine3D>(),
+        tmp_log("tmp_log_for_distance_se3.txt") {
     information().setIdentity();
     _information(0, 0) = 10.0f;
+    tmp_log << _information << std::endl;
 }
 
 bool DistanceSE3Line3D::read(std::istream &is) {
@@ -22,6 +24,8 @@ bool DistanceSE3Line3D::write(std::ostream &os) const {
 
 void DistanceSE3Line3D::computeError() {
     /// Wait
+    tmp_log << "first code " << std::endl;
+
     g2o::VertexSE3 *from = static_cast<g2o::VertexSE3 *>(_vertices[0]);
     g2o::VertexLine3D *to = static_cast<g2o::VertexLine3D *>(_vertices[1]);
     double p[10] = {0};
@@ -36,9 +40,19 @@ void DistanceSE3Line3D::computeError() {
 
     auto u = pose - npoint;
 
-//    _error(0,0) = std::sqrt(std::pow(u.norm(),2.0)-
-//                                    std::pow((u.dot(direct)).cross(dir;
+    if (direct.norm() < 1e-15) {
+        direct *= 100000;
+    }
+
+
     _error(0, 0) = double((u.cross(direct)).norm() / (direct.norm()));
+
+    if (std::isnan(_error(0, 0))) {
+        _error(0, 0) = 0.1;
+    }
+
+    tmp_log << "error size :" << _error << std::endl;
+//    _error(0,0) = 0.0;
 
 }
 

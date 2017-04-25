@@ -2,6 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="510" />
+    <bookmark url="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" line="7" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -18,11 +19,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/graph_build_without_ekf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp" afterPath="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" afterPath="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" afterPath="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -43,21 +43,9 @@
                 <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="255">
+                      <state relative-caret-position="969">
                         <caret line="552" column="37" lean-forward="false" selection-start-line="552" selection-start-column="37" selection-end-line="552" selection-end-column="37" />
                         <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="DistanceSE3Line3D.h" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="901">
-                        <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-                        <folding>
-                          <element signature="e#179#217#0" expanded="true" />
-                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -65,9 +53,33 @@
                 <file leaf-file-name="DistanceSE3Line3D.cpp" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="476">
-                        <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                      <state relative-caret-position="884">
+                        <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
                         <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="vertex_line3d.h" pinned="false" current-in-tab="false">
+                  <entry file="file:///usr/local/include/g2o/types/slam3d_addons/vertex_line3d.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="433">
+                        <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+                        <folding>
+                          <element signature="e#1483#1506#0" expanded="true" />
+                        </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="DistanceEdge.h" pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="347">
+                        <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+                        <folding>
+                          <element signature="e#101#139#0" expanded="true" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -76,45 +88,23 @@
             </split-first>
             <split-second>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                <file leaf-file-name="Point2Line3D.cpp" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="85">
-                        <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="DistanceEdge.h" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="272">
-                        <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-                        <folding>
-                          <element signature="e#101#139#0" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="DistanceEdge.cpp" pinned="false" current-in-tab="false">
+                <file leaf-file-name="DistanceEdge.cpp" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="585">
-                        <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+                      <state relative-caret-position="204">
+                        <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
                         <folding />
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="graph_build_without_ekf.cpp" pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
+                <file leaf-file-name="DistanceSE3Line3D.h" pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="357">
-                        <caret line="273" column="0" lean-forward="false" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+                      <state relative-caret-position="340">
+                        <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
                         <folding>
-                          <element signature="e#151#172#0" expanded="true" />
+                          <element signature="e#179#217#0" expanded="true" />
                         </folding>
                       </state>
                     </provider>
@@ -132,7 +122,7 @@
     <favorites_list name="MagnetometerFeatureAugumentationLocation" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.4251722">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
@@ -158,8 +148,8 @@
           <file leaf-file-name="optimizable_graph.h" pinned="false" current-in-tab="true">
             <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="349">
-                  <caret line="302" column="10" lean-forward="false" selection-start-line="302" selection-start-column="10" selection-end-line="302" selection-end-column="10" />
+                <state relative-caret-position="298">
+                  <caret line="299" column="29" lean-forward="false" selection-start-line="299" selection-start-column="29" selection-end-line="299" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -169,34 +159,63 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="graph_build_test.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
+          <file leaf-file-name="line_range_file.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TMP_DATA/line_range_file.csv">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="124" column="8" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#38#58#0" expanded="true" />
-                    <element signature="e#152#173#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="graph_build_only_corner.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/graph_build_only_corner.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-213">
-                  <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Point2Line2D.cpp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp">
+          <file leaf-file-name="graph_build_without_ekf.cpp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+                <state relative-caret-position="102">
+                  <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#151#172#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="optimization_algorithm_levenberg.h" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/include/g2o/core/optimization_algorithm_levenberg.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="196">
+                  <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="solver.h" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/include/g2o/core/solver.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="196">
+                  <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="block_solver.h" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/include/g2o/core/block_solver.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="286">
+                  <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sparse_optimizer.h" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/include/g2o/core/sparse_optimizer.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="716">
+                  <caret line="121" column="12" lean-forward="true" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -238,15 +257,15 @@
         <option value="$PROJECT_DIR$/include/OwnEdge/ZoEdge.cpp" />
         <option value="$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv" />
         <option value="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
-        <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Line3D.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Line2D.h" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.h" />
+        <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp" />
+        <option value="$PROJECT_DIR$/src/graph_build_test.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h" />
         <option value="$PROJECT_DIR$/src/graph_build_without_ekf.cpp" />
-        <option value="$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp" />
         <option value="$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" />
       </list>
     </option>
@@ -712,21 +731,7 @@
       <workItem from="1492944816873" duration="6706000" />
       <workItem from="1493013024680" duration="2356000" />
       <workItem from="1493017068873" duration="10412000" />
-      <workItem from="1493083118922" duration="15330000" />
-    </task>
-    <task id="LOCAL-00029" summary="try to direct read quant and pose from file save by python scripts.">
-      <created>1492513183744</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1492513183744</updated>
-    </task>
-    <task id="LOCAL-00030" summary="try to direct read quant and pose from file save by python scripts.">
-      <created>1492514436876</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1492514436876</updated>
+      <workItem from="1493083118922" duration="25032000" />
     </task>
     <task id="LOCAL-00031" summary="read file and build base graph ok.">
       <created>1492515843881</created>
@@ -1057,25 +1062,39 @@
       <option name="project" value="LOCAL" />
       <updated>1493107545105</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="try to fixed a bug in point2line2d.">
+      <created>1493109243902</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1493109243902</updated>
+    </task>
+    <task id="LOCAL-00079" summary="same error to self defined class.">
+      <created>1493113598244</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1493113598244</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194417000" />
+    <option name="totallyTimeSpent" value="204119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14781217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897604" sideWeight="0.31163287" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.31163287" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29738563" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14781217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1086,7 +1105,6 @@
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1098,8 +1116,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pause" />
-    <MESSAGE value="add Line3D and Point2Line3D but may not useful." />
     <MESSAGE value="do not achive linearizeOplus()~." />
     <MESSAGE value="auto jacbian matrix." />
     <MESSAGE value="zero z .." />
@@ -1123,7 +1139,9 @@
     <MESSAGE value="...try to use Line3D in g2o library." />
     <MESSAGE value="list of point on line ...." />
     <MESSAGE value="try to use self defined vertex first." />
-    <option name="LAST_COMMIT_MESSAGE" value="try to use self defined vertex first." />
+    <MESSAGE value="try to fixed a bug in point2line2d." />
+    <MESSAGE value="same error to self defined class." />
+    <option name="LAST_COMMIT_MESSAGE" value="same error to self defined class." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1154,61 +1172,17 @@
           <line>50</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp</url>
+          <line>9</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/all_data2.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Extent/CSVReader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="87" column="27" lean-forward="false" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/zupt_result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/eigen3/Eigen/src/Core/Matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="450" column="54" lean-forward="false" selection-start-line="450" selection-start-column="54" selection-end-line="450" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Extent/FileReader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/ZUPT/MYEKF.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="662" column="6" lean-forward="true" selection-start-line="662" selection-start-column="6" selection-end-line="662" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/eigen3/Eigen/src/Geometry/Transform.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -1363,32 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
-          <folding>
-            <element signature="e#39#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/line_range_file.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line2D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1407,34 +1355,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/g2o/core/base_edge.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="75" column="50" lean-forward="false" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/g2o/core/sparse_optimizer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="119" column="53" lean-forward="true" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1444,34 +1368,6 @@
         <state relative-caret-position="555">
           <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph_build_only_corner.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="e#39#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line2D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
-          <folding>
-            <element signature="e#155#185#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1485,44 +1381,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line2D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="552" column="37" lean-forward="false" selection-start-line="552" selection-start-column="37" selection-end-line="552" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="302" column="10" lean-forward="false" selection-start-line="302" selection-start-column="10" selection-end-line="302" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <caret line="23" column="63" lean-forward="false" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
           <folding>
-            <element signature="e#179#217#0" expanded="true" />
+            <element signature="e#39#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Line2D.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        <state relative-caret-position="215">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding>
+            <element signature="e#155#185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph_build_only_corner.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/hyper_graph.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/base_edge.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="166" column="6" lean-forward="false" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/types/slam3d_addons/line3d.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="552" column="37" lean-forward="false" selection-start-line="552" selection-start-column="37" selection-end-line="552" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graph_build_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="124" column="8" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
+        <state relative-caret-position="272">
+          <caret line="148" column="46" lean-forward="false" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
           <folding>
             <element signature="e#38#58#0" expanded="true" />
             <element signature="e#152#173#0" expanded="true" />
@@ -1530,39 +1484,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="266" column="38" lean-forward="false" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="38" />
+          <folding>
+            <element signature="e#12483#12675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TMP_DATA/line_range_file.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/types/slam3d_addons/vertex_line3d.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding>
+            <element signature="e#1483#1506#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="347">
+          <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding>
             <element signature="e#101#139#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
+    <entry file="file:///usr/local/include/g2o/core/optimizable_graph.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="273" column="0" lean-forward="false" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
+        <state relative-caret-position="298">
+          <caret line="299" column="29" lean-forward="false" selection-start-line="299" selection-start-column="29" selection-end-line="299" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <element signature="e#151#172#0" expanded="true" />
+            <element signature="e#179#217#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/sparse_optimizer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="121" column="12" lean-forward="true" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/block_solver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/solver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/g2o/core/optimization_algorithm_levenberg.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceEdge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="884">
+          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line2D.cpp">
+    <entry file="file://$PROJECT_DIR$/src/graph_build_without_ekf.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+          <folding>
+            <element signature="e#151#172#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

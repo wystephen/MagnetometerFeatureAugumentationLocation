@@ -14,6 +14,9 @@
 #include "g2o/types/slam3d/types_slam3d.h"
 #include "g2o/types/slam3d_addons/types_slam3d_addons.h"
 
+
+#include "Extent/MyError.h"
+
 class DistanceSE3Line3D :
         public g2o::BaseBinaryEdge<1, double, g2o::VertexSE3, g2o::VertexLine3D> {
 public:
@@ -48,18 +51,27 @@ public:
 
     virtual bool setMeasurementFromState();
 
-    virtual double initialEstimatePossible(
-            const g2o::OptimizableGraph::VertexSet &/*from*/,
-            g2o::OptimizableGraph::Vertex */*to*/) {
-//        //TODO:
+//    virtual double initialEstimatePossible(
+//            const g2o::OptimizableGraph::VertexSet &/*from*/,
+//            g2o::OptimizableGraph::Vertex */*to*/) {
+////        //TODO:
 //        std::cout << __FILE__ << __FUNCTION__
 //                  << __LINE__ << "this function not implement" << std::endl;
-        return 1.0;
-    }
+//        return 1.0;
+//    }
 
 
     virtual void initialEstimate(const g2o::OptimizableGraph::VertexSet &from,
                                  g2o::OptimizableGraph::Vertex *to);
+
+//    void linearizeOplus(){
+////        std::cout << _jacobianOplusXi.size();
+//        _jacobianOplusXi.setZero();
+//        _jacobianOplusXj.setZero();
+//
+//    }
+
+    std::ofstream tmp_log;
 
 };
 
