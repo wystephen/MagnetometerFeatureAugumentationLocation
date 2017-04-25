@@ -21,9 +21,9 @@
 #define MAGNETOMETERFEATUREAUGUMENTATIONLOCATION_POINT2LINE2D_H
 
 
-class Point2Line2D : public g2o::BaseBinaryEdge<1, g2o::VertexSE3, Line3D> {
+class Point2Line2D : public g2o::BaseBinaryEdge<1, double, Line2D, g2o::VertexSE3> {
 public:
-    EIGEN_MAKE_ALIGEND_OPERATOR_NEW;
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
     Point2Line2D() {
 
@@ -33,24 +33,12 @@ public:
         return true;
     }
 
-    virtual bool write(std::ostream &os) {
+    virtual bool write(std::ostream &os) const {
         return true;
     }
 
-    void computeErros() {
-        double p[10] = {0};
-        double l[10] = {0};
 
-
-        const auto *Line = static_cast<const Line2D *>(vertices()[0]);
-        Line->getEstimateData(l);
-        auto *point = static_cast<g2o::VertexSE3 *>(vertices()[1]);
-        point->getEstimateData(p);
-
-
-        _error(0, 0) = std::abs(l[0] * p[0] + l[1] * p[1] + 1.0) /
-                       std::sqrt(l[0] * l[0] + l[1] * l[1]);
-    }
+    void computeError();
 
 
 };

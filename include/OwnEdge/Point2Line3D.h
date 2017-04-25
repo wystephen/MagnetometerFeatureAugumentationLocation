@@ -35,7 +35,7 @@ public:
         return true;
     }
 
-    virtual bool write(std::ostream &os) {
+    virtual bool write(std::ostream &os) const {
         return true;
     }
 

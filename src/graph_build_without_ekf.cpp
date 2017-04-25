@@ -35,6 +35,11 @@
 #include "OwnEdge/DistanceEdge.h"
 #include "OwnEdge/DistanceEdge.cpp"
 
+#include "OwnEdge/Line2D.h"
+#include "OwnEdge/Line2D.cpp"
+#include "OwnEdge/Point2Line2D.h"
+#include "OwnEdge/Point2Line2D.cpp"
+
 G2O_USE_TYPE_GROUP(slam3d)
 
 
@@ -72,11 +77,12 @@ int main(int argc, char *argv[]) {
     CSVReader vertex_pose_file("./TMP_DATA/vertex_pose.csv");
     CSVReader vertex_quat_file("./TMP_DATA/vertex_quat.csv");
     CSVReader close_id_file("./TMP_DATA/close_vetices_num_full.csv");
+    CSVReader line_range_file("./TMP_DATA/line_range_file.csv");
 
     auto vertex_pose(vertex_pose_file.GetMatrix());
     auto vertex_quat(vertex_quat_file.GetMatrix());
     auto close_id(close_id_file.GetMatrix());
-
+    auto line_range(line_range_file.GetMatrix());
 
     /// Initial graph
     g2o::SparseOptimizer globalOptimizer;
@@ -227,6 +233,34 @@ int main(int argc, char *argv[]) {
         globalOptimizer.addEdge(distanceEdge);
     }
     std::cout << "close id count:" << close_id.GetRows() << std::endl;
+
+
+    /// Add line constraint
+
+    for (int k(0); k < line_range.GetRows(); ++k) {
+        auto l_v = new Line2D();
+        l_v->setId(10000 + k);
+        globalOptimizer.addVertex(l_v);
+
+        /// link point to line
+        for (int index = (int(*line_range(k, 0))); index < int(*line_range(k, 1)); ++index) {
+            auto pl = new Point2Line2D();
+            pl->vertices()[0] = globalOptimizer.vertex(k + 10000);
+            if (globalOptimizer.vertex(index) > 0) {
+
+                pl->vertices()[1] = globalOptimizer.vertex(index);
+            } else {
+                std::cerr << " the index " << index << "is out of range" << std::endl;
+                continue;
+            }
+            Eigen::Matrix<double, 1, 1> information = Eigen::Matrix<double, 1, 1>::Identity();
+            pl->setInformation(information);
+            pl->setMeasurement(0.0);
+            globalOptimizer.addEdge(pl);
+
+
+        }
+    }
 
     /// Optimizer
     double start_optimize_time = TimeStamp::now();
