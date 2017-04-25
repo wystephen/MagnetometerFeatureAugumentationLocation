@@ -5,15 +5,16 @@
 #include "Point2Line2D.h"
 
 void Point2Line2D::computeError() {
+    std::cout << "eeeee" << std::endl;
 
     double p[10] = {0};
     double l[10] = {0};
 
     std::cout << "compute error" << std::endl;
 
-    auto *Line = static_cast<g2o::VertexSE3 *>(vertices()[1]);
+    auto *Line = static_cast<g2o::VertexSE3 *>(_vertices[1]);
     Line->getEstimateData(l);
-    auto *point = static_cast<Line2D *>(vertices()[0]);
+    auto *point = static_cast<Line2D *>(_vertices[0]);
     point->getEstimateData(p);
 
     std::cout << "after load data " << std::endl;

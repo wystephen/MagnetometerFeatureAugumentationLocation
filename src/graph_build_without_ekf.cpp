@@ -44,6 +44,9 @@
 #include "OwnEdge/Point2Line2D.h"
 #include "OwnEdge/Point2Line2D.cpp"
 
+#include "OwnEdge/DistanceSE3Line3D.h"
+#include "OwnEdge/DistanceSE3Line3D.cpp"
+
 G2O_USE_TYPE_GROUP(slam3d)
 
 
@@ -248,7 +251,7 @@ int main(int argc, char *argv[]) {
 //
 //        /// link point to line
 //        for (int index = (int(*line_range(k, 0))) + 1; index < int(*line_range(k, 1)) - 1; ++index) {
-//            auto pl = new g2o::EdgeSE3Line3D();
+//            auto pl = new DistanceSE3Line3D();
 //            pl->vertices()[1] = globalOptimizer.vertex(k + 10000);
 //            if (globalOptimizer.vertex(index) > 0) {
 //
@@ -257,12 +260,12 @@ int main(int argc, char *argv[]) {
 //                std::cerr << " the index " << index << "is out of range" << std::endl;
 //                break;
 //            }
-//            Eigen::Matrix4d information = Eigen::Matrix4d::Identity();
+//            Eigen::Matrix<double,1,1> information = Eigen::Matrix<double,1,1>::Identity();
 //            information *= 100.0;
 //            pl->setInformation(information);
-//            g2o::Line3D measuredLine;
-//            measuredLine << 1.0, 0.0, 0.0, 1.0, 0.0, 0.0;
-//            pl->setMeasurement(measuredLine);
+////            g2o::Line3D measuredLine;
+////            measuredLine << 1.0, 0.0, 0.0, 1.0, 0.0, 0.0;
+//            pl->setMeasurement(0.0f);
 //
 //            globalOptimizer.addEdge(pl);
 //
