@@ -40,19 +40,23 @@ void DistanceSE3Line3D::computeError() {
 
     auto u = pose - npoint;
 
-    if (direct.norm() < 1e-15) {
-        direct *= 100000;
-    }
+//    if (direct.norm() < 1e-15) {
+//        direct *= 100000;
+//    }
 //    if()
     tmp_log << "pose:" << pose << "direct :" << direct <<
             " npoint :" << npoint << " u cross direct " << u.cross(direct) << std::endl;
 
+    if (direct.norm() > 1e-10) {
 
-    _error(0, 0) = double((u.cross(direct)).norm() / (direct.norm()));
-
-    if (std::isnan(_error(0, 0))) {
-        _error(0, 0) = 100000;
+        _error(0, 0) = double((u.cross(direct)).norm() / (direct.norm()));
+    } else {
+        _error(0, 0) = double(u.norm());
     }
+
+//    if (std::isnan(_error(0, 0))) {
+//        _error(0, 0) = 100000;
+//    }
 
 //    tmp_log << "error size :" << _error << std::endl;
 //    _error(0,0) = 0.0;
