@@ -198,7 +198,7 @@ int main(int argc, char *argv[]) {
             }
             edge->setInformation(information);
 
-            edge->setInformation(information);
+//            edge->setInformation(information);
 
             edge->setMeasurement(last_t.inverse() * transform);
 //            std::cout << " index : \n" << (transform).matrix() << std::endl;
