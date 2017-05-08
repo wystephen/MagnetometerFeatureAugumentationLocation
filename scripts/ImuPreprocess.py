@@ -162,10 +162,12 @@ class ImuPreprocess:
         vertex_point = array.array('f')
         vertex_quat = array.array('f')
         vertex_to_id = array.array('f')
+        vertex_time = array.array('f')
         data_cols = 9
 
         for i in range(1, self.trace_x.shape[0]):
             if self.zupt_result[i] > 0.5 and self.zupt_result[i - 1] < 0.5:
+                vertex_time.append(self.data[i, 0])
 
                 for j in range(data_cols):
                     vertex_point.append(self.trace_x[i, j])
@@ -181,6 +183,8 @@ class ImuPreprocess:
         self.vertex_quat = np.frombuffer(vertex_quat, dtype=np.float32).reshape([-1, 4])
         self.vertics_id = np.frombuffer(vertex_to_id, dtype=np.float32).reshape([-1])
         self.vertics_id = self.vertics_id.astype(dtype=np.int32)
+        self.vertics_time = np.frombuffer(vertex_time, dtype=np.float32).reshape([-1])
+
 
         np.savetxt("../TMP_DATA/vertex_pose.csv", self.vertics, delimiter=',')
         np.savetxt("../TMP_DATA/vertex_quat.csv", self.vertex_quat, delimiter=',')

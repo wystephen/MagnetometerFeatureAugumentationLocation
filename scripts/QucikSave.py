@@ -5,13 +5,29 @@
 import scripts.ImuResultReader
 import scripts.ImuPreprocess
 
+import matplotlib.pyplot as plt
+
 import numpy as np
 
 if __name__ == '__main__':
     irr = scripts.ImuResultReader.ImuResultReader("/home/steve/Data/10DOFIMU/Record(6).txt")
-    np.savetxt("/home/steve/Data/FastUwbDemo/1/sim_imu.csv", irr.data_with_time, "%.18e", delimiter=',')
+    np.savetxt("/home/steve/Data/FastUwbDemo/1/sim_imu.csv", irr.data_with_time, delimiter=',')
 
     ip = scripts.ImuPreprocess.ImuPreprocess("/home/steve/Data/FastUwbDemo/1/sim_imu.csv")
     ip.computezupt()
+    ip.findvertex()
     print(ip.zupt_result)
-    np.savetxt("/home/steve/Data/FastUwbDemo/1/sim_zupt.csv", ip.zupt_result, '%.18e', delimiter=',')
+
+    np.savetxt("/home/steve/Data/FastUwbDemo/1/sim_pose.csv", ip.vertics, delimiter=',')
+    np.savetxt("/home/steve/Data/FastUwbDemo/1/all_quat.csv", ip.vertex_quat, delimiter=',')
+    np.savetxt("/home/steve/Data/FastUwbDemo/1/sim_zupt.csv", ip.zupt_result, delimiter=',')
+    np.savetxt("/home/steve/Data/FastUwbDemo/1/vertex_time.csv", ip.vertics_time, delimiter=",")
+
+    print(ip.vertics.shape, " - ", ip.vertex_quat.shape, " - ", ip.vertics_time.shape)
+
+    plt.figure()
+    plt.plot(ip.vertics_time, 'r')
+
+    # ip.findcorner()
+    # ip.computeconerfeature()
+    plt.show()
