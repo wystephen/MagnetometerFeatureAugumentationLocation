@@ -159,10 +159,10 @@ class ImuPreprocess:
         :return: 
         '''
 
-        vertex_point = array.array('f')
-        vertex_quat = array.array('f')
-        vertex_to_id = array.array('f')
-        vertex_time = array.array('f')
+        vertex_point = array.array('d')
+        vertex_quat = array.array('d')
+        vertex_to_id = array.array('d')
+        vertex_time = array.array('d')
         data_cols = 9
 
         for i in range(1, self.trace_x.shape[0]):
@@ -178,12 +178,12 @@ class ImuPreprocess:
                     # vertex_point.append(self.trace_x[i,2])
                     # vertex_point
                 vertex_to_id.append(i)
-        self.vertics = np.frombuffer(vertex_point, dtype=np.float32)
+        self.vertics = np.frombuffer(vertex_point, dtype=np.float)
         self.vertics = np.reshape(self.vertics, (-1, data_cols))
-        self.vertex_quat = np.frombuffer(vertex_quat, dtype=np.float32).reshape([-1, 4])
-        self.vertics_id = np.frombuffer(vertex_to_id, dtype=np.float32).reshape([-1])
+        self.vertex_quat = np.frombuffer(vertex_quat, dtype=np.float).reshape([-1, 4])
+        self.vertics_id = np.frombuffer(vertex_to_id, dtype=np.float).reshape([-1])
         self.vertics_id = self.vertics_id.astype(dtype=np.int32)
-        self.vertics_time = np.frombuffer(vertex_time, dtype=np.float32).reshape([-1])
+        self.vertics_time = np.frombuffer(vertex_time, dtype=np.float).reshape([-1])
 
 
         np.savetxt("../TMP_DATA/vertex_pose.csv", self.vertics, delimiter=',')
