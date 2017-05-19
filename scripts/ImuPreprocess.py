@@ -104,8 +104,9 @@ class ImuPreprocess:
 
 
         for index in range(self.data.shape[0]):
-            # if(index > 2):
-            #     self.para.Ts = self.data[index,0]-self.data[index-1,0]
+            if (index > 2):
+                ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
+            print(self.para.Ts)
             self.trace_x[:, index] = ins_filter.GetPosition(self.data[index, 1:7], self.zupt_result[index]).reshape(18)[
                                      :9]
 

@@ -4,24 +4,32 @@
 
 import scripts.ImuResultReader
 import scripts.ImuPreprocess
+import scripts.PcSavedReader
 
 import matplotlib.pyplot as plt
 
 import numpy as np
 
+import os
 if __name__ == '__main__':
-    irr = scripts.ImuResultReader.ImuResultReader("/home/steve/Data/10DOFIMU/Record(7).txt")
-    np.savetxt("/home/steve/Data/FastUwbDemo/2/sim_imu.csv", irr.data_with_time, delimiter=',')
 
-    ip = scripts.ImuPreprocess.ImuPreprocess("/home/steve/Data/FastUwbDemo/2/sim_imu.csv")
+    dir_name = "/home/steve/Data/FastUwbDemo/5/"
+    for tt in os.listdir(dir_name):
+        if 'ttsv' in tt:
+            irr = scripts.PcSavedReader.PcSavedReader(dir_name + tt)
+    # irr = scripts.ImuResultReader.ImuResultReader(dir_name)
+
+    np.savetxt(dir_name + "sim_imu.csv", irr.data_with_time, delimiter=',')
+
+    ip = scripts.ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
     ip.computezupt()
     ip.findvertex()
     print(ip.zupt_result)
 
-    np.savetxt("/home/steve/Data/FastUwbDemo/2/sim_pose.csv", ip.vertics, delimiter=',')
-    np.savetxt("/home/steve/Data/FastUwbDemo/2/all_quat.csv", ip.vertex_quat, delimiter=',')
-    np.savetxt("/home/steve/Data/FastUwbDemo/2/sim_zupt.csv", ip.zupt_result, delimiter=',')
-    np.savetxt("/home/steve/Data/FastUwbDemo/2/vertex_time.csv", ip.vertics_time, delimiter=",")
+    np.savetxt(dir_name + "sim_pose.csv", ip.vertics, delimiter=',')
+    np.savetxt(dir_name + "all_quat.csv", ip.vertex_quat, delimiter=',')
+    np.savetxt(dir_name + "sim_zupt.csv", ip.zupt_result, delimiter=',')
+    np.savetxt(dir_name + "vertex_time.csv", ip.vertics_time, delimiter=",")
 
     print(ip.vertics.shape, " - ", ip.vertex_quat.shape, " - ", ip.vertics_time.shape)
 

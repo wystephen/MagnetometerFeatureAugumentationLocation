@@ -22,7 +22,11 @@ class ImuResultReader:
         self.line_list = self.file_handle.readlines()
 
         # Read first line set initial time stamp
-        self.start_time = time.mktime(time.strptime(self.line_list[0],u"﻿开始时间：%Y年%m月%d日 %H:%M:%S "))
+        if '开始时间' in self.line_list[0]:
+            self.start_time = time.mktime(time.strptime(self.line_list[0], u"﻿开始时间：%Y年%m月%d日 %H:%M:%S "))
+        elif 'StartTime' in self.line_list[0]:
+            self.start_time = time.mktime(
+                time.strptime(self.line_list[0].split('.')[0], u"StartTime: %Y-%m-%d %H:%M:%S"))
         self.start_time = float(self.start_time)
 
         print("start time :",self.start_time)
@@ -42,7 +46,8 @@ class ImuResultReader:
             index = i +2
             try:
 
-                self.data_with_time[i,0] = time.mktime(time.strptime(self.line_list[index].split('     ')[0].split('.')[0],"%Y-%m-%d %H:%M:%S"))
+                self.data_with_time[i, 0] = time.mktime(
+                    time.strptime(self.line_list[index].split('      ')[0].split('.')[0], "%Y-%m-%d %H:%M:%S"))
                 self.data_with_time[i,0] += float(self.line_list[index].split('     ')[0].split('.')[1])/1000.0
                 print("self. data withe time :", self.data_with_time[i, 0])
             except ValueError:
