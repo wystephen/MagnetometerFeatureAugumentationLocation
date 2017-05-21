@@ -157,6 +157,7 @@ class ImuPreprocess:
     def findvertex(self):
         '''
         Find vertex and compute edge(in trace graph not optimize graph).
+        ((Actually also the vertex in optimize graph))
         :return: 
         '''
 
@@ -569,6 +570,12 @@ class ImuPreprocess:
 
         # print("self.line_range:", self.line_range)
         np.savetxt("../TMP_DATA/line_range_file.csv", self.line_range, delimiter=',')
+
+        return True
+
+    def findSimpleFFT(self):
+
+        offset = 1000
 
         return True
 
