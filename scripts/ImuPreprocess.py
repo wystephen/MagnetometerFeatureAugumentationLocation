@@ -106,7 +106,7 @@ class ImuPreprocess:
         for index in range(self.data.shape[0]):
             if (index > 2):
                 ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
-            print(self.para.Ts)
+            # print(self.para.Ts)
             self.trace_x[:, index] = ins_filter.GetPosition(self.data[index, 1:7], self.zupt_result[index]).reshape(18)[
                                      :9]
 
@@ -417,54 +417,7 @@ class ImuPreprocess:
             for j in range(self.distance.shape[1]):
 
                 self.distance[i, j] = np.linalg.norm(self.feature[i, :] - self.feature[j, :])
-                # try  new way
-                # tmp = self.feature[j,:]
-                #
-                # dis_l = np.linalg.norm(self.feature[i,:]-tmp)
-                #
-                # tmp[:6] = self.feature[j,-6:]
-                # tmp[-6:] = self.feature[j,:6]
-                #
-                # dis_r = np.linalg.norm(self.feature[i,:]-tmp)
-                #
-                #
-                # if dis_l<dis_r:
-                #     self.distance[i,j] = dis_l
-                # else:
-                #     self.distance[i,j] = dis_r
 
-                # # tmp_first = self.feature[i,:]
-                # tmp_first = np.zeros([4])
-                # tmp_last = np.zeros([4])
-                #
-                # tmp_first[0] = self.feature[i,4]
-                # tmp_first[1] = self.feature[i,5]
-                #
-                # tmp_first[2] = self.feature[i,10]
-                # tmp_first[3] = self.feature[i,11]
-                #
-                #
-                # tmp_last[0] = self.feature[j,4]
-                # tmp_last[1] = self.feature[j,5]
-                #
-                # tmp_last[2] = self.feature[j,10]
-                # tmp_last[3] = self.feature[j,11]
-                #
-                # dis_l = np.linalg.norm(tmp_first-tmp_last)
-                #
-                # tmp_last[2] = self.feature[j,4]
-                # tmp_last[3] = self.feature[j,5]
-                #
-                # tmp_last[0] = self.feature[j,10]
-                # tmp_last[1] = self.feature[j,11]
-                #
-                #
-                # dis_r = np.linalg.norm(tmp_first-tmp_last)
-                #
-                # if dis_l<dis_r:
-                #     self.distance[i,j] = dis_l
-                # else:
-                #     self.distance[i,j] = dis_r
 
         # print("distantce:\n", self.distance)
 
@@ -575,7 +528,27 @@ class ImuPreprocess:
 
     def findSimpleFFT(self):
 
-        offset = 1000
+        offset = 8000
+
+        index = 0
+
+        data_rows = 12
+
+        fft_feature = np.zeros([int(self.data / offset), data_rows])
+
+        while (True):
+            if index + offset < self.data.shape[0]:
+
+                print("index:", np.fft.fft(np.linalg.norm(self.data[7:10], axis=0)))
+
+                fft_feature[int(index / offset), :] = np.fft.fft(np.linalg.norm(self.data[7:10], axis=0))
+
+                index += offset
+
+
+            else:
+                break
+
 
         return True
 
@@ -585,7 +558,7 @@ class ImuPreprocess:
 
 
 if __name__ == '__main__':
-    ip = ImuPreprocess(source_data_file="../TMP_DATA/all_data2.csv")
+    ip = ImuPreprocess(source_data_file="../TMP_DATA/all_data3.csv")
 
     ip.computezupt()
 
@@ -598,5 +571,7 @@ if __name__ == '__main__':
     ip.computeconerfeature()
 
     ip.findstraightline()
+
+    ip.findSimpleFFT()
 
     plt.show()
