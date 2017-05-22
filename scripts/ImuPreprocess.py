@@ -528,26 +528,43 @@ class ImuPreprocess:
 
     def findSimpleFFT(self):
 
-        offset = 8000
+        offset = 800
 
         index = 0
 
-        data_rows = 12
+        data_rows = 30
 
-        fft_feature = np.zeros([int(self.data / offset), data_rows])
+        fft_feature = np.zeros([int(self.data.shape[0] / offset), data_rows])
 
         while (True):
             if index + offset < self.data.shape[0]:
 
-                print("index:", np.fft.fft(np.linalg.norm(self.data[7:10], axis=0)))
+                # print("index:", np.fft.fft(np.linalg.norm(self.data[7:10], axis=0)))
 
-                fft_feature[int(index / offset), :] = np.fft.fft(np.linalg.norm(self.data[7:10], axis=0))
+                fft_feature[int(index / offset), :] = np.real(
+                    np.fft.fft(np.linalg.norm(self.data[7:10], axis=0), data_rows))
 
                 index += offset
 
 
             else:
                 break
+
+        # compute related distance
+
+        fft_distance = np.zeros([fft_feature.shape[0], fft_feature.shape[0]])
+
+        for i in range(fft_feature.shape[0]):
+            print(fft_feature[i, :])
+            for j in range(fft_feature.shape[0]):
+                fft_distance[i, j] = np.sum(np.abs(fft_feature[i, :] - fft_feature[j, :]))
+
+        plt.figure()
+        plt.title("fft distance")
+        # plt.imshow(fft_distance)
+        plt.contourf(fft_distance)
+
+        print("average:min:max   of fft distance :", np.mean(fft_distance), np.min(fft_distance), np.max(fft_distance))
 
 
         return True
