@@ -23,7 +23,7 @@ class ImuResultReader:
 
         # Read first line set initial time stamp
         if '开始时间' in self.line_list[0]:
-            self.start_time = time.mktime(time.strptime(self.line_list[0], u"﻿开始时间：%Y年%m月%d日 %H:%M:%S "))
+            self.start_time = time.mktime(time.strptime(self.line_list[0], u"开始时间：%Y年%m月%d日 %H:%M:%S "))
         elif 'StartTime' in self.line_list[0]:
             self.start_time = time.mktime(
                 time.strptime(self.line_list[0].split('.')[0], u"StartTime: %Y-%m-%d %H:%M:%S"))

@@ -527,22 +527,33 @@ class ImuPreprocess:
         return True
 
     def findSimpleFFT(self):
+        print('data shape :', self.data.shape)
 
-        offset = 800
+        offset = 100
 
         index = 0
 
-        data_rows = 30
+        data_rows = 20
 
-        fft_feature = np.zeros([int(self.data.shape[0] / offset), data_rows])
+        fft_feature = np.zeros([int(self.data.shape[0] / offset), data_rows * 2])
 
         while (True):
             if index + offset < self.data.shape[0]:
 
                 # print("index:", np.fft.fft(np.linalg.norm(self.data[7:10], axis=0)))
 
-                fft_feature[int(index / offset), :] = np.real(
-                    np.fft.fft(np.linalg.norm(self.data[7:10], axis=0), data_rows))
+                fft_feature[int(index / offset), :data_rows] = np.imag(
+                    np.fft.fft(np.linalg.norm(self.data[index:index + offset, :], axis=1), data_rows))
+                fft_feature[int(index / offset), -data_rows:] = np.real(
+                    np.fft.fft(np.linalg.norm(self.data[index:index + offset, :], axis=1), data_rows)
+                )
+
+                fft_feature[int(index / offset), :data_rows] /= np.linalg.norm(
+                    fft_feature[int(index / offset), :data_rows])
+
+                fft_feature[int(index / offset), -data_rows:] /= np.linalg.norm(
+                    fft_feature[int(index / offset), -data_rows:])
+
 
                 index += offset
 
@@ -555,7 +566,7 @@ class ImuPreprocess:
         fft_distance = np.zeros([fft_feature.shape[0], fft_feature.shape[0]])
 
         for i in range(fft_feature.shape[0]):
-            print(fft_feature[i, :])
+            # print(fft_feature[i, :])
             for j in range(fft_feature.shape[0]):
                 fft_distance[i, j] = np.sum(np.abs(fft_feature[i, :] - fft_feature[j, :]))
 

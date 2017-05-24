@@ -14,7 +14,7 @@ import numpy as np
 import os
 
 if __name__ == '__main__':
-    dir_name = "/home/steve/Data/IMUWB/26/"
+    dir_name = "/home/steve/Data/IMUWB/27/"
 
     a = np.loadtxt(dir_name + 'imu.txt', delimiter=',')
     print(a[:, 1:4].shape)
