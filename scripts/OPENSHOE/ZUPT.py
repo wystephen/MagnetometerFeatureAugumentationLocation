@@ -323,8 +323,7 @@ class ZUPTaidedInsPlus(object):
                                                                          self.quat1,
                                                                          self.quat2)
 
-
-        self.P = (self.P * 0.5 + self.P.transpose() * 0.5)
+        self.P = (self.P + self.P.transpose()) * 0.5
         # print(self.x_h,self.quat1,self.quat2)
         return self.x_h
 

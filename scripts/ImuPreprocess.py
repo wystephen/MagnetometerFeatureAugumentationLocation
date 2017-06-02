@@ -24,11 +24,11 @@ class ImuPreprocess:
         # use rad replace deg
         self.data[:, 4:7] = self.data[:, 4:7] * np.pi / 180.0
         # use m/s^2 replace g.
-        self.data[:, 1:4] = self.data[:, 1:4] * 9.8
+        self.data[:, 1:4] = self.data[:, 1:4] * 9.81
 
         self.para = Setting.settings()
-        self.para.sigma_a *= 6.0
-        self.para.sigma_g *= 6.0
+        self.para.sigma_a *= 8.0
+        self.para.sigma_g *= 8.0
 
         self.para.sigma_acc *= 6.0
         self.para.sigma_gyro *= 6.0
@@ -39,6 +39,9 @@ class ImuPreprocess:
         # self.para.time_Window_size = 5
 
         return
+
+    def computeheight(self):
+
 
     def computezupt(self):
         '''
