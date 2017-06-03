@@ -32,6 +32,7 @@ if __name__ == '__main__':
     np.savetxt(dir_name + "all_quat.csv", ip.vertex_quat, delimiter=',')
     np.savetxt(dir_name + "sim_zupt.csv", ip.zupt_result, delimiter=',')
     np.savetxt(dir_name + "vertex_time.csv", ip.vertics_time, delimiter=",")
+    np.savetxt(dir_name + "vertex_high.csv", ip.vertics_high, delimiter=',')
 
     print(ip.vertics.shape, " - ", ip.vertex_quat.shape, " - ", ip.vertics_time.shape)
 

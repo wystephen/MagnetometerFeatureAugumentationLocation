@@ -40,7 +40,7 @@ class ImuPreprocess:
 
         return
 
-    def computeheight(self):
+    # def computeheigh(self):
 
 
     def computezupt(self):
@@ -157,6 +157,16 @@ class ImuPreprocess:
         print(min(self.data[:, 11]), max(self.data[:, 11]))
         return
 
+    def pressure2high(self, pressure):
+        '''
+        from pressure Pa to m. reduced a offset 165.0m
+        :param pressure:(1013.5-imu(:,11)./100.0).*9.81
+        :return:
+        '''
+
+        return (1013.5 - pressure / 100.0) * np.pi - 165.0
+
+
     def findvertex(self):
         '''
         Find vertex and compute edge(in trace graph not optimize graph).
@@ -168,11 +178,14 @@ class ImuPreprocess:
         vertex_quat = array.array('d')
         vertex_to_id = array.array('d')
         vertex_time = array.array('d')
+        vertex_high = array.array('d')
+
         data_cols = 9
 
         for i in range(1, self.trace_x.shape[0]):
             if self.zupt_result[i] > 0.5 and self.zupt_result[i - 1] < 0.5:
                 vertex_time.append(self.data[i, 0])
+                vertex_high.append(self.pressure2high(self.data[i, 10]))
 
                 for j in range(data_cols):
                     vertex_point.append(self.trace_x[i, j])
@@ -183,6 +196,7 @@ class ImuPreprocess:
                     # vertex_point.append(self.trace_x[i,2])
                     # vertex_point
                 vertex_to_id.append(i)
+        self.vertics_high = np.frombuffer(vertex_high, dtype=np.float).reshape([-1])
         self.vertics = np.frombuffer(vertex_point, dtype=np.float)
         self.vertics = np.reshape(self.vertics, (-1, data_cols))
         self.vertex_quat = np.frombuffer(vertex_quat, dtype=np.float).reshape([-1, 4])
