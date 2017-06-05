@@ -185,7 +185,8 @@ class ImuPreprocess:
         for i in range(1, self.trace_x.shape[0]):
             if self.zupt_result[i] > 0.5 and self.zupt_result[i - 1] < 0.5:
                 vertex_time.append(self.data[i, 0])
-                vertex_high.append(self.pressure2high(self.data[i, 10]))
+                if (self.data.shape[1] > 10):
+                    vertex_high.append(self.pressure2high(self.data[i, 10]))
 
                 for j in range(data_cols):
                     vertex_point.append(self.trace_x[i, j])
