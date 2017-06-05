@@ -13,7 +13,7 @@ import numpy as np
 import os
 if __name__ == '__main__':
 
-    dir_name = "/home/steve/Data/FastUwbDemo/5/"
+    dir_name = "/home/steve/Data/FastUwbDemo/2/"
     # dir_name = "/home/steve/tmp/test/15/"
     for tt in os.listdir(dir_name):
         if 'ttsv' in tt:

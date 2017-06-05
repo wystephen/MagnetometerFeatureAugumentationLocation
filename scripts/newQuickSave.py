@@ -14,7 +14,10 @@ import numpy as np
 import os
 
 if __name__ == '__main__':
-    dir_name = "/home/steve/tmp/test/44/"
+    # dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/29/"
+    # dir_name = "/home/steve/Data/FastUwbDemo/2/"
+    dir_name = "/home/steve/tmp/test/51/"
+
 
     a = np.loadtxt(dir_name + 'imu.txt', delimiter=',')
     print(a[:, 1:4].shape)

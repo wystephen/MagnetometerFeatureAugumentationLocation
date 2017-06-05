@@ -310,7 +310,7 @@ class ZUPTaidedInsPlus(object):
 
             self.K = self.P.dot(np.transpose(H)). \
                 dot(
-                np.linalg.inv(
+                np.linalg.pinv(
                     (H.dot(self.P).dot(np.transpose(H)) + R))
             )
 
