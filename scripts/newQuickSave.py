@@ -15,8 +15,9 @@ import os
 
 if __name__ == '__main__':
     dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/29/"
+    # dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/20/"
     # dir_name = "/home/steve/Data/FastUwbDemo/2/"
-    # dir_name = "/home/steve/tmp/test/47/"
+    # dir_name = "/home/steve/tmp/test/20/"
 
 
     a = np.loadtxt(dir_name + 'imu.txt', delimiter=',')

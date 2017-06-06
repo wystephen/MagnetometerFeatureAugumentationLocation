@@ -178,7 +178,7 @@ class ZUPTaidedInsPlus(object):
 
         # Really Big Change.
         # ToDo:Why there are some value is smallter than zero.
-        if math.fabs(T) > 1e-3:
+        if math.fabs(T) > 1e-8:
             S = 0.5 / math.sqrt(math.fabs(T))
 
             qw = 0.25 / S
@@ -310,7 +310,7 @@ class ZUPTaidedInsPlus(object):
 
             self.K = self.P.dot(np.transpose(H)). \
                 dot(
-                np.linalg.pinv(
+                np.linalg.inv(
                     (H.dot(self.P).dot(np.transpose(H)) + R))
             )
 

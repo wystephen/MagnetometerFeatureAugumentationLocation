@@ -24,11 +24,11 @@ class ImuPreprocess:
         # use rad replace deg
         self.data[:, 4:7] = self.data[:, 4:7] * np.pi / 180.0
         # use m/s^2 replace g.
-        self.data[:, 1:4] = self.data[:, 1:4] * 9.81
+        self.data[:, 1:4] = self.data[:, 1:4] * 9.8172
 
         self.para = Setting.settings()
-        self.para.sigma_a *= 8.0
-        self.para.sigma_g *= 8.0
+        self.para.sigma_a *= 5.0
+        self.para.sigma_g *= 5.0
 
         self.para.sigma_acc *= 6.0
         self.para.sigma_gyro *= 6.0
@@ -107,8 +107,8 @@ class ImuPreprocess:
 
 
         for index in range(self.data.shape[0]):
-            if (index > 2):
-                ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
+            # if (index > 2):
+            #     ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
             # print(self.para.Ts)
             self.trace_x[:, index] = ins_filter.GetPosition(self.data[index, 1:7], self.zupt_result[index]).reshape(18)[
                                      :9]
