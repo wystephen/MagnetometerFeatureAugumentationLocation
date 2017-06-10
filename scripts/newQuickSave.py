@@ -10,7 +10,6 @@ import PcSavedReader
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-
 import numpy as np
 
 import os
@@ -44,7 +43,9 @@ if __name__ == '__main__':
 
     trace_fig = plt.figure()
     ax = trace_fig.gca(projection='3d')
-    ax.plot(ip.vertics[:, 0], ip.vertics[:, 1], ip.vertics[:, 2], 'r*-')
+    ax.plot(ip.vertics[:, 0], ip.vertics[:, 1], ip.vertics[:, 2],
+            'r*-',
+            label='trace')
     ax.legend()
 
     # plt.figure()
