@@ -3,18 +3,20 @@
 
 
 
-import scripts.ImuResultReader
-import scripts.ImuPreprocess
-import scripts.PcSavedReader
+import ImuResultReader
+import ImuPreprocess
+import PcSavedReader
 
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
 
 import numpy as np
 
 import os
 
 if __name__ == '__main__':
-    dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/47/"
+    dir_name = "/home/steve/Code/Mini_IMU/Scripts/IMUWB/46/"
     # dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/20/"
     # dir_name = "/home/steve/Data/FastUwbDemo/2/"
     # dir_name = "/home/steve/tmp/test/20/"
@@ -26,9 +28,9 @@ if __name__ == '__main__':
 
     np.savetxt(dir_name + "sim_imu.csv", a, delimiter=',')
 
-    ip = scripts.ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
+    ip = ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
     ip.computezupt()
-    plt.show()
+    # plt.show()
     ip.findvertex()
     print(ip.zupt_result)
 
@@ -40,8 +42,13 @@ if __name__ == '__main__':
 
     print(ip.vertics.shape, " - ", ip.vertex_quat.shape, " - ", ip.vertics_time.shape)
 
-    plt.figure()
-    plt.plot(ip.vertics_time, 'r')
+    trace_fig = plt.figure()
+    ax = trace_fig.gca(projection='3d')
+    ax.plot(ip.vertics[:, 0], ip.vertics[:, 1], ip.vertics[:, 2], 'r*-')
+    ax.legend()
+
+    # plt.figure()
+    # plt.plot(ip.vertics_time, 'r')
 
     # ip.findcorner()
     # ip.computeconerfeature()

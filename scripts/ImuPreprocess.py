@@ -8,11 +8,12 @@ import scipy as sp
 import matplotlib.pyplot as plt
 
 # from OPENSHOE import zupt_test
-from scripts.OPENSHOE import Setting, zupt_test, ZUPT
+from OPENSHOE import Setting, zupt_test, ZUPT
 
 import array
 
 import os
+
 
 class ImuPreprocess:
     def __init__(self, source_data_file):
@@ -24,7 +25,7 @@ class ImuPreprocess:
         # use rad replace deg
         self.data[:, 4:7] = self.data[:, 4:7] * np.pi / 180.0
         # use m/s^2 replace g.
-        self.data[:, 1:4] = self.data[:, 1:4] * 9.8172
+        self.data[:, 1:4] = self.data[:, 1:4] * 9.81
 
         self.para = Setting.settings()
         self.para.sigma_a *= 5.0
@@ -105,13 +106,13 @@ class ImuPreprocess:
         Try extrac 
         '''
 
-
         for index in range(self.data.shape[0]):
             # if (index > 2):
             #     ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
             # print(self.para.Ts)
-            self.trace_x[:, index] = ins_filter.GetPosition(self.data[index, 1:7], self.zupt_result[index]).reshape(18)[
-                                     :9]
+            self.trace_x[:, index] = \
+                ins_filter.GetPosition(self.data[index, 1:7],
+                                       self.zupt_result[index]).reshape(18)[:9]
 
             self.all_quat[index, :] = ins_filter.quat1.reshape([1, -1])
 
@@ -131,8 +132,6 @@ class ImuPreprocess:
         plt.grid(True)
 
         return
-
-
 
     def ShowMagnety(self):
         '''
@@ -165,7 +164,6 @@ class ImuPreprocess:
         '''
 
         return (1013.5 - pressure / 100.0) * np.pi - 165.0
-
 
     def findvertex(self):
         '''
@@ -205,10 +203,8 @@ class ImuPreprocess:
         self.vertics_id = self.vertics_id.astype(dtype=np.int32)
         self.vertics_time = np.frombuffer(vertex_time, dtype=np.float).reshape([-1])
 
-
         np.savetxt("../TMP_DATA/vertex_pose.csv", self.vertics, delimiter=',')
         np.savetxt("../TMP_DATA/vertex_quat.csv", self.vertex_quat, delimiter=',')
-
 
         print(self.vertics[20, :])
 
@@ -271,14 +267,14 @@ class ImuPreprocess:
                 #             np.abs(self.vertics[i, 1] -
                 #                            (self.vertics[i - 1, 1] + self.vertics[i + 1, 1]) / 2.0) > threshold):
                 if ((self.vertics[i, 0] - self.vertics[i - length, 0]) * (
-                    self.vertics[i + length, 0] - self.vertics[i, 0]) < 0.0 and
+                            self.vertics[i + length, 0] - self.vertics[i, 0]) < 0.0 and
                         (abs((self.vertics[i, 0] - self.vertics[i - length, 0]) + (
-                            self.vertics[i + length, 0] - self.vertics[i, 0])) > threshold
+                                    self.vertics[i + length, 0] - self.vertics[i, 0])) > threshold
                          ) or (
                                     (self.vertics[i, 1] - self.vertics[i - length, 1]) * (
-                                    self.vertics[i + length, 1] - self.vertics[i, 1]) < 0.0 and
+                                            self.vertics[i + length, 1] - self.vertics[i, 1]) < 0.0 and
                                 abs((self.vertics[i, 1] - self.vertics[i - length, 1]) + (
-                                    self.vertics[i + length, 1] - self.vertics[i, 1])) > threshold)
+                                            self.vertics[i + length, 1] - self.vertics[i, 1])) > threshold)
                     ):
                     itcounter += 1
                     # if itcounter < 3 or itcounter > 4:
@@ -293,8 +289,6 @@ class ImuPreprocess:
                         # itcounter += length-3
                 else:
                     itcounter = 0
-
-
 
         self.corner = np.frombuffer(corner, dtype=np.float32).reshape([-1, self.vertics.shape[1]])
         self.corner_id = np.frombuffer(corner_id, dtype=np.float32).reshape([-1, 2]).astype(np.int)
@@ -429,13 +423,10 @@ class ImuPreprocess:
         # try to get abs
         self.feature = np.abs(self.feature)
 
-
         self.distance = np.zeros([self.feature.shape[0], self.feature.shape[0]])
         for i in range(self.distance.shape[0]):
             for j in range(self.distance.shape[1]):
-
                 self.distance[i, j] = np.linalg.norm(self.feature[i, :] - self.feature[j, :])
-
 
         # print("distantce:\n", self.distance)
 
@@ -480,7 +471,6 @@ class ImuPreprocess:
         print(close_vetices)
         np.savetxt("../TMP_DATA/close_vetices_num.csv", close_vetices, delimiter=',')
 
-
         '''
         Save all vertex in corner.
         '''
@@ -498,7 +488,7 @@ class ImuPreprocess:
         np.savetxt("../TMP_DATA/close_vetices_num_full.csv", close_full, delimiter=',')
 
 
-                    # plt.legend()
+        # plt.legend()
 
     def findstraightline(self):
         '''
@@ -512,7 +502,6 @@ class ImuPreprocess:
 
         # print("corner id :" , self.corner_id)
         current_corner_id = 0
-
 
         self.line_range[0, 0] = 0
         self.line_range[0, 1] = self.corner_id[0, 1]
@@ -572,7 +561,6 @@ class ImuPreprocess:
                 fft_feature[int(index / offset), -data_rows:] /= np.linalg.norm(
                     fft_feature[int(index / offset), -data_rows:])
 
-
                 index += offset
 
 
@@ -595,12 +583,7 @@ class ImuPreprocess:
 
         print("average:min:max   of fft distance :", np.mean(fft_distance), np.min(fft_distance), np.max(fft_distance))
 
-
         return True
-
-
-
-
 
 
 if __name__ == '__main__':

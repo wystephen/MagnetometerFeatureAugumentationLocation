@@ -386,7 +386,7 @@ class ZUPTaidedInsPlus(object):
         else:
             q2 = quat2
 
-        g_t = np.array([0, 0, 9.8173])
+        g_t = np.array([0, 0, 9.81])
         g_t = np.transpose(g_t)
 
         # use rotation transform form imu to word

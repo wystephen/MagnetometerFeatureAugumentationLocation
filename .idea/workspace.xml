@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="487" />
+    <bookmark url="file://$PROJECT_DIR$/scripts/ImuPreprocess.py" line="477" />
     <bookmark url="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.cpp" line="7" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="MagnetometerFeatureAugumentationLocation" targetName="graph_build_only_corner" />
       <config projectName="MagnetometerFeatureAugumentationLocation" targetName="graph_build" />
+      <config projectName="MagnetometerFeatureAugumentationLocation" targetName="graph_build_only_corner" />
       <config projectName="MagnetometerFeatureAugumentationLocation" targetName="graph_build_without_ekf" />
       <config projectName="MagnetometerFeatureAugumentationLocation" targetName="MagnetometerFeatureAugumentationLocation" />
     </generated>
@@ -19,8 +19,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2d7f47d-d8dd-449c-a9d9-c45c946ec0bb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MagnetometerFeatureAugumentationLocation.iml" afterPath="$PROJECT_DIR$/.idea/MagnetometerFeatureAugumentationLocation.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TMP_DATA/preprocess_data.csv" afterPath="$PROJECT_DIR$/TMP_DATA/preprocess_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MagnetometerFeatureAugumentationLocation.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph_build_without_ekf.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/MagnetometerFeatureAugumentationLocation.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/MagnetometerFeatureAugumentationLocation.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/ImuPreprocess.py" afterPath="$PROJECT_DIR$/scripts/ImuPreprocess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/OPENSHOE/ZUPT.py" afterPath="$PROJECT_DIR$/scripts/OPENSHOE/ZUPT.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/newQuickSave.py" afterPath="$PROJECT_DIR$/scripts/newQuickSave.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,16 +59,16 @@
     <favorites_list name="MagnetometerFeatureAugumentationLocation" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49328858">
+    <splitter split-orientation="horizontal" split-proportion="0.3057644">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="newQuickSave.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/newQuickSave.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+                <state relative-caret-position="459">
+                  <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
                   <folding>
-                    <element signature="e#65#95#0" expanded="true" />
+                    <element signature="e#65#87#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -54,8 +77,8 @@
           <file leaf-file-name="ImuResultReader.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                <state relative-caret-position="380">
+                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#2#33#0" expanded="true" />
                   </folding>
@@ -66,40 +89,58 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="QucikSave.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scripts/QucikSave.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MobileFileProcess.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scripts/MobileFileProcess.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="516">
-                  <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#65#83#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.53692114">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file leaf-file-name="QucikSave.py" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/scripts/QucikSave.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="220">
+                      <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="MobileFileProcess.py" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/scripts/MobileFileProcess.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="220">
+                      <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ImuPreprocess.py" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="340">
+                      <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+                      <folding>
+                        <element signature="e#65#83#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="ZUPT.py" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/scripts/OPENSHOE/ZUPT.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="298">
+                      <caret line="383" column="34" lean-forward="false" selection-start-line="383" selection-start-column="34" selection-end-line="383" selection-end-column="34" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -160,8 +201,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1044" />
+    <option name="x" value="45" />
+    <option name="y" value="-4" />
+    <option name="width" value="2515" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -271,8 +314,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IntegratingFusing" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
@@ -694,6 +737,7 @@
       <workItem from="1496747001528" duration="983000" />
       <workItem from="1496751158075" duration="735000" />
       <workItem from="1496832410747" duration="2914000" />
+      <workItem from="1497075897882" duration="2640000" />
     </task>
     <task id="LOCAL-00054" summary="ok result  at 5000 1000 0.1 4 10.">
       <created>1492755259497</created>
@@ -1042,21 +1086,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309273000" />
+    <option name="totallyTimeSpent" value="311913000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1044" extended-state="0" />
+    <frame x="45" y="-4" width="2515" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20704375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08469185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33039647" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.50213903" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28431374" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282365" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2833843" sideWeight="0.4850587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1755603" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5149413" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985729" sideWeight="0.49786553" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1067,7 +1112,6 @@
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.49786553" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1296,13 +1340,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TMP_DATA/close_vetices_num_full.csv" />
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/Point2Line3D.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1441,13 +1479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/vertex_pose.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="379" column="39" lean-forward="true" selection-start-line="379" selection-start-column="39" selection-end-line="379" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TMP_DATA/vertex_pose.csv" />
     <entry file="file://$PROJECT_DIR$/include/OwnEdge/DistanceSE3Line3D.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1508,13 +1540,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TMP_DATA/line_range_file.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TMP_DATA/line_range_file.csv" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1524,7 +1550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/QucikSave.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="220">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
@@ -1546,18 +1572,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/MobileFileProcess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="220">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+    <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="380">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#65#83#0" expanded="true" />
+            <element signature="e#2#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1565,26 +1591,27 @@
     <entry file="file://$PROJECT_DIR$/scripts/OPENSHOE/ZUPT.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
-          <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ImuResultReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#33#0" expanded="true" />
-          </folding>
+          <caret line="383" column="34" lean-forward="false" selection-start-line="383" selection-start-column="34" selection-end-line="383" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/newQuickSave.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        <state relative-caret-position="459">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
-            <element signature="e#65#95#0" expanded="true" />
+            <element signature="e#65#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ImuPreprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <element signature="e#65#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
