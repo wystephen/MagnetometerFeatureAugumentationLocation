@@ -54,7 +54,7 @@ class ImuPreprocess:
 
         if "tmp_data" in os.listdir("./"):
             # print(os.listdir("./"))
-            if "zupt_result.txt" in os.listdir("./tmp_data") and "trace.txt" in os.listdir("./tmp_data"):
+            if False:  # "zupt_result.txt" in os.listdir("./tmp_data") and "trace.txt" in os.listdir("./tmp_data"):
 
                 self.trace_x = np.loadtxt("./tmp_data/trace.txt")
                 self.zupt_result = np.loadtxt("./tmp_data/zupt_result.txt")
