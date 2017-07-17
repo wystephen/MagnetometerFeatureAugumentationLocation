@@ -64,13 +64,13 @@ class ZUPTaidedInsPlus(object):
         x[0:3, 0] = self.para.init_pos1
         x[6:9, 0] = attitude
 
-        # f_u = np.mean(u2[:, 0])
-        # f_v = np.mean(u2[:, 1])
-        # f_w = np.mean(u2[:, 2])
+        f_u = np.mean(u2[:, 0])
+        f_v = np.mean(u2[:, 1])
+        f_w = np.mean(u2[:, 2])
 
-        f_u = np.mean(u2[0, :])
-        f_v = np.mean(u2[1, :])
-        f_w = np.mean(u2[2, :])
+        # f_u = np.mean(u2[0, :])
+        # f_v = np.mean(u2[1, :])
+        # f_w = np.mean(u2[2, :])
 
         # print(f_u,f_v,f_w)
         roll = math.atan2(-f_v, -f_w)
