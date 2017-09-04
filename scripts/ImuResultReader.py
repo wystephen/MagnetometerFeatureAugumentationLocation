@@ -65,10 +65,15 @@ class ImuResultReader:
             tt = pattern.findall(self.line_list[index])
             # tt = list(tt)
             if len(pattern.findall(self.line_list[index]))> 9:
+                print("tt:", tt)
 
                 for j in range(1,self.data_with_time.shape[1]):
-                    print("tt:", tt)
+                    # print("tt:", tt)
+                    if (j - 1 >= len(tt)):
+                        print("all data :", )
+                        break
                     self.data_with_time[i,j] = float(tt[j-1])
+                print("data:", self.data_with_time[i, :])
 
 
 

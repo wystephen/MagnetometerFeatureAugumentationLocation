@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # dir_name = "/home/steve/Data/NewRecord/Record2/"
     dir_name = "/home/steve/XsensData/"
     for tt in os.listdir(dir_name):
-        if 'Record' in tt:
+        if 'Recordnew2' in tt:
             irr = scripts.ImuResultReader.ImuResultReader(dir_name + tt)
 
     # irr = scripts.ImuResultReader.ImuResultReader(dir_name)
