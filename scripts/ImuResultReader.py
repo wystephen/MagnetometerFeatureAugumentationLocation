@@ -23,7 +23,7 @@ class ImuResultReader:
 
         # Read first line set initial time stamp
         if '开始时间' in self.line_list[0]:
-            self.start_time = time.mktime(time.strptime(self.line_list[0], u"开始时间：%Y年%m月%d日 %H:%M:%S \n"))
+            self.start_time = time.mktime(time.strptime(self.line_list[0], u"\ufeff开始时间：%Y年%m月%d日 %H:%M:%S \n"))
         elif 'StartTime' in self.line_list[0]:
             self.start_time = time.mktime(
                 time.strptime(self.line_list[0].split('.')[0], u"StartTime: %Y-%m-%d %H:%M:%S"))
@@ -67,6 +67,7 @@ class ImuResultReader:
             if len(pattern.findall(self.line_list[index]))> 9:
 
                 for j in range(1,self.data_with_time.shape[1]):
+                    print("tt:", tt)
                     self.data_with_time[i,j] = float(tt[j-1])
 
 
@@ -107,8 +108,9 @@ if __name__ == '__main__':
     full_time_wast = 0.0
     full_size = 0
 
-    for i in [3, 4]:
-        irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record({0}).txt".format(i))
+    for i in [1, 3]:
+        # irr = ImuResultReader("/home/steve/Data/10DOFIMU/Record({0}).txt".format(i))
+        irr = ImuResultReader("/home/steve/XsensData/Recordnew{0}.txt".format(i))
 
         # array_list.append(irr.data_with_time)
 

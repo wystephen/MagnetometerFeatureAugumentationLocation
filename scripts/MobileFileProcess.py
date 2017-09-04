@@ -14,10 +14,12 @@ import os
 
 if __name__ == '__main__':
 
-    dir_name = "/home/steve/Data/NewRecord/Record2/"
+    # dir_name = "/home/steve/Data/NewRecord/Record2/"
+    dir_name = "/home/steve/XsensData/"
     for tt in os.listdir(dir_name):
         if 'Record' in tt:
             irr = scripts.ImuResultReader.ImuResultReader(dir_name + tt)
+
     # irr = scripts.ImuResultReader.ImuResultReader(dir_name)
 
     np.savetxt(dir_name + "sim_imu.csv", irr.data_with_time, delimiter=',')
