@@ -17,12 +17,12 @@ if __name__ == '__main__':
     # dir_name = "/home/steve/Data/NewRecord/Record2/"
     dir_name = "/home/steve/XsensData/"
     for tt in os.listdir(dir_name):
-        if 'Recordnew2' in tt:
+        if 'Recordnew1' in tt:
             irr = scripts.ImuResultReader.ImuResultReader(dir_name + tt)
 
     # irr = scripts.ImuResultReader.ImuResultReader(dir_name)
 
-    np.savetxt(dir_name + "sim_imu.csv", irr.data_with_time, delimiter=',')
+    np.savetxt(dir_name + "sim_imu.csv", irr.data_with_time, delimiter=',', fmt='%.09f')
 
     ip = scripts.ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
     ip.computezupt()
