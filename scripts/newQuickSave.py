@@ -13,13 +13,19 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 import os
+from UwbDataPreprocess import UwbDataPre
 
 if __name__ == '__main__':
-    dir_name = "/home/steve/Code/Mini_IMU/Scripts/IMUWB/73/"
+    # dir_name = "/home/steve/Code/Mini_IMU/Scripts/IMUWB/73/"
+    dir_name = "/home/steve/Data/IU/45/"
     # dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/20/"
     # dir_name = "/home/steve/Data/FastUwbDemo/2/"
     # dir_name = "/home/steve/tmp/test/20/"
+    udp = UwbDataPre("/home/steve/Data/IU/45/")
+    # udp.filter()
 
+    udp.save()
+    udp.show()
 
     a = np.loadtxt(dir_name + 'imu.txt', delimiter=',')
     print(a[:, 1:4].shape)
@@ -53,4 +59,23 @@ if __name__ == '__main__':
 
     # ip.findcorner()
     # ip.computeconerfeature()
+    imu = np.loadtxt(dir_name + 'imu.txt', delimiter=',')
+    uwb = np.loadtxt(dir_name + 'uwb_result.csv', delimiter=',')
+
+    print("min:", min(imu[:, 0] - min(uwb[:, 0])))
+    print("max:", max(imu[:, 0] - max(uwb[:, 0])))
+
+    print("total imu:", max(imu[:, 0]) - min(imu[:, 0]))
+    print("total uwb:", max(uwb[:, 0]) - min(uwb[:, 0]))
+
+    plt.figure()
+    plt.plot(imu[:, 0], 'r', label='imu')
+    plt.plot(uwb[:, 0], 'b', label='uwb')
+    plt.legend()
+
+    plt.figure()
+    for i in range(1, uwb.shape[1]):
+        plt.plot(uwb[:, i], '+', label=i)
+    plt.legend()
+
     plt.show()

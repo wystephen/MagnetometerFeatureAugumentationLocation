@@ -108,9 +108,9 @@ class ImuPreprocess:
         '''
 
         for index in range(self.data.shape[0]):
-            # if (index > 2):
-            #     ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
-            # print(self.para.Ts)
+            if (index > 2):
+                ins_filter.para.Ts = self.data[index, 0] - self.data[index - 1, 0]
+            print(self.para.Ts)
             self.trace_x[:, index] = \
                 ins_filter.GetPosition(self.data[index, 1:7],
                                        self.zupt_result[index]).reshape(18)[:9]
@@ -207,7 +207,7 @@ class ImuPreprocess:
         np.savetxt("../TMP_DATA/vertex_pose.csv", self.vertics, delimiter=',')
         np.savetxt("../TMP_DATA/vertex_quat.csv", self.vertex_quat, delimiter=',')
 
-        print(self.vertics[20, :])
+        # print(self.vertics[20, :])
 
         plt.figure()
         plt.title("show vertices in trace")
