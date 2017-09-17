@@ -17,11 +17,11 @@ from UwbDataPreprocess import UwbDataPre
 
 if __name__ == '__main__':
     # dir_name = "/home/steve/Code/Mini_IMU/Scripts/IMUWB/73/"
-    dir_name = "/home/steve/Data/IU/45/"
+    dir_name = "/home/steve/Data/IU/55/"
     # dir_name = "/home/steve/Code/Mini-IMU/Scripts/IMUWB/20/"
     # dir_name = "/home/steve/Data/FastUwbDemo/2/"
     # dir_name = "/home/steve/tmp/test/20/"
-    udp = UwbDataPre("/home/steve/Data/IU/45/")
+    udp = UwbDataPre(dir_name)
     # udp.filter()
 
     udp.save()
@@ -77,5 +77,13 @@ if __name__ == '__main__':
     for i in range(1, uwb.shape[1]):
         plt.plot(uwb[:, i], '+', label=i)
     plt.legend()
+
+    plt.figure()
+    # plt.plot()
+    for i in range(1, uwb.shape[1]):
+        plt.plot(uwb[:, 0], uwb[:, i], '.')
+
+    for i in range(3):
+        plt.plot(ip.vertics_time, ip.vertics[:, i], '+-')
 
     plt.show()
