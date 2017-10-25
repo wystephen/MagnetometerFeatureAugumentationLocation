@@ -3,9 +3,9 @@
 
 
 
-import ImuResultReader
-import ImuPreprocess
-import PcSavedReader
+import scripts.ImuResultReader
+import scripts.ImuPreprocess
+import scripts.PcSavedReader
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -13,11 +13,11 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 import os
-from UwbDataPreprocess import UwbDataPre
+from scripts.UwbDataPreprocess import UwbDataPre
 
 if __name__ == '__main__':
     # dir_name = "/home/steve/Code/Mini_IMU/Scripts/IMUWB/73/"
-    dir_name = "/home/steve/Data/IU/84/"
+    dir_name = "/home/steve/Data/IU/92/"
     # dir_name = "/home/steve/Code/yyyy0Mini-IMU/Scripts/IMUWB/20/"
     # dir_name = "/home/steve/Data/FastUwbDemo/2/"
     # dir_name = "/home/steve/tmp/test/20/"
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     np.savetxt(dir_name + "sim_imu.csv", a, delimiter=',')
 
-    ip = ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
+    ip = scripts.ImuPreprocess.ImuPreprocess(dir_name + "sim_imu.csv")
     ip.computezupt()
     # plt.show()
     ip.findvertex()

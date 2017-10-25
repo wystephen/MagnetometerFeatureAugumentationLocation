@@ -8,7 +8,7 @@ import scipy as sp
 import matplotlib.pyplot as plt
 
 # from OPENSHOE import zupt_test
-from OPENSHOE import Setting, zupt_test, ZUPT
+from scripts.OPENSHOE import Setting, zupt_test, ZUPT
 
 import array
 
