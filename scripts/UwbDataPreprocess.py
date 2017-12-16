@@ -127,8 +127,8 @@ class UwbDataPre:
             tmp_value_list = list()
             for index in range(step_len, len(index_list) - step_len):
                 if abs((self.result_uwb[index_list[index - step_len], i] +
-                            self.result_uwb[index_list[index + step_len], i])
-                               - 2.0 * self.result_uwb[index_list[index], i]) > 1.92:
+                        self.result_uwb[index_list[index + step_len], i])
+                       - 2.0 * self.result_uwb[index_list[index], i]) > 1.92:
                     # print(abs((self.result_uwb[index_list[index-step_len],i]+
                     #         self.result_uwb[index_list[index+step_len],i])
                     #    -2.0* self.result_uwb[index_list[index],i]) )
