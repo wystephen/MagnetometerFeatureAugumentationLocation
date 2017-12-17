@@ -132,7 +132,6 @@ class ZUPTaidedInsPlus(object):
 
         # print(self.R12)
 
-
         self.Q[0:3, 0:3] = np.diagflat(np.transpose(self.para.sigma_acc ** 2.0))
         self.Q[3:6, 3:6] = np.diagflat(np.transpose(self.para.sigma_gyro ** 2.0))
 
@@ -189,7 +188,6 @@ class ZUPTaidedInsPlus(object):
         """
         T = 1.0 + R[0, 0] + R[1, 1] + R[2, 2]
         # print (T)
-
 
         # Really Big Change.
         # ToDo:Why there are some value is smallter than zero.
@@ -571,8 +569,8 @@ class ZUPTaidedInsPlus(object):
         alpha = np.transpose(z).dot(A).dot(z)
 
         Jp = (((np.diagflat(np.ones([18, 1])) - 1) / alpha).
-              dot(A).
-              dot(z.dot(np.transpose(z)))).dot(A).dot(W)
+            dot(A).
+            dot(z.dot(np.transpose(z)))).dot(A).dot(W)
 
         Pout = Jp.dot(Pin).dot(np.transpose(Jp))
 
@@ -608,7 +606,6 @@ class ZUPTaidedInsPlus(object):
             #     e[1] ** 2.0 * S[1, 1] ** 2.0 / ((1 + lam * S[1, 1] ** 2) ** 2) + \
             #     e[2] ** 2.0 * S[2, 2] ** 2.0 / ((1 + lam * S[2, 2] ** 2.0) * 2.0) - eta ** 2.0
 
-
             g = e[0] * e[0] * S[0] * S[0] / ((1 + lam * S[0] * S[0]) ** 2) + \
                 e[1] * e[1] * S[1] * S[1] / ((1 + lam * S[1] * S[1]) ** 2) + \
                 e[2] * e[2] * S[2] * S[2] / ((1 + lam * S[2] * S[2]) ** 2) - \
@@ -618,7 +615,6 @@ class ZUPTaidedInsPlus(object):
             #              e[1] ** 2 * S[1, 1] ** 4.0 / ((1 + lam * S[1, 1] ** 2.0) ** 3.0) +
             #              e[2] ** 2.0 * S[2, 2] ** 4.0 / ((1 + lam * S[2, 2] ** 2.0) ** 3.0)
             #              )
-
 
             dg = -2.0 * (e[0] * e[0] * S[0] ** 4.0 / ((1 + lam * S[0] * S[0]) ** 3.0) +
                          e[1] * e[1] * S[1] ** 4.0 / ((1 + lam * S[1] * S[1]) ** 3.0) +
