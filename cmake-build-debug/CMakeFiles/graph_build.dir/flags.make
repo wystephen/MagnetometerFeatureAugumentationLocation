@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -O4 -msse2 -msse3 -msse4 -lopencv_aruco -lpthread  -fope
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/eigen3 -I/home/steve/Code/MagnetometerFeatureAugumentationLocation/./include -I/usr/local/cuda/include -I/usr/local/include -I/usr/include/suitesparse 
+CXX_INCLUDES = -I/usr/include/eigen3 -I/data/Code/MagnetometerFeatureAugumentationLocation/./include -I/usr/local/cuda/include -I/usr/local/include -I/usr/include/suitesparse 
 
